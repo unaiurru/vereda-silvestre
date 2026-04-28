@@ -8,7 +8,7 @@ const WHATSAPP_URL = 'https://wa.me/5215562058871?text=' + encodeURIComponent('H
 // DATOS EDITABLES — cambia aquí cuando tengas la información real.
 // =====================================================================
 
-const NOMBRE_DUENIA = 'Sofía'
+const NOMBRE_DUENIA = 'Mine'
 const FRASE_DESTACADA = 'El perro no es un proyecto que corregir, es un compañero que comprender.'
 
 const HISTORIA = [
