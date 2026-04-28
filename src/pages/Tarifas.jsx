@@ -34,7 +34,7 @@ const bloques = [
     titulo: 'Excursiones',
     nota: 'Salidas en grupo reducido al campo. Rutas adaptadas al grupo.',
     items: [
-      { concepto: 'Perro pequeño',          precio: '300 MXN', unidad: '/ excursión', slug: 'excursiones_pequeno' },
+      { concepto: 'Perro pequeño',          precio: '300 MXN', unidad: '/ excursión', slug: 'excursion-perro-pequeno' },
       { concepto: 'Perro mediano o grande', precio: '350 MXN', unidad: '/ excursión', slug: 'excursion-perro-mediano-grande' },
     ],
   },
