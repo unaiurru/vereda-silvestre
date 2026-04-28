@@ -40,9 +40,11 @@ export default function Header() {
     <header className={'sticky top-0 z-40 transition-all duration-300 ' + headerClass}>
       <div className="max-w-6xl mx-auto px-5 md:px-8 h-20 flex items-center justify-between">
         <Link to="/" className="flex items-center gap-3">
-          <div className="w-10 h-10 rounded-full bg-[#3F4A2A] flex items-center justify-center text-[#FAF6EC] font-serif text-lg">
-            V
-          </div>
+          <img
+            src="/logo.png"
+            alt="Vereda Silvestre"
+            className="w-12 h-12 object-contain rounded-full"
+          />
           <div className="leading-tight hidden sm:block">
             <div className="font-serif text-base text-[#2E3720]">Vereda Silvestre</div>
             <div className="text-[10px] uppercase tracking-[0.2em] text-stone-500">Centro Canino</div>

@@ -13,7 +13,11 @@ export default function Footer() {
           {/* Marca */}
           <div>
             <div className="flex items-center gap-3 mb-4">
-              <div className="w-10 h-10 rounded-full bg-[#FAF6EC] text-[#3F4A2A] flex items-center justify-center font-serif">V</div>
+              <img
+                src="/logo.png"
+                alt="Vereda Silvestre"
+                className="w-12 h-12 object-contain rounded-full bg-[#FAF6EC] p-0.5"
+              />
               <div>
                 <div className="font-serif text-lg text-[#FAF6EC]">Vereda Silvestre</div>
                 <div className="text-[10px] uppercase tracking-[0.2em] text-[#E0A458]">Centro Canino</div>
