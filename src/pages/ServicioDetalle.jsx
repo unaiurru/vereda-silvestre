@@ -2,10 +2,17 @@ import { useState, useEffect } from 'react'
 import { useParams, Link, Navigate } from 'react-router-dom'
 import { ArrowLeft, MessageCircle, Check, ImageOff, X, ChevronLeft, ChevronRight, Play, Clock } from 'lucide-react'
 import { servicios, whatsappLinkServicio } from '../data/servicios'
+import useSeo from '../hooks/useSeo'
 
 export default function ServicioDetalle() {
   const { slug } = useParams()
   const servicio = servicios.find((s) => s.slug === slug)
+
+  useSeo({
+    title: servicio ? servicio.titulo : 'Servicio',
+    description: servicio ? servicio.resumen : 'Servicio canino en Vereda Silvestre.',
+    path: servicio ? `/servicios/${servicio.slug}` : '/servicios',
+  })
 
   const [activeIdx, setActiveIdx] = useState(0)
   const [lightboxOpen, setLightboxOpen] = useState(false)
@@ -68,7 +75,7 @@ export default function ServicioDetalle() {
       )
     }
     return (
-      <div className="flex flex-col items-center justify-center text-stone-500 gap-3 p-10">
+      <div className="flex flex-col items-center justify-center text-stone-600 gap-3 p-10">
         <Clock size={36} strokeWidth={1.3} />
         <span className="text-[12px] uppercase tracking-wider">{item.label || 'Próximamente'}</span>
       </div>
@@ -103,14 +110,14 @@ export default function ServicioDetalle() {
         <div className="max-w-6xl mx-auto px-5 md:px-8 py-10 md:py-14">
           <Link
             to="/servicios"
-            className="inline-flex items-center gap-1.5 text-[12.5px] text-stone-500 hover:text-[#3F4A2A] mb-5"
+            className="inline-flex items-center gap-1.5 text-[12.5px] text-stone-600 hover:text-[#3F4A2A] mb-5"
           >
             <ArrowLeft size={14} />
             Todos los servicios
           </Link>
           <div className="flex items-end justify-between gap-6 flex-wrap">
             <div>
-              <div className="text-[11px] uppercase tracking-[0.22em] text-stone-500 mb-3">
+              <div className="text-[11px] uppercase tracking-[0.22em] text-stone-600 mb-3">
                 {servicio.categoria}
               </div>
               <h1 className="font-serif text-4xl md:text-6xl text-[#2E3720] leading-[1.05] tracking-tight">
@@ -203,7 +210,7 @@ export default function ServicioDetalle() {
         <div className="max-w-5xl mx-auto px-5 md:px-8">
           <div className="grid lg:grid-cols-12 gap-12 lg:gap-16">
             <div className="lg:col-span-7">
-              <div className="text-[11px] uppercase tracking-[0.22em] text-stone-500 mb-4">
+              <div className="text-[11px] uppercase tracking-[0.22em] text-stone-600 mb-4">
                 Sobre el servicio
               </div>
               <div className="space-y-4 text-[15px] md:text-[16px] text-stone-700 leading-relaxed">
@@ -234,7 +241,7 @@ export default function ServicioDetalle() {
             {servicio.incluye && servicio.incluye.length > 0 && (
               <div className="lg:col-span-5">
                 <div className="rounded-2xl border border-stone-200 bg-white p-7">
-                  <div className="text-[11px] uppercase tracking-[0.22em] text-stone-500 mb-4">
+                  <div className="text-[11px] uppercase tracking-[0.22em] text-stone-600 mb-4">
                     Qué incluye
                   </div>
                   <ul className="space-y-3.5">
@@ -253,11 +260,11 @@ export default function ServicioDetalle() {
       </section>
 
       {/* Otros servicios */}
-      <section className="py-14 border-t border-stone-200 bg-white/40">
+      <section className="py-14 border-t border-stone-200 bg-white/40" aria-labelledby="otros-servicios-heading">
         <div className="max-w-6xl mx-auto px-5 md:px-8">
-          <div className="text-[11px] uppercase tracking-[0.22em] text-stone-500 mb-3">
+          <h2 id="otros-servicios-heading" className="text-[11px] uppercase tracking-[0.22em] text-stone-600 mb-3 font-normal">
             También te puede interesar
-          </div>
+          </h2>
           <div className="grid md:grid-cols-3 gap-5 mt-6">
             {servicios
               .filter((s) => s.slug !== servicio.slug)
@@ -268,10 +275,10 @@ export default function ServicioDetalle() {
                   to={'/servicios/' + s.slug}
                   className="group rounded-xl border border-stone-200 bg-white p-5 hover:border-[#3F4A2A]/40 transition-colors"
                 >
-                  <div className="text-[10px] uppercase tracking-[0.2em] text-stone-400 mb-1.5">
+                  <div className="text-[10px] uppercase tracking-[0.2em] text-stone-600 mb-1.5">
                     {s.categoria}
                   </div>
-                  <h4 className="font-serif text-lg text-[#2E3720] mb-1">{s.titulo}</h4>
+                  <h3 className="font-serif text-lg text-[#2E3720] mb-1">{s.titulo}</h3>
                   <div className="text-[12.5px] text-[#3F4A2A] font-medium">{s.precio}</div>
                 </Link>
               ))}
@@ -316,13 +323,4 @@ export default function ServicioDetalle() {
               >
                 <ChevronRight size={24} />
               </button>
-              <div className="absolute bottom-5 left-1/2 -translate-x-1/2 bg-white/10 text-white text-[13px] px-4 py-1.5 rounded-full backdrop-blur-sm">
-                {activeIdx + 1} / {items.length}
-              </div>
-            </>
-          )}
-        </div>
-      )}
-    </div>
-  )
-}
+              <div className="abso

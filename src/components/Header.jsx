@@ -47,7 +47,7 @@ export default function Header() {
           />
           <div className="leading-tight hidden sm:block">
             <div className="font-serif text-base text-[#2E3720]">Vereda Silvestre</div>
-            <div className="text-[10px] uppercase tracking-[0.2em] text-stone-500">Centro Canino</div>
+            <div className="text-[10px] uppercase tracking-[0.2em] text-stone-600">Centro Canino</div>
           </div>
         </Link>
 
@@ -71,8 +71,9 @@ export default function Header() {
           </a>
           <button
             onClick={() => setOpen(!open)}
-            className="lg:hidden p-2 -mr-2 text-[#2E3720]"
-            aria-label="Menu"
+            className="lg:hidden w-11 h-11 -mr-2 text-[#2E3720] flex items-center justify-center rounded-md hover:bg-[#3F4A2A]/5 transition-colors"
+            aria-label={open ? 'Cerrar menú' : 'Abrir menú'}
+            aria-expanded={open}
           >
             {open ? <X size={22} /> : <Menu size={22} />}
           </button>

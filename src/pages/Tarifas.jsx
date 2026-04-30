@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom'
 import { ArrowRight, MessageCircle, Info } from 'lucide-react'
+import useSeo from '../hooks/useSeo'
 
 const WHATSAPP_URL = 'https://wa.me/5215562058871?text=' + encodeURIComponent('Hola, me gustaría información sobre las tarifas de Vereda Silvestre.')
 
@@ -50,7 +51,7 @@ function FilaTarifa({ item }) {
         <div className="font-serif text-[18px] md:text-[20px] text-[#3F4A2A] whitespace-nowrap">
           {item.precio}
           {item.unidad && (
-            <span className="text-[12px] text-stone-500 font-sans ml-1.5">{item.unidad}</span>
+            <span className="text-[12px] text-stone-600 font-sans ml-1.5">{item.unidad}</span>
           )}
         </div>
         {item.slug && (
@@ -81,11 +82,18 @@ function FilaTarifa({ item }) {
 }
 
 export default function Tarifas() {
+  useSeo({
+    title: 'Tarifas',
+    description:
+      'Tarifas claras y transparentes de pensión, adiestramiento, paseos y excursiones caninas en Jilotepec, Estado de México. Sin sorpresas.',
+    path: '/tarifas',
+  })
+
   return (
     <div>
       <section className="border-b border-stone-200">
         <div className="max-w-5xl mx-auto px-5 md:px-8 py-16 md:py-20">
-          <div className="text-[11px] uppercase tracking-[0.22em] text-stone-500 mb-3">
+          <div className="text-[11px] uppercase tracking-[0.22em] text-stone-600 mb-3">
             Tarifas
           </div>
           <h1 className="font-serif text-5xl md:text-6xl text-[#2E3720] leading-[1.05] tracking-tight">
@@ -95,7 +103,7 @@ export default function Tarifas() {
             Estos son nuestros precios orientativos. Cualquier servicio combinado o necesidad
             específica la ajustamos contigo por WhatsApp para que pagues solo lo que necesitas.
           </p>
-          <p className="mt-3 text-[13px] text-stone-500">
+          <p className="mt-3 text-[13px] text-stone-600">
             Pulsa cualquier servicio para ver su descripción completa.
           </p>
         </div>
@@ -119,7 +127,7 @@ export default function Tarifas() {
                 </div>
 
                 {b.nota && (
-                  <div className="mt-3 flex items-start gap-2 text-[12.5px] text-stone-500 leading-relaxed">
+                  <div className="mt-3 flex items-start gap-2 text-[12.5px] text-stone-600 leading-relaxed">
                     <Info size={13} className="mt-0.5 shrink-0" />
                     <span>{b.nota}</span>
                   </div>
@@ -162,14 +170,4 @@ export default function Tarifas() {
             </a>
             <Link
               to="/servicios"
-              className="inline-flex items-center gap-2 rounded-full border border-[#3F4A2A]/25 text-[#3F4A2A] px-7 py-3.5 text-[14px] font-medium hover:bg-[#3F4A2A]/5 transition-colors"
-            >
-              Ver servicios completos
-              <ArrowRight size={14} />
-            </Link>
-          </div>
-        </div>
-      </section>
-    </div>
-  )
-}
+              className="inline-flex items-center gap-2 rounded-full border border-[#3F4A2A]/25 text-[#3

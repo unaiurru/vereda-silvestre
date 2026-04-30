@@ -1,25 +1,33 @@
 import { Link } from 'react-router-dom'
 import { ArrowLeft } from 'lucide-react'
+import useSeo from '../hooks/useSeo'
 
 export default function AvisoPrivacidad() {
+  useSeo({
+    title: 'Aviso de Privacidad',
+    description:
+      'Aviso de Privacidad Integral de Centro Canino Vereda Silvestre S.A.S. de C.V., conforme a la LFPDPPP y los lineamientos del INAI.',
+    path: '/aviso-privacidad',
+  })
+
   return (
     <div>
       <section className="border-b border-stone-200">
         <div className="max-w-3xl mx-auto px-5 md:px-8 py-14 md:py-20">
           <Link
             to="/"
-            className="inline-flex items-center gap-1.5 text-[12.5px] text-stone-500 hover:text-[#3F4A2A] mb-5"
+            className="inline-flex items-center gap-1.5 text-[12.5px] text-stone-600 hover:text-[#3F4A2A] mb-5"
           >
             <ArrowLeft size={14} />
             Volver al inicio
           </Link>
-          <div className="text-[11px] uppercase tracking-[0.22em] text-stone-500 mb-3">
+          <div className="text-[11px] uppercase tracking-[0.22em] text-stone-600 mb-3">
             Información legal
           </div>
           <h1 className="font-serif text-4xl md:text-5xl text-[#2E3720] leading-[1.1] tracking-tight">
-            Aviso de privacidad
+            Aviso de Privacidad Integral
           </h1>
-          <p className="mt-4 text-[13px] text-stone-500">
+          <p className="mt-4 text-[13px] text-stone-600">
             Última actualización: abril de 2026
           </p>
         </div>
@@ -29,115 +37,96 @@ export default function AvisoPrivacidad() {
         <article className="max-w-3xl mx-auto px-5 md:px-8 prose-content">
           <p className="text-[15px] text-stone-700 leading-relaxed">
             En cumplimiento con lo dispuesto por la Ley Federal de Protección de Datos
-            Personales en Posesión de los Particulares (LFPDPPP), <strong>Centro Canino
-            Vereda Silvestre S.A.S. de C.V.</strong> (en adelante, "Vereda Silvestre"),
-            con domicilio en Jilotepec de Molina Enríquez, Estado de México, pone a tu
-            disposición el presente aviso de privacidad.
+            Personales en Posesión de los Particulares (LFPDPPP), su Reglamento y los
+            Lineamientos del Aviso de Privacidad emitidos por el INAI,{' '}
+            <strong>Centro Canino Vereda Silvestre S.A.S. de C.V.</strong> (en adelante,
+            "Vereda Silvestre"), con domicilio en Jilotepec de Molina Enríquez, Estado de
+            México, pone a tu disposición el presente Aviso de Privacidad Integral.
           </p>
 
           <h2 className="font-serif text-2xl text-[#2E3720] mt-10 mb-3">
-            1. Responsable del tratamiento de datos
+            1. Identidad y domicilio del responsable
           </h2>
           <p className="text-[15px] text-stone-700 leading-relaxed">
-            Centro Canino Vereda Silvestre S.A.S. de C.V. es responsable del uso y
-            protección de tus datos personales. Para cualquier consulta puedes
-            escribirnos a <a href="mailto:v.silvestre.info@gmail.com" className="text-[#3F4A2A] underline underline-offset-2">v.silvestre.info@gmail.com</a>.
+            Centro Canino Vereda Silvestre S.A.S. de C.V., con domicilio en Jilotepec de
+            Molina Enríquez, Estado de México, es responsable del tratamiento, uso y
+            protección de tus datos personales. Para cualquier consulta relacionada con
+            este aviso o con tus datos puedes escribirnos a{' '}
+            <a href="mailto:v.silvestre.info@gmail.com" className="text-[#3F4A2A] underline underline-offset-2">
+              v.silvestre.info@gmail.com
+            </a>.
           </p>
 
           <h2 className="font-serif text-2xl text-[#2E3720] mt-10 mb-3">
             2. Datos personales que recabamos
           </h2>
           <p className="text-[15px] text-stone-700 leading-relaxed">
-            Recabamos únicamente los datos que tú nos proporcionas voluntariamente
-            cuando nos contactas a través de:
+            Recabamos únicamente los datos personales que tú nos proporcionas
+            voluntariamente cuando nos contactas a través de:
           </p>
           <ul className="text-[15px] text-stone-700 leading-relaxed list-disc pl-6 space-y-1.5 mt-3">
             <li>El formulario de contacto de esta web (nombre, teléfono y mensaje).</li>
             <li>WhatsApp, llamada telefónica o correo electrónico.</li>
-            <li>Datos del perro y del tutor necesarios para prestar el servicio contratado.</li>
+            <li>Datos del perro y del tutor necesarios para prestar el servicio contratado (nombre, edad y características del perro, indicaciones veterinarias o de comportamiento, contacto del tutor).</li>
           </ul>
+          <p className="text-[15px] text-stone-700 leading-relaxed mt-3">
+            <strong>No recabamos datos personales sensibles</strong> (origen racial o
+            étnico, estado de salud, información genética, creencias religiosas,
+            filosóficas o morales, afiliación sindical, opiniones políticas, preferencia
+            sexual) ni datos financieros o patrimoniales.
+          </p>
+          <p className="text-[15px] text-stone-700 leading-relaxed mt-3">
+            Nuestros servicios están dirigidos a personas mayores de edad. <strong>No
+            recabamos datos personales de menores de edad</strong> de manera consciente.
+          </p>
 
           <h2 className="font-serif text-2xl text-[#2E3720] mt-10 mb-3">
             3. Finalidades del tratamiento
           </h2>
           <p className="text-[15px] text-stone-700 leading-relaxed">
-            Tus datos se utilizan exclusivamente para:
+            Tus datos se utilizan para las siguientes <strong>finalidades primarias</strong>,
+            necesarias para la relación con Vereda Silvestre:
           </p>
           <ul className="text-[15px] text-stone-700 leading-relaxed list-disc pl-6 space-y-1.5 mt-3">
             <li>Atender consultas, dudas o solicitudes de información.</li>
             <li>Coordinar reservas, citas y servicios contratados.</li>
             <li>Facturación y registros administrativos del servicio prestado.</li>
             <li>Comunicar incidencias o información relevante sobre tu perro durante la estancia.</li>
+            <li>Cumplir obligaciones legales y fiscales aplicables.</li>
           </ul>
-          <p className="text-[15px] text-stone-700 leading-relaxed mt-3">
-            <strong>No utilizamos tus datos con fines publicitarios ni los compartimos con terceros</strong>
-            salvo obligación legal.
+          <p className="text-[15px] text-stone-700 leading-relaxed mt-4">
+            <strong>No realizamos tratamientos con finalidades secundarias</strong> tales
+            como mercadotecnia, publicidad o prospección comercial. Tampoco utilizamos
+            tus datos para fines distintos a los descritos en este aviso.
           </p>
 
           <h2 className="font-serif text-2xl text-[#2E3720] mt-10 mb-3">
-            4. Conservación y seguridad
+            4. Transferencia de datos personales
           </h2>
           <p className="text-[15px] text-stone-700 leading-relaxed">
-            Conservamos tus datos durante el tiempo estrictamente necesario para
-            cumplir con las finalidades descritas y, en su caso, durante el plazo legal
-            que aplique. Adoptamos las medidas razonables para protegerlos frente a
-            acceso no autorizado, pérdida o uso indebido.
+            <strong>No realizamos transferencias de datos personales a terceros que
+            requieran tu consentimiento.</strong> Únicamente podríamos compartirlos en los
+            supuestos previstos en el artículo 37 de la LFPDPPP (por ejemplo, requerimiento
+            de autoridad competente o cumplimiento de una obligación legal), sin que en
+            ningún caso se realicen transferencias con fines comerciales.
           </p>
 
           <h2 className="font-serif text-2xl text-[#2E3720] mt-10 mb-3">
-            5. Tus derechos (ARCO)
+            5. Conservación y medidas de seguridad
           </h2>
           <p className="text-[15px] text-stone-700 leading-relaxed">
-            Tienes derecho a <strong>acceder, rectificar, cancelar u oponerte</strong> al
-            tratamiento de tus datos personales (los conocidos como derechos ARCO).
-            Para ejercerlos, escríbenos a{' '}
-            <a href="mailto:v.silvestre.info@gmail.com" className="text-[#3F4A2A] underline underline-offset-2">
-              v.silvestre.info@gmail.com
-            </a>{' '}
-            indicando tu nombre, el derecho que deseas ejercer y un medio de contacto.
-            Te responderemos en un plazo razonable.
+            Conservamos tus datos durante el tiempo estrictamente necesario para cumplir
+            con las finalidades descritas y, en su caso, durante el plazo legal que
+            resulte aplicable (por ejemplo, materia fiscal). Hemos implementado medidas
+            de seguridad administrativas, técnicas y físicas razonables para proteger tus
+            datos frente a daño, pérdida, alteración, destrucción o uso, acceso o
+            tratamiento no autorizados.
           </p>
 
           <h2 className="font-serif text-2xl text-[#2E3720] mt-10 mb-3">
-            6. Formulario de contacto de esta web
+            6. Tus derechos ARCO
           </h2>
           <p className="text-[15px] text-stone-700 leading-relaxed">
-            El formulario de la sección de contacto <strong>no almacena tus datos en
-            ningún servidor</strong>. Al enviarlo, abre directamente WhatsApp con el
-            mensaje pre-rellenado para que tú decidas si quieres mandárnoslo o no.
-            Si nos escribes por WhatsApp, tu número y mensaje quedan en la conversación
-            de WhatsApp como en cualquier chat normal.
-          </p>
-
-          <h2 className="font-serif text-2xl text-[#2E3720] mt-10 mb-3">
-            7. Cookies
-          </h2>
-          <p className="text-[15px] text-stone-700 leading-relaxed">
-            Esta web utiliza cookies técnicas mínimas necesarias para su funcionamiento.
-            Puedes consultar el detalle en nuestra{' '}
-            <Link to="/cookies" className="text-[#3F4A2A] underline underline-offset-2">
-              política de cookies
-            </Link>.
-          </p>
-
-          <h2 className="font-serif text-2xl text-[#2E3720] mt-10 mb-3">
-            8. Modificaciones
-          </h2>
-          <p className="text-[15px] text-stone-700 leading-relaxed">
-            Nos reservamos el derecho a modificar este aviso de privacidad cuando sea
-            necesario. La versión vigente será siempre la publicada en esta web, con
-            indicación de su fecha de última actualización.
-          </p>
-
-          <div className="mt-12 p-5 rounded-2xl bg-[#F5EFDF] border border-[#3F4A2A]/10 text-[13px] text-stone-600 leading-relaxed">
-            Si tienes cualquier duda sobre este aviso, escríbenos a{' '}
-            <a href="mailto:v.silvestre.info@gmail.com" className="text-[#3F4A2A] underline">
-              v.silvestre.info@gmail.com
-            </a>{' '}
-            y te respondemos.
-          </div>
-        </article>
-      </section>
-    </div>
-  )
-}
+            Tienes derecho a <strong>Acceder</strong> a tus datos, <strong>Rectificarlos</strong>{' '}
+            si son inexactos, <strong>Cancelarlos</strong> cuando consideres que no se
+            requieren para alguna de las f

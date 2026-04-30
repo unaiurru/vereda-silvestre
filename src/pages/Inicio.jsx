@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { ArrowRight, MessageCircle, Heart, Mountain, PawPrint, Sparkles } from 'lucide-react'
 import CarruselAuto from '../components/CarruselAuto'
 import Galeria from '../components/Galeria'
+import useSeo from '../hooks/useSeo'
 
 const WHATSAPP_URL = 'https://wa.me/5215562058871?text=' + encodeURIComponent('Hola, me gustaría reservar un servicio en Vereda Silvestre.')
 
@@ -42,6 +43,13 @@ const serviciosDestacados = [
 ]
 
 export default function Inicio() {
+  useSeo({
+    title: null, // usa el título por defecto del sitio
+    description:
+      'Centro canino en Jilotepec, Edo. de México. Pensión campestre, adiestramiento, paseos y excursiones con manejo respetuoso. Atención personalizada para tu perro.',
+    path: '/',
+  })
+
   return (
     <div>
       {/* HERO */}
@@ -49,7 +57,7 @@ export default function Inicio() {
         <div className="max-w-6xl mx-auto px-5 md:px-8 pt-16 md:pt-24 pb-20">
           <div className="grid lg:grid-cols-2 gap-12 items-center">
             <div>
-              <div className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.22em] text-stone-500 mb-6">
+              <div className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.22em] text-stone-600 mb-6">
                 <span className="h-1 w-6 bg-[#3F4A2A]" />
                 Jilotepec, Edo. de México
               </div>
@@ -95,8 +103,9 @@ export default function Inicio() {
       </section>
 
       {/* BENEFICIOS */}
-      <section className="border-t border-stone-200 bg-white/40">
+      <section className="border-t border-stone-200 bg-white/40" aria-labelledby="beneficios-heading">
         <div className="max-w-6xl mx-auto px-5 md:px-8 py-16">
+          <h2 id="beneficios-heading" className="sr-only">Por qué elegir Vereda Silvestre</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {beneficios.map((b) => (
               <div key={b.title}>
@@ -115,7 +124,7 @@ export default function Inicio() {
       <section className="py-20">
         <div className="max-w-6xl mx-auto px-5 md:px-8">
           <div className="max-w-2xl mb-12">
-            <div className="text-[11px] uppercase tracking-[0.22em] text-stone-500 mb-3">Servicios</div>
+            <div className="text-[11px] uppercase tracking-[0.22em] text-stone-600 mb-3">Servicios</div>
             <h2 className="font-serif text-4xl md:text-5xl text-[#2E3720] leading-[1.1]">
               Todo lo que tu perro necesita.
             </h2>
@@ -173,7 +182,7 @@ export default function Inicio() {
             </div>
 
             <div className="lg:col-span-7">
-              <div className="text-[11px] uppercase tracking-[0.22em] text-stone-500 mb-3">
+              <div className="text-[11px] uppercase tracking-[0.22em] text-stone-600 mb-3">
                 Quiénes somos
               </div>
               <h2 className="font-serif text-4xl md:text-5xl text-[#2E3720] leading-[1.1] mb-6">
@@ -219,14 +228,4 @@ export default function Inicio() {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-7 inline-flex items-center gap-2 rounded-full bg-[#FAF6EC] text-[#2E3720] px-7 py-3.5 text-[14px] font-medium hover:bg-white transition-colors"
-            >
-              <MessageCircle size={16} />
-              Escribir por WhatsApp
-            </a>
-          </div>
-        </div>
-      </section>
-    </div>
-  )
-}
+              className="mt-7 in

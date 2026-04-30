@@ -1,14 +1,22 @@
 import { Link } from 'react-router-dom'
 import { ArrowRight, ImageOff } from 'lucide-react'
 import { servicios } from '../data/servicios'
+import useSeo from '../hooks/useSeo'
 
 export default function Servicios() {
+  useSeo({
+    title: 'Servicios',
+    description:
+      'Pensión campestre, adiestramiento (agility y obediencia), clases grupales, paseos y excursiones para perros en Jilotepec, Estado de México.',
+    path: '/servicios',
+  })
+
   return (
     <div>
       {/* Cabecera */}
       <section className="border-b border-stone-200">
         <div className="max-w-6xl mx-auto px-5 md:px-8 py-16 md:py-20">
-          <div className="text-[11px] uppercase tracking-[0.22em] text-stone-500 mb-3">
+          <div className="text-[11px] uppercase tracking-[0.22em] text-stone-600 mb-3">
             Nuestros servicios
           </div>
           <h1 className="font-serif text-5xl md:text-6xl text-[#2E3720] leading-[1.05] tracking-tight">
@@ -46,7 +54,7 @@ export default function Servicios() {
                   )}
                 </div>
                 <div className="p-7">
-                  <div className="text-[10px] uppercase tracking-[0.2em] text-stone-400 mb-2">
+                  <div className="text-[10px] uppercase tracking-[0.2em] text-stone-600 mb-2">
                     {s.categoria}
                   </div>
                   <h3 className="font-serif text-xl text-[#2E3720] mb-3">{s.titulo}</h3>
@@ -57,15 +65,4 @@ export default function Servicios() {
                     <span className="font-serif text-[15px] text-[#2E3720]">{s.precio}</span>
                     <span className="inline-flex items-center gap-1 text-[12.5px] font-medium text-[#3F4A2A]">
                       Ver detalles
-                      <ArrowRight size={13} className="transition-transform group-hover:translate-x-1" />
-                    </span>
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
-    </div>
-  )
-}
+                  

@@ -1,25 +1,33 @@
 import { Link } from 'react-router-dom'
 import { ArrowLeft } from 'lucide-react'
+import useSeo from '../hooks/useSeo'
 
 export default function Cookies() {
+  useSeo({
+    title: 'Política de Cookies',
+    description:
+      'Política de cookies de Vereda Silvestre. Solo utilizamos cookies técnicas estrictamente necesarias para el funcionamiento del sitio.',
+    path: '/cookies',
+  })
+
   return (
     <div>
       <section className="border-b border-stone-200">
         <div className="max-w-3xl mx-auto px-5 md:px-8 py-14 md:py-20">
           <Link
             to="/"
-            className="inline-flex items-center gap-1.5 text-[12.5px] text-stone-500 hover:text-[#3F4A2A] mb-5"
+            className="inline-flex items-center gap-1.5 text-[12.5px] text-stone-600 hover:text-[#3F4A2A] mb-5"
           >
             <ArrowLeft size={14} />
             Volver al inicio
           </Link>
-          <div className="text-[11px] uppercase tracking-[0.22em] text-stone-500 mb-3">
+          <div className="text-[11px] uppercase tracking-[0.22em] text-stone-600 mb-3">
             Información legal
           </div>
           <h1 className="font-serif text-4xl md:text-5xl text-[#2E3720] leading-[1.1] tracking-tight">
             Política de cookies
           </h1>
-          <p className="mt-4 text-[13px] text-stone-500">
+          <p className="mt-4 text-[13px] text-stone-600">
             Última actualización: abril de 2026
           </p>
         </div>
@@ -99,14 +107,4 @@ export default function Cookies() {
             Para más información, consulta nuestro{' '}
             <Link to="/aviso-privacidad" className="text-[#3F4A2A] underline">
               aviso de privacidad
-            </Link>
-            {' '}o escríbenos a{' '}
-            <a href="mailto:v.silvestre.info@gmail.com" className="text-[#3F4A2A] underline">
-              v.silvestre.info@gmail.com
-            </a>.
-          </div>
-        </article>
-      </section>
-    </div>
-  )
-}
+          

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { ArrowRight, MessageCircle, Heart, Eye, Users, Mountain, Quote } from 'lucide-react'
 import Lightbox from '../components/Lightbox'
+import useSeo from '../hooks/useSeo'
 
 const WHATSAPP_URL = 'https://wa.me/5215562058871?text=' + encodeURIComponent('Hola, me gustaría conocer Vereda Silvestre.')
 
@@ -60,12 +61,19 @@ const GALERIA = [
 // =====================================================================
 
 export default function Nosotros() {
+  useSeo({
+    title: 'Nosotros',
+    description:
+      'Conoce a Mine y la historia de Vereda Silvestre: comunicación asertiva, manejo respetuoso y un entorno rural pensado para el bienestar de tu perro.',
+    path: '/nosotros',
+  })
+
   return (
     <div>
       {/* Cabecera */}
       <section className="border-b border-stone-200">
         <div className="max-w-5xl mx-auto px-5 md:px-8 py-16 md:py-20">
-          <div className="text-[11px] uppercase tracking-[0.22em] text-stone-500 mb-3">
+          <div className="text-[11px] uppercase tracking-[0.22em] text-stone-600 mb-3">
             Quiénes somos
           </div>
           <h1 className="font-serif text-5xl md:text-6xl text-[#2E3720] leading-[1.05] tracking-tight">
@@ -134,7 +142,7 @@ export default function Nosotros() {
         <div className="max-w-6xl mx-auto px-5 md:px-8">
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-16">
             <div className="lg:col-span-5">
-              <div className="text-[11px] uppercase tracking-[0.22em] text-stone-500 mb-3">
+              <div className="text-[11px] uppercase tracking-[0.22em] text-stone-600 mb-3">
                 Formación y experiencia
               </div>
               <h2 className="font-serif text-3xl md:text-4xl text-[#2E3720] leading-[1.15] mb-6">
@@ -155,7 +163,7 @@ export default function Nosotros() {
             </div>
 
             <div className="lg:col-span-7">
-              <div className="text-[11px] uppercase tracking-[0.22em] text-stone-500 mb-3">
+              <div className="text-[11px] uppercase tracking-[0.22em] text-stone-600 mb-3">
                 Nuestro enfoque
               </div>
               <h2 className="font-serif text-3xl md:text-4xl text-[#2E3720] leading-[1.15] mb-8">
@@ -188,7 +196,7 @@ export default function Nosotros() {
         <div className="max-w-6xl mx-auto px-5 md:px-8">
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
             <div className="lg:col-span-7 order-2 lg:order-1">
-              <div className="text-[11px] uppercase tracking-[0.22em] text-stone-500 mb-3">
+              <div className="text-[11px] uppercase tracking-[0.22em] text-stone-600 mb-3">
                 El lugar
               </div>
               <h2 className="font-serif text-3xl md:text-5xl text-[#2E3720] leading-[1.1] mb-6">
@@ -210,7 +218,7 @@ export default function Nosotros() {
                 {CIFRAS.map((c, i) => (
                   <div key={i}>
                     <div className="font-serif text-3xl md:text-4xl text-[#3F4A2A]">{c.numero}</div>
-                    <div className="text-[12px] uppercase tracking-wider text-stone-500 mt-1 leading-tight">
+                    <div className="text-[12px] uppercase tracking-wider text-stone-600 mt-1 leading-tight">
                       {c.etiqueta}
                     </div>
                   </div>
@@ -237,7 +245,7 @@ export default function Nosotros() {
       <section className="py-16 md:py-24">
         <div className="max-w-6xl mx-auto px-5 md:px-8">
           <div className="text-center max-w-2xl mx-auto mb-10">
-            <div className="text-[11px] uppercase tracking-[0.22em] text-stone-500 mb-3">
+            <div className="text-[11px] uppercase tracking-[0.22em] text-stone-600 mb-3">
               El día a día
             </div>
             <h2 className="font-serif text-3xl md:text-4xl text-[#2E3720] leading-[1.1]">
@@ -285,15 +293,4 @@ export default function Nosotros() {
               </a>
               <Link
                 to="/servicios"
-                className="inline-flex items-center gap-2 rounded-full border border-[#FAF6EC]/30 text-[#FAF6EC] px-7 py-3.5 text-[14px] font-medium hover:bg-[#FAF6EC]/10 transition-colors"
-              >
-                Ver servicios
-                <ArrowRight size={14} />
-              </Link>
-            </div>
-          </div>
-        </div>
-      </section>
-    </div>
-  )
-}
+                className="inline-flex items-center gap-2 rounded-full border border-[#FAF6EC]/30 text-[#FAF6EC

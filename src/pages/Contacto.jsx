@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { MessageCircle, Mail, MapPin, Clock, Send, Phone } from 'lucide-react'
+import useSeo from '../hooks/useSeo'
 
 const WHATSAPP_NUMBER = '5215562058871'
 const WHATSAPP_DISPLAY = '+52 1 55 6205 8871'
@@ -12,6 +13,13 @@ const waLink = (msg) =>
   `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`
 
 export default function Contacto() {
+  useSeo({
+    title: 'Contacto',
+    description:
+      'Contáctanos por WhatsApp, teléfono o correo. Centro Canino Vereda Silvestre en Jilotepec, Estado de México. Te respondemos rápido.',
+    path: '/contacto',
+  })
+
   const [form, setForm] = useState({ nombre: '', telefono: '', mensaje: '', sitio_web: '' })
   const [enviado, setEnviado] = useState(false)
   // Tiempo en el que se montó el formulario (para detectar bots que lo rellenan al instante)
@@ -55,7 +63,7 @@ export default function Contacto() {
       {/* Cabecera */}
       <section className="border-b border-stone-200">
         <div className="max-w-5xl mx-auto px-5 md:px-8 py-16 md:py-20">
-          <div className="text-[11px] uppercase tracking-[0.22em] text-stone-500 mb-3">
+          <div className="text-[11px] uppercase tracking-[0.22em] text-stone-600 mb-3">
             Contacto
           </div>
           <h1 className="font-serif text-5xl md:text-6xl text-[#2E3720] leading-[1.05] tracking-tight">
@@ -125,11 +133,11 @@ export default function Contacto() {
               <div className="font-serif text-base text-[#2E3720] leading-tight mb-1">
                 Jilotepec de Molina Enríquez
               </div>
-              <div className="text-[13px] text-stone-500">Estado de México</div>
+              <div className="text-[13px] text-stone-600">Estado de México</div>
               <p className="text-[13px] text-stone-600 mt-3 leading-relaxed flex-1">
                 Te compartimos la dirección exacta al confirmar tu visita o reserva.
               </p>
-              <div className="mt-5 flex items-center gap-2 text-[13px] text-stone-500">
+              <div className="mt-5 flex items-center gap-2 text-[13px] text-stone-600">
                 <Clock size={14} />
                 <span>Lun–Sáb · 9:00 – 19:00</span>
               </div>
@@ -144,7 +152,7 @@ export default function Contacto() {
           <div className="grid lg:grid-cols-12 gap-8">
             {/* Mapa */}
             <div className="lg:col-span-6">
-              <div className="text-[11px] uppercase tracking-[0.22em] text-stone-500 mb-3">
+              <div className="text-[11px] uppercase tracking-[0.22em] text-stone-600 mb-3">
                 Cómo llegar
               </div>
               <h2 className="font-serif text-2xl md:text-3xl text-[#2E3720] leading-tight mb-5">
@@ -160,7 +168,7 @@ export default function Contacto() {
                   allowFullScreen
                 />
               </div>
-              <p className="mt-3 text-[13px] text-stone-500 leading-relaxed">
+              <p className="mt-3 text-[13px] text-stone-600 leading-relaxed">
                 Por privacidad y seguridad, compartimos la ubicación exacta del centro al confirmar
                 la visita o la reserva por WhatsApp.
               </p>
@@ -168,21 +176,21 @@ export default function Contacto() {
 
             {/* Formulario */}
             <div className="lg:col-span-6">
-              <div className="text-[11px] uppercase tracking-[0.22em] text-stone-500 mb-3">
+              <div className="text-[11px] uppercase tracking-[0.22em] text-stone-600 mb-3">
                 Formulario
               </div>
               <h2 className="font-serif text-2xl md:text-3xl text-[#2E3720] leading-tight mb-5">
                 Envíanos un mensaje
               </h2>
               <form onSubmit={onSubmit} className="rounded-2xl border border-stone-200 bg-white p-7">
-                <p className="text-[13px] text-stone-500 mb-6 leading-relaxed">
+                <p className="text-[13px] text-stone-600 mb-6 leading-relaxed">
                   Al enviar, abriremos WhatsApp con tu mensaje listo. No almacenamos
                   tu información en este sitio.
                 </p>
 
                 <div className="space-y-5">
                   <label className="block">
-                    <span className="text-[12px] uppercase tracking-wider text-stone-500">
+                    <span className="text-[12px] uppercase tracking-wider text-stone-600">
                       Tu nombre *
                     </span>
                     <input
@@ -197,7 +205,7 @@ export default function Contacto() {
                   </label>
 
                   <label className="block">
-                    <span className="text-[12px] uppercase tracking-wider text-stone-500">
+                    <span className="text-[12px] uppercase tracking-wider text-stone-600">
                       Teléfono (opcional)
                     </span>
                     <input
@@ -211,7 +219,7 @@ export default function Contacto() {
                   </label>
 
                   <label className="block">
-                    <span className="text-[12px] uppercase tracking-wider text-stone-500">
+                    <span className="text-[12px] uppercase tracking-wider text-stone-600">
                       ¿En qué te podemos ayudar? *
                     </span>
                     <textarea
@@ -279,15 +287,4 @@ export default function Contacto() {
           </div>
           <a
             href={`tel:+${WHATSAPP_NUMBER}`}
-            className="font-serif text-3xl md:text-4xl text-[#2E3720] hover:text-[#3F4A2A] transition-colors"
-          >
-            {WHATSAPP_DISPLAY}
-          </a>
-          <p className="mt-4 text-[14px] text-stone-600">
-            Atención de lunes a sábado, de 9:00 a 19:00.
-          </p>
-        </div>
-      </section>
-    </div>
-  )
-}
+            className="font-serif text-3xl md:text-4xl text-[#2E3720] hover:text-[#3F4A2A]

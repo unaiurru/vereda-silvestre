@@ -47,13 +47,21 @@ export default function BannerCookies() {
             </div>
             <p>
               Usamos cookies técnicas necesarias para que la web funcione bien.
-              No usamos cookies de publicidad ni de seguimiento.{' '}
+              No usamos cookies de publicidad ni de seguimiento. Consulta nuestra{' '}
               <Link
                 to="/cookies"
                 className="underline underline-offset-2 hover:text-white"
                 onClick={() => setVisible(false)}
               >
-                Más información
+                política de cookies
+              </Link>{' '}
+              y el{' '}
+              <Link
+                to="/aviso-privacidad"
+                className="underline underline-offset-2 hover:text-white"
+                onClick={() => setVisible(false)}
+              >
+                aviso de privacidad
               </Link>.
             </p>
           </div>
@@ -65,15 +73,3 @@ export default function BannerCookies() {
               Aceptar y continuar
             </button>
             <button
-              onClick={aceptar}
-              aria-label="Cerrar"
-              className="md:hidden w-10 h-10 rounded-full bg-[#FAF6EC]/10 flex items-center justify-center"
-            >
-              <X size={16} />
-            </button>
-          </div>
-        </div>
-      </div>
-    </div>
-  )
-}
