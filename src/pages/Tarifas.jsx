@@ -6,6 +6,41 @@ const WHATSAPP_URL = 'https://wa.me/5215562058871?text=' + encodeURIComponent('H
 
 const bloques = [
   {
+    titulo: 'Pensión',
+    nota: 'Precio por día. Transporte a domicilio incluido en zona Jilotepec.',
+    items: [
+      { concepto: 'Perro pequeño', precio: '400 MXN', unidad: '/ día', slug: 'pension-perro-pequeno' },
+      { concepto: 'Perro mediano', precio: '500 MXN', unidad: '/ día', slug: 'pension-perro-mediano' },
+      { concepto: 'Perro grande',  precio: '600 MXN', unidad: '/ día', slug: 'pension-perro-grande' },
+      { concepto: 'Pensión Campestre', precio: '500 MXN', unidad: '/ día', slug: 'pension-campestre' },
+    ],
+  },
+  {
+    titulo: 'Adiestramiento',
+    nota: 'Sesiones individuales o clases grupales. Comunicación clara y manejo respetuoso.',
+    items: [
+      { concepto: 'Clase grupal',                    precio: '50 MXN',  unidad: '/ clase', slug: 'clase-grupal' },
+      { concepto: 'Sesión individual de obediencia', precio: '150 MXN', unidad: '/ hora',  slug: 'adiestramiento-obediencia' },
+      { concepto: 'Sesión individual de agility',    precio: '150 MXN', unidad: '/ hora',  slug: 'adiestramiento-agility' },
+    ],
+  },
+  {
+    titulo: 'Paseos',
+    nota: 'Paseos guiados con manejo respetuoso. Consulta disponibilidad por zona.',
+    items: [
+      { concepto: 'Paseo de 30 minutos', precio: '50 MXN',  unidad: '', slug: 'paseo-30-minutos' },
+      { concepto: 'Paseo de 1 hora',     precio: '100 MXN', unidad: '', slug: 'paseo-1-hora' },
+    ],
+  },
+  {
+    titulo: 'Excursiones',
+    nota: 'Salidas en grupo reducido al campo. Rutas adaptadas al grupo.',
+    items: [
+      { concepto: 'Perro pequeño',          precio: '300 MXN', unidad: '/ excursión', slug: 'excursion-perro-pequeno' },
+      { concepto: 'Perro mediano o grande', precio: '350 MXN', unidad: '/ excursión', slug: 'excursion-perro-mediano-grande' },
+    ],
+  },
+  {
     titulo: 'Programas',
     nota: 'Programas por convocatoria. La edición actual está finalizada; escríbenos y te avisamos de la próxima.',
     items: [
@@ -18,13 +53,6 @@ const bloques = [
     nota: 'Trabajo de enriquecimiento y olfato en entorno natural, adaptado a cada perro.',
     items: [
       { concepto: 'Activación natural', precio: '350 MXN', unidad: '/ sesión', slug: 'activacion-natural' },
-    ],
-  },
-  {
-    titulo: 'Pensión',
-    nota: 'Precio por día. Transporte a domicilio incluido en zona Jilotepec.',
-    items: [
-      { concepto: 'Pensión Campestre', precio: '500 MXN', unidad: '/ día', slug: 'pension-campestre' },
     ],
   },
   {
@@ -85,7 +113,7 @@ export default function Tarifas() {
   useSeo({
     title: 'Tarifas',
     description:
-      'Tarifas de programas, sesiones de activación natural, pensión campestre y seminarios formativos en Jilotepec, Estado de México. Sin sorpresas.',
+      'Tarifas de pensión, adiestramiento, paseos, excursiones, programas, activación natural y seminarios en Jilotepec, Estado de México. Sin sorpresas.',
     path: '/tarifas',
   })
 
