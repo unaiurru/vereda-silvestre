@@ -1,12 +1,14 @@
 import { useState, useEffect } from 'react'
 import { Link, NavLink } from 'react-router-dom'
-import { Menu, X, MessageCircle } from 'lucide-react'
+import { Menu, X, MessageCircle, ShoppingBag } from 'lucide-react'
+import { useCarrito } from '../context/CarritoContext'
 
 const WHATSAPP_URL = 'https://wa.me/5215562058871?text=' + encodeURIComponent('Hola, me gustaria reservar un servicio en Vereda Silvestre.')
 
 const links = [
   { to: '/', label: 'Inicio' },
   { to: '/servicios', label: 'Servicios' },
+  { to: '/tienda', label: 'Tienda' },
   { to: '/nosotros', label: 'Nosotros' },
   { to: '/tarifas', label: 'Tarifas' },
   { to: '/contacto', label: 'Contacto' },
@@ -15,6 +17,7 @@ const links = [
 export default function Header() {
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
+  const { totalItems, abrir } = useCarrito()
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20)
@@ -69,6 +72,21 @@ export default function Header() {
             <MessageCircle size={14} />
             Reservar
           </a>
+
+          {/* Carrito */}
+          <button
+            onClick={abrir}
+            className="relative w-11 h-11 text-[#2E3720] flex items-center justify-center rounded-md hover:bg-[#3F4A2A]/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3F4A2A] transition-colors"
+            aria-label={'Abrir carrito' + (totalItems > 0 ? ' (' + totalItems + ')' : '')}
+          >
+            <ShoppingBag size={20} />
+            {totalItems > 0 && (
+              <span className="absolute -top-0.5 -right-0.5 min-w-[18px] h-[18px] px-1 rounded-full bg-[#3F4A2A] text-[#FAF6EC] text-[10px] font-medium flex items-center justify-center">
+                {totalItems}
+              </span>
+            )}
+          </button>
+
           <button
             onClick={() => setOpen(!open)}
             className="lg:hidden w-11 h-11 -mr-2 text-[#2E3720] flex items-center justify-center rounded-md hover:bg-[#3F4A2A]/5 transition-colors"

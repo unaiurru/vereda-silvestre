@@ -293,4 +293,14 @@ export default function Nosotros() {
               </a>
               <Link
                 to="/servicios"
-                className="inline-flex items-center gap-2 rounded-full border border-[#FAF6EC]/30 text-[#FAF6EC
+                className="inline-flex items-center gap-2 rounded-full border border-[#FAF6EC]/30 text-[#FAF6EC] px-7 py-3.5 text-[14px] font-medium hover:bg-[#FAF6EC]/10 transition-colors"
+              >
+                Ver servicios
+              </Link>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  )
+}

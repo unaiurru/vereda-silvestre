@@ -73,3 +73,15 @@ export default function BannerCookies() {
               Aceptar y continuar
             </button>
             <button
+              onClick={() => setVisible(false)}
+              className="w-11 h-11 shrink-0 rounded-full bg-[#FAF6EC]/10 hover:bg-[#FAF6EC]/20 flex items-center justify-center transition-colors"
+              aria-label="Cerrar aviso de cookies"
+            >
+              <X size={18} />
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}

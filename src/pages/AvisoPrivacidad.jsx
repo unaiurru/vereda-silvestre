@@ -129,4 +129,46 @@ export default function AvisoPrivacidad() {
           <p className="text-[15px] text-stone-700 leading-relaxed">
             Tienes derecho a <strong>Acceder</strong> a tus datos, <strong>Rectificarlos</strong>{' '}
             si son inexactos, <strong>Cancelarlos</strong> cuando consideres que no se
+            requieren para alguna de las finalidades aquí señaladas o estén siendo utilizados
+            de forma indebida, y <strong>Oponerte</strong> a su tratamiento para fines
+            específicos (derechos ARCO). También puedes revocar en cualquier momento el
+            consentimiento que nos hayas otorgado.
+          </p>
+          <p className="text-[15px] text-stone-700 leading-relaxed mt-4">
+            Para ejercer cualquiera de estos derechos, limitar el uso o divulgación de tus
+            datos o revocar tu consentimiento, envíanos una solicitud al correo{' '}
+            <a
+              href="mailto:v.silvestre.info@gmail.com"
+              className="text-[#3F4A2A] underline underline-offset-2"
+            >
+              v.silvestre.info@gmail.com
+            </a>{' '}
+            indicando tu nombre, una descripción clara de lo que solicitas y un medio para
+            contactarte. Te responderemos en los plazos que establece la ley.
+          </p>
+
+          <h2 className="font-serif text-2xl text-[#2E3720] mt-10 mb-3">
+            7. Cambios al presente aviso
+          </h2>
+          <p className="text-[15px] text-stone-700 leading-relaxed">
+            Nos reservamos el derecho de actualizar este Aviso de Privacidad en cualquier
+            momento para reflejar cambios en nuestras prácticas o en la legislación
+            aplicable. Cualquier modificación se publicará en esta misma página, por lo que
+            te recomendamos revisarla periódicamente.
+          </p>
+
+          <div className="mt-12 p-5 rounded-2xl bg-[#F5EFDF] border border-[#3F4A2A]/10 text-[13px] text-stone-600 leading-relaxed">
+            Si tienes dudas sobre este aviso o sobre el tratamiento de tus datos, escríbenos a{' '}
+            <a
+              href="mailto:v.silvestre.info@gmail.com"
+              className="text-[#3F4A2A] underline"
+            >
+              v.silvestre.info@gmail.com
+            </a>.
+          </div>
+        </article>
+      </section>
+    </div>
+  )
+}
             requieren para alguna de las f

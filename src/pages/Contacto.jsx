@@ -287,4 +287,13 @@ export default function Contacto() {
           </div>
           <a
             href={`tel:+${WHATSAPP_NUMBER}`}
+            className="font-serif text-3xl md:text-4xl text-[#2E3720] hover:text-[#3F4A2A] transition-colors"
+          >
+            +52 1 55 6205 8871
+          </a>
+        </div>
+      </section>
+    </div>
+  )
+}
             className="font-serif text-3xl md:text-4xl text-[#2E3720] hover:text-[#3F4A2A]

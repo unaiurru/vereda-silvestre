@@ -6,37 +6,32 @@ const WHATSAPP_URL = 'https://wa.me/5215562058871?text=' + encodeURIComponent('H
 
 const bloques = [
   {
-    titulo: 'Pensión campestre',
+    titulo: 'Programas',
+    nota: 'Programas por convocatoria. La edición actual está finalizada; escríbenos y te avisamos de la próxima.',
+    items: [
+      { concepto: 'Cachorro', precio: '1500 MXN', unidad: '', slug: 'cachorro', etiqueta: 'Finalizado' },
+      { concepto: 'Educación canina familiar', precio: '2500 MXN', unidad: '', slug: 'educacion-canina-familiar', etiqueta: 'Finalizado' },
+    ],
+  },
+  {
+    titulo: 'Sesiones',
+    nota: 'Trabajo de enriquecimiento y olfato en entorno natural, adaptado a cada perro.',
+    items: [
+      { concepto: 'Activación natural', precio: '350 MXN', unidad: '/ sesión', slug: 'activacion-natural' },
+    ],
+  },
+  {
+    titulo: 'Pensión',
     nota: 'Precio por día. Transporte a domicilio incluido en zona Jilotepec.',
     items: [
-      { concepto: 'Perro pequeño', precio: '400 MXN', unidad: '/ día', slug: 'pension-perro-pequeno' },
-      { concepto: 'Perro mediano', precio: '500 MXN', unidad: '/ día', slug: 'pension-perro-mediano' },
-      { concepto: 'Perro grande',  precio: '600 MXN', unidad: '/ día', slug: 'pension-perro-grande' },
+      { concepto: 'Pensión Campestre', precio: '500 MXN', unidad: '/ día', slug: 'pension-campestre' },
     ],
   },
   {
-    titulo: 'Adiestramiento',
-    nota: 'Sesiones individuales o clases grupales. Comunicación clara y manejo respetuoso.',
+    titulo: 'Formación',
+    nota: 'Seminarios para tutores y profesionales. Consulta fechas y plazas disponibles.',
     items: [
-      { concepto: 'Clase grupal',                    precio: '50 MXN',  unidad: '/ clase', slug: 'clase-grupal' },
-      { concepto: 'Sesión individual de obediencia', precio: '150 MXN', unidad: '/ hora',  slug: 'adiestramiento-obediencia' },
-      { concepto: 'Sesión individual de agility',    precio: '150 MXN', unidad: '/ hora',  slug: 'adiestramiento-agility' },
-    ],
-  },
-  {
-    titulo: 'Paseos',
-    nota: 'Paseos guiados con manejo respetuoso. Consulta disponibilidad por zona.',
-    items: [
-      { concepto: 'Paseo de 30 minutos', precio: '50 MXN',  unidad: '', slug: 'paseo-30-minutos' },
-      { concepto: 'Paseo de 1 hora',     precio: '100 MXN', unidad: '', slug: 'paseo-1-hora' },
-    ],
-  },
-  {
-    titulo: 'Excursiones',
-    nota: 'Salidas en grupo reducido al campo. Rutas adaptadas al grupo.',
-    items: [
-      { concepto: 'Perro pequeño',          precio: '300 MXN', unidad: '/ excursión', slug: 'excursion-perro-pequeno' },
-      { concepto: 'Perro mediano o grande', precio: '350 MXN', unidad: '/ excursión', slug: 'excursion-perro-mediano-grande' },
+      { concepto: 'Seminarios formativos', precio: '3500 MXN', unidad: '', slug: 'seminarios-formativos' },
     ],
   },
 ]
@@ -46,6 +41,11 @@ function FilaTarifa({ item }) {
     <>
       <div className="flex items-center gap-2 text-[15px] text-stone-800">
         <span>{item.concepto}</span>
+        {item.etiqueta && (
+          <span className="bg-stone-700 text-[#FAF6EC] px-2 py-0.5 text-[10px] uppercase tracking-wide rounded">
+            {item.etiqueta}
+          </span>
+        )}
       </div>
       <div className="flex items-center gap-3">
         <div className="font-serif text-[18px] md:text-[20px] text-[#3F4A2A] whitespace-nowrap">
@@ -85,7 +85,7 @@ export default function Tarifas() {
   useSeo({
     title: 'Tarifas',
     description:
-      'Tarifas claras y transparentes de pensión, adiestramiento, paseos y excursiones caninas en Jilotepec, Estado de México. Sin sorpresas.',
+      'Tarifas de programas, sesiones de activación natural, pensión campestre y seminarios formativos en Jilotepec, Estado de México. Sin sorpresas.',
     path: '/tarifas',
   })
 
@@ -144,6 +144,7 @@ export default function Tarifas() {
               <li>• Los precios pueden variar según la zona, la duración total del servicio o necesidades especiales.</li>
               <li>• Para reservas de pensión recomendamos contactar con antelación, sobre todo en periodos vacacionales.</li>
               <li>• Aceptamos pago en efectivo y transferencia. Confirma la modalidad por WhatsApp al reservar.</li>
+              <li>• ¿Buscas material para tu perro? Visita nuestra <Link to="/tienda" className="text-[#3F4A2A] underline underline-offset-2">tienda</Link>.</li>
             </ul>
           </div>
         </div>
@@ -170,4 +171,14 @@ export default function Tarifas() {
             </a>
             <Link
               to="/servicios"
-              className="inline-flex items-center gap-2 rounded-full border border-[#3F4A2A]/25 text-[#3
+              className="inline-flex items-center gap-2 rounded-full border border-[#3F4A2A]/25 text-[#3F4A2A] px-7 py-3.5 text-[14px] font-medium hover:bg-[#3F4A2A]/5 transition-colors"
+            >
+              Ver servicios
+              <ArrowRight size={16} />
+            </Link>
+          </div>
+        </div>
+      </section>
+    </div>
+  )
+}

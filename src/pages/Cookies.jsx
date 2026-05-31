@@ -107,4 +107,11 @@ export default function Cookies() {
             Para más información, consulta nuestro{' '}
             <Link to="/aviso-privacidad" className="text-[#3F4A2A] underline">
               aviso de privacidad
+            </Link>.
+          </div>
+        </article>
+      </section>
+    </div>
+  )
+}
           

@@ -17,11 +17,14 @@ export default function ServicioDetalle() {
   const [activeIdx, setActiveIdx] = useState(0)
   const [lightboxOpen, setLightboxOpen] = useState(false)
 
-  useEffect(() => {
+  // Reset de la galería al cambiar de servicio, en render (en vez de un efecto
+  // que llame a setState). El scroll al inicio lo gestiona <ScrollToTop />.
+  const [prevSlug, setPrevSlug] = useState(slug)
+  if (slug !== prevSlug) {
+    setPrevSlug(slug)
     setActiveIdx(0)
     setLightboxOpen(false)
-    window.scrollTo(0, 0)
-  }, [slug])
+  }
 
   useEffect(() => {
     if (!lightboxOpen) return
@@ -39,6 +42,7 @@ export default function ServicioDetalle() {
     return <Navigate to="/servicios" replace />
   }
 
+  const finalizado = servicio.estado === 'finalizado'
   const items = servicio.media || []
   const hayItems = items.length > 0
   const activeItem = hayItems ? items[activeIdx] : null
@@ -117,8 +121,15 @@ export default function ServicioDetalle() {
           </Link>
           <div className="flex items-end justify-between gap-6 flex-wrap">
             <div>
-              <div className="text-[11px] uppercase tracking-[0.22em] text-stone-600 mb-3">
-                {servicio.categoria}
+              <div className="flex items-center gap-3 mb-3">
+                <span className="text-[11px] uppercase tracking-[0.22em] text-stone-600">
+                  {servicio.categoria}
+                </span>
+                {finalizado && (
+                  <span className="bg-stone-700 text-[#FAF6EC] px-3 py-1 text-xs uppercase tracking-wide rounded">
+                    Finalizado
+                  </span>
+                )}
               </div>
               <h1 className="font-serif text-4xl md:text-6xl text-[#2E3720] leading-[1.05] tracking-tight">
                 {servicio.titulo}
@@ -227,7 +238,7 @@ export default function ServicioDetalle() {
                   className="inline-flex items-center gap-2 rounded-full bg-[#3F4A2A] text-[#FAF6EC] px-6 py-3.5 text-[14px] font-medium hover:bg-[#2E3720] transition-colors"
                 >
                   <MessageCircle size={16} />
-                  Consultar por WhatsApp
+                  {finalizado ? 'Avísame de la próxima edición' : 'Consultar por WhatsApp'}
                 </a>
                 <Link
                   to="/contacto"
@@ -323,4 +334,13 @@ export default function ServicioDetalle() {
               >
                 <ChevronRight size={24} />
               </button>
-              <div className="abso
+              <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-white/10 text-white text-[12px] px-3 py-1 rounded-full backdrop-blur-sm">
+                {activeIdx + 1} / {items.length}
+              </div>
+            </>
+          )}
+        </div>
+      )}
+    </div>
+  )
+}

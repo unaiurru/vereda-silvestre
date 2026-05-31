@@ -214,6 +214,44 @@ export default function Inicio() {
         </div>
       </section>
 
+      {/* ÚNETE AL EQUIPO */}
+      <section className="pb-20" aria-labelledby="unete-heading">
+        <div className="max-w-6xl mx-auto px-5 md:px-8">
+          <div className="grid md:grid-cols-2 rounded-3xl overflow-hidden border border-stone-200">
+            <div className="bg-[#F5EFDF] p-10 md:p-14 flex flex-col justify-center">
+              <div className="text-[11px] uppercase tracking-[0.22em] text-stone-600 mb-3">
+                Trabaja con nosotros
+              </div>
+              <h2 id="unete-heading" className="font-serif text-3xl md:text-4xl text-[#2E3720] leading-[1.1]">
+                Únete a nuestro equipo
+              </h2>
+              <p className="mt-5 text-[15px] text-stone-700 leading-relaxed max-w-md">
+                Vereda Silvestre está en expansión. Actualmente contamos con personal de apoyo
+                en salidas estructuradas y pensión, y nos encontramos formando educadores bajo
+                nuestro enfoque técnico y comunitario. Creemos en la formación interna y en la
+                construcción de criterio profesional.
+              </p>
+              <div className="mt-7">
+                <Link
+                  to="/unete"
+                  className="inline-flex items-center gap-2 rounded-full bg-[#3F4A2A] text-[#FAF6EC] px-6 py-3.5 text-[14px] font-medium hover:bg-[#2E3720] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3F4A2A] focus-visible:ring-offset-2 transition-colors"
+                >
+                  Quiero formar parte
+                  <ArrowRight size={16} />
+                </Link>
+              </div>
+            </div>
+            <div className="bg-[#F5EFDF] min-h-[260px] md:min-h-0">
+              <img
+                src="/unete-portada.jpg"
+                alt="Entorno natural del centro canino Vereda Silvestre"
+                className="w-full h-full object-cover"
+              />
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* CTA FINAL */}
       <section className="pb-20">
         <div className="max-w-6xl mx-auto px-5 md:px-8">
@@ -228,4 +266,14 @@ export default function Inicio() {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="mt-7 in
+              className="mt-7 inline-flex items-center gap-2 rounded-full bg-[#FAF6EC] text-[#2E3720] px-7 py-3.5 text-[14px] font-medium hover:bg-white transition-colors"
+            >
+              <MessageCircle size={16} />
+              Reservar por WhatsApp
+            </a>
+          </div>
+        </div>
+      </section>
+    </div>
+  )
+}

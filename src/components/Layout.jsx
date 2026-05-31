@@ -3,6 +3,7 @@ import Header from './Header'
 import Footer from './Footer'
 import ScrollToTop from './ScrollToTop'
 import BannerCookies from './BannerCookies'
+import CarritoDrawer from './CarritoDrawer'
 
 export default function Layout() {
   return (
@@ -14,6 +15,7 @@ export default function Layout() {
       </main>
       <Footer />
       <BannerCookies />
+      <CarritoDrawer />
     </div>
   )
 }
