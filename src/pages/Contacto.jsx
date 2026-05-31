@@ -296,4 +296,3 @@ export default function Contacto() {
     </div>
   )
 }
-            className="font-serif text-3xl md:text-4xl text-[#2E3720] hover:text-[#3F4A2A]

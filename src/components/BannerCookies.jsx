@@ -8,24 +8,24 @@ export default function BannerCookies() {
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
-    // Mostrar si no se ha aceptado antes
+    // Mostrar el banner (tras un pequeño retraso) si no se ha aceptado antes.
+    let t
     try {
       const aceptadas = localStorage.getItem(COOKIE_KEY)
       if (!aceptadas) {
-        // Pequeño retraso para que no aparezca de golpe al cargar
-        const t = setTimeout(() => setVisible(true), 600)
-        return () => clearTimeout(t)
+        t = setTimeout(() => setVisible(true), 600)
       }
-    } catch (e) {
-      // Si localStorage no está disponible, mostramos el banner igualmente
-      setVisible(true)
+    } catch {
+      // Si localStorage no está disponible, mostramos el banner igualmente.
+      t = setTimeout(() => setVisible(true), 600)
     }
+    return () => clearTimeout(t)
   }, [])
 
   const aceptar = () => {
     try {
       localStorage.setItem(COOKIE_KEY, 'true')
-    } catch (e) {
+    } catch {
       // ignorar
     }
     setVisible(false)

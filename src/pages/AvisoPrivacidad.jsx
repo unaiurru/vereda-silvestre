@@ -171,4 +171,3 @@ export default function AvisoPrivacidad() {
     </div>
   )
 }
-            requieren para alguna de las f

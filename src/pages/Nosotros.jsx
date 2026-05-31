@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom'
-import { ArrowRight, MessageCircle, Heart, Eye, Users, Mountain, Quote } from 'lucide-react'
+import { MessageCircle, Heart, Eye, Users, Mountain, Quote } from 'lucide-react'
 import Lightbox from '../components/Lightbox'
 import useSeo from '../hooks/useSeo'
 

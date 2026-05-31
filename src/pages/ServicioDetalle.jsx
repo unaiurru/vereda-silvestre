@@ -28,15 +28,18 @@ export default function ServicioDetalle() {
 
   useEffect(() => {
     if (!lightboxOpen) return
+    // Lógica de navegación inline (sin depender de nextItem/prevItem, que se
+    // declaran más abajo) para no romper las reglas de hooks.
     const onKey = (e) => {
+      const total = servicio?.media?.length || 0
       if (e.key === 'Escape') setLightboxOpen(false)
-      if (e.key === 'ArrowRight') nextItem()
-      if (e.key === 'ArrowLeft') prevItem()
+      if (total === 0) return
+      if (e.key === 'ArrowRight') setActiveIdx((i) => (i + 1) % total)
+      if (e.key === 'ArrowLeft') setActiveIdx((i) => (i - 1 + total) % total)
     }
     window.addEventListener('keydown', onKey)
     return () => window.removeEventListener('keydown', onKey)
-    // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [lightboxOpen, activeIdx])
+  }, [lightboxOpen, servicio])
 
   if (!servicio) {
     return <Navigate to="/servicios" replace />
