@@ -18,7 +18,7 @@ const serviciosDestacados = [
     titulo: 'Cachorro',
     desc: 'Porque un buen inicio siempre es mejor.',
     link: '/servicios',
-    imgs: ['/cachorro-poodle-bicolor-primer-plano.jpeg', '/pequeno-1.jpg', '/pequeno-2.jpg'],
+    imgs: ['/dos-perros-corriendo-charco-nopal.jpg', '/cachorro-poodle-bicolor-primer-plano.jpeg', '/pequeno-1.jpg', '/pequeno-2.jpg'],
   },
   {
     titulo: 'Educación familiar',
@@ -30,7 +30,7 @@ const serviciosDestacados = [
     titulo: 'Activación natural y entrenamiento',
     desc: 'Enriquecimiento ambiental, socialización y entrenamiento. Paseo estructurado.',
     link: '/servicios',
-    imgs: ['/cocker-spaniel-saltando-agility.jpg', '/paseo-1h-1.jpg', '/excursion-grande-1.jpg'],
+    imgs: ['/cocker-spaniel-pomerania-descansando-parque.jpg', '/cocker-spaniel-saltando-agility.jpg', '/paseo-1h-1.jpg', '/excursion-grande-1.jpg'],
   },
   {
     titulo: 'Pensión Campestre',
