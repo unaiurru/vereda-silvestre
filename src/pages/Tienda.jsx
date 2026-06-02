@@ -4,6 +4,7 @@ import { Check, Plus, SlidersHorizontal } from 'lucide-react'
 import { productos, categoriasProductos } from '../data/productos'
 import { useCarrito } from '../context/CarritoContext'
 import useSeo from '../hooks/useSeo'
+import { FlipReveal, FlipRevealItem } from '../components/FlipReveal'
 
 const CATEGORIAS = ['Todas', ...categoriasProductos()]
 
@@ -41,18 +42,29 @@ export default function Tienda() {
     setTimeout(() => setAgregadoId((actual) => (actual === id ? null : actual)), 1200)
   }
 
-  const visibles = useMemo(() => {
+  // La categoría la resuelve FlipReveal (muestra/oculta con animación), así que
+  // aquí sólo filtramos por precio y aplicamos el orden. Todos los productos que
+  // pasan el precio se renderizan; los que no son de la categoría activa se
+  // ocultan animadamente.
+  const renderizados = useMemo(() => {
     const minN = min === '' ? -Infinity : Number(min)
     const maxN = max === '' ? Infinity : Number(max)
-    const filtrados = productos.filter((p) => {
-      const okCat = categoria === 'Todas' || p.categoria === categoria
-      const okPrecio = p.precio >= minN && p.precio <= maxN
-      return okCat && okPrecio
-    })
+    const filtrados = productos.filter((p) => p.precio >= minN && p.precio <= maxN)
     if (orden === 'precio-asc') return [...filtrados].sort((a, b) => a.precio - b.precio)
     if (orden === 'precio-desc') return [...filtrados].sort((a, b) => b.precio - a.precio)
     return filtrados
-  }, [categoria, min, max, orden])
+  }, [min, max, orden])
+
+  // Clave(s) para FlipReveal: "all" muestra todo; si no, sólo la categoría activa.
+  const flipKeys = useMemo(
+    () => [categoria === 'Todas' ? 'all' : categoria],
+    [categoria],
+  )
+
+  // ¿Queda algún producto visible con los filtros actuales? (para el mensaje vacío)
+  const hayVisibles = renderizados.some(
+    (p) => categoria === 'Todas' || p.categoria === categoria,
+  )
 
   const Filtros = (
     <div className="space-y-8">
@@ -167,21 +179,35 @@ export default function Tienda() {
                 </div>
               )}
 
-              {/* Grid de productos */}
-              {visibles.length === 0 ? (
+              {/* Grid de productos. FlipReveal anima el filtrado por categoría.
+                  Se renderizan todos los productos que pasan el precio; la
+                  categoría activa decide cuáles se muestran (showClass="flex")
+                  u ocultan (hideClass="hidden"). `deps` reanima al cambiar el
+                  orden o el rango de precio. */}
+              {!hayVisibles && (
                 <div className="py-20 text-center text-stone-500 text-[14px]">
                   No hay productos que coincidan con los filtros.
                 </div>
-              ) : (
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
-                  {visibles.map((p) => {
+              )}
+              <FlipReveal
+                className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5"
+                keys={flipKeys}
+                deps={[orden, min, max]}
+                showClass="flex"
+                hideClass="hidden"
+              >
+                  {renderizados.map((p) => {
                     const badge = p.etiqueta ? etiquetaBadge[p.etiqueta] : null
                     const agotado = p.stock === false
                     const recienAgregado = agregadoId === p.id
                     return (
-                      <article
+                      <FlipRevealItem
                         key={p.id}
-                        className="group relative rounded-2xl border border-stone-200 bg-white overflow-hidden hover:border-[#3F4A2A]/40 transition-colors flex flex-col"
+                        flipKey={p.categoria}
+                        className="flex-col"
+                      >
+                      <article
+                        className="group relative w-full rounded-2xl border border-stone-200 bg-white overflow-hidden hover:border-[#3F4A2A]/40 transition-colors flex flex-col flex-1"
                       >
                         {badge && (
                           <span className={'absolute top-3 left-3 z-10 px-3 py-1 text-[10px] uppercase tracking-wide rounded ' + badge.clase}>
@@ -249,10 +275,10 @@ export default function Tienda() {
                           <span className="sr-only">Ver {p.nombre}</span>
                         </Link>
                       </article>
+                      </FlipRevealItem>
                     )
                   })}
-                </div>
-              )}
+              </FlipReveal>
             </div>
           </div>
         </div>
