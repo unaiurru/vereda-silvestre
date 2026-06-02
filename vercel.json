@@ -52,6 +52,13 @@
           "value": "public, max-age=31536000, immutable"
         }
       ]
+    },
+    {
+      "source": "/api/(.*)",
+      "headers": [
+        { "key": "Cross-Origin-Opener-Policy", "value": "unsafe-none" },
+        { "key": "Cache-Control", "value": "no-store" }
+      ]
     }
   ]
 }
