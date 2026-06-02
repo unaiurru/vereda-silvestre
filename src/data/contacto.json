@@ -1,0 +1,16 @@
+{
+  "hero": {
+    "epigrafe": "Contacto",
+    "titulo": "Hablemos de tu perro.",
+    "subtitulo": "La forma más rápida de contactarnos es por WhatsApp. Si lo prefieres, llámanos, envíanos un email o utiliza el formulario y te respondemos lo antes posible."
+  },
+  "tarjetas": {
+    "whatsappDesc": "Te respondemos en horario laboral. Cuéntanos lo que necesites.",
+    "emailDesc": "Para consultas más detalladas o documentación.",
+    "ubicacionDesc": "Te compartimos la dirección exacta al confirmar tu visita o reserva."
+  },
+  "formulario": {
+    "titulo": "Envíanos un mensaje",
+    "intro": "Al enviar, abriremos WhatsApp con tu mensaje listo. No almacenamos tu información en este sitio."
+  }
+}

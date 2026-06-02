@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { MessageCircle, Mail, MapPin, Clock, Send, Phone } from 'lucide-react'
 import useSeo from '../hooks/useSeo'
 import { negocio, waLink } from '../data/negocio'
+import contacto from '../data/contacto.json'
 
 const WHATSAPP_NUMBER = negocio.whatsapp
 const WHATSAPP_DISPLAY = negocio.telefonoVisible
@@ -62,14 +63,13 @@ export default function Contacto() {
       <section className="border-b border-stone-200">
         <div className="max-w-5xl mx-auto px-5 md:px-8 py-16 md:py-20">
           <div className="text-[11px] uppercase tracking-[0.22em] text-stone-600 mb-3">
-            Contacto
+            {contacto.hero.epigrafe}
           </div>
           <h1 className="font-serif text-5xl md:text-6xl text-brand leading-[1.05] tracking-tight">
-            Hablemos de tu perro.
+            {contacto.hero.titulo}
           </h1>
           <p className="mt-5 text-stone-600 max-w-2xl text-[15px] leading-relaxed">
-            La forma más rápida de contactarnos es por WhatsApp. Si lo prefieres, llámanos,
-            envíanos un email o utiliza el formulario y te respondemos lo antes posible.
+            {contacto.hero.subtitulo}
           </p>
         </div>
       </section>
@@ -93,7 +93,7 @@ export default function Contacto() {
               </div>
               <div className="font-serif text-xl mb-1">{WHATSAPP_DISPLAY}</div>
               <p className="text-[13px] text-crema-clara/75 mt-2 leading-relaxed flex-1">
-                Te respondemos en horario laboral. Cuéntanos lo que necesites.
+                {contacto.tarjetas.whatsappDesc}
               </p>
               <div className="mt-5 inline-flex items-center gap-1.5 text-[13px] font-medium">
                 Abrir WhatsApp →
@@ -113,7 +113,7 @@ export default function Contacto() {
               </div>
               <div className="font-serif text-base text-brand mb-1 break-all">{EMAIL}</div>
               <p className="text-[13px] text-stone-600 mt-2 leading-relaxed flex-1">
-                Para consultas más detalladas o documentación.
+                {contacto.tarjetas.emailDesc}
               </p>
               <div className="mt-5 inline-flex items-center gap-1.5 text-[13px] font-medium text-oliva">
                 Escribir un email →
@@ -133,11 +133,11 @@ export default function Contacto() {
               </div>
               <div className="text-[13px] text-stone-600">Estado de México</div>
               <p className="text-[13px] text-stone-600 mt-3 leading-relaxed flex-1">
-                Te compartimos la dirección exacta al confirmar tu visita o reserva.
+                {contacto.tarjetas.ubicacionDesc}
               </p>
               <div className="mt-5 flex items-center gap-2 text-[13px] text-stone-600">
                 <Clock size={14} />
-                <span>Lun–Sáb · 9:00 – 19:00</span>
+                <span>{negocio.horario}</span>
               </div>
             </div>
           </div>
@@ -178,12 +178,11 @@ export default function Contacto() {
                 Formulario
               </div>
               <h2 className="font-serif text-2xl md:text-3xl text-brand leading-tight mb-5">
-                Envíanos un mensaje
+                {contacto.formulario.titulo}
               </h2>
               <form onSubmit={onSubmit} className="rounded-2xl border border-stone-200 bg-white p-7">
                 <p className="text-[13px] text-stone-600 mb-6 leading-relaxed">
-                  Al enviar, abriremos WhatsApp con tu mensaje listo. No almacenamos
-                  tu información en este sitio.
+                  {contacto.formulario.intro}
                 </p>
 
                 <div className="space-y-5">

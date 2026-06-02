@@ -1,0 +1,22 @@
+{
+  "hero": {
+    "epigrafe": "Trabaja con nosotros",
+    "titulo": "Únete a nuestro equipo",
+    "subtitulo": "Vereda Silvestre está en expansión. Buscamos personas que compartan nuestra forma de entender el trabajo con perros: desde el respeto, la observación y la comunicación asertiva."
+  },
+  "sobreTrabajo": [
+    "Actualmente contamos con personal de apoyo en salidas estructuradas y pensión, y nos encontramos formando educadores bajo nuestro enfoque técnico y comunitario. No buscamos solo manos: buscamos personas con criterio, ganas de aprender y respeto por el perro y por las familias.",
+    "Creemos en la formación interna. Acompañamos a quien se incorpora para que construya su propio criterio profesional, entienda el porqué de cada decisión y gane autonomía. Trabajar aquí es trabajar al aire libre, en equipo y con los perros como punto de partida, no como problema a resolver.",
+    "Si esto te resuena, aunque ahora mismo no veas una vacante concreta, escríbenos. Guardamos las candidaturas espontáneas y te avisamos cuando encaje."
+  ],
+  "perfiles": [
+    { "icono": "Compass", "titulo": "Apoyo en salidas", "texto": "Acompañamiento en paseos y salidas estructuradas, con manejo respetuoso y atención al grupo." },
+    { "icono": "Sprout", "titulo": "Pensión", "texto": "Cuidado diario en la pensión campestre: rutinas, descanso, manejo y bienestar de cada perro." },
+    { "icono": "Users", "titulo": "Educador en formación", "texto": "Formación interna en nuestro enfoque técnico y comunitario para construir criterio profesional." }
+  ],
+  "aplicar": {
+    "epigrafe": "¿Cómo aplicar?",
+    "titulo": "Cuéntanos sobre ti",
+    "intro": "Completa el formulario y se abrirá WhatsApp con tu mensaje listo para enviar. Así podemos seguir la conversación de la forma más ágil."
+  }
+}

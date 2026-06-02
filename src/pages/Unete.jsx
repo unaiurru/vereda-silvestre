@@ -3,6 +3,10 @@ import { Link } from 'react-router-dom'
 import { ArrowLeft, Send, Sprout, Users, Compass } from 'lucide-react'
 import useSeo from '../hooks/useSeo'
 import { waLink } from '../data/negocio'
+import unete from '../data/unete.json'
+
+// Mapa nombre→icono para los perfiles (el icono se elige por nombre en el JSON).
+const ICONOS = { Compass, Sprout, Users }
 
 const AREAS = [
   'Apoyo en salidas',
@@ -11,23 +15,7 @@ const AREAS = [
   'Otro',
 ]
 
-const PERFILES = [
-  {
-    icon: Compass,
-    titulo: 'Apoyo en salidas',
-    texto: 'Acompañamiento en paseos y salidas estructuradas, con manejo respetuoso y atención al grupo.',
-  },
-  {
-    icon: Sprout,
-    titulo: 'Pensión',
-    texto: 'Cuidado diario en la pensión campestre: rutinas, descanso, manejo y bienestar de cada perro.',
-  },
-  {
-    icon: Users,
-    titulo: 'Educador en formación',
-    texto: 'Formación interna en nuestro enfoque técnico y comunitario para construir criterio profesional.',
-  },
-]
+const PERFILES = unete.perfiles.map((p) => ({ ...p, Icono: ICONOS[p.icono] || Compass }))
 
 export default function Unete() {
   useSeo({
@@ -101,15 +89,13 @@ export default function Unete() {
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-center">
             <div>
               <div className="text-[11px] uppercase tracking-[0.22em] text-stone-600 mb-3">
-                Trabaja con nosotros
+                {unete.hero.epigrafe}
               </div>
               <h1 className="font-serif text-5xl md:text-6xl text-brand leading-[1.05] tracking-tight">
-                Únete a nuestro equipo
+                {unete.hero.titulo}
               </h1>
               <p className="mt-5 text-stone-600 max-w-xl text-[15px] leading-relaxed">
-                Vereda Silvestre está en expansión. Buscamos personas que compartan nuestra
-                forma de entender el trabajo con perros: desde el respeto, la observación y la
-                comunicación asertiva.
+                {unete.hero.subtitulo}
               </p>
             </div>
             <div className="rounded-2xl overflow-hidden bg-crema aspect-[4/3]">
@@ -127,29 +113,16 @@ export default function Unete() {
       <section className="py-14 md:py-20">
         <div className="max-w-3xl mx-auto px-5 md:px-8">
           <div className="space-y-4 text-[15px] md:text-[16px] text-stone-700 leading-relaxed">
-            <p>
-              Actualmente contamos con personal de apoyo en salidas estructuradas y pensión, y
-              nos encontramos formando educadores bajo nuestro enfoque técnico y comunitario.
-              No buscamos solo manos: buscamos personas con criterio, ganas de aprender y
-              respeto por el perro y por las familias.
-            </p>
-            <p>
-              Creemos en la formación interna. Acompañamos a quien se incorpora para que
-              construya su propio criterio profesional, entienda el porqué de cada decisión y
-              gane autonomía. Trabajar aquí es trabajar al aire libre, en equipo y con los
-              perros como punto de partida, no como problema a resolver.
-            </p>
-            <p>
-              Si esto te resuena, aunque ahora mismo no veas una vacante concreta, escríbenos.
-              Guardamos las candidaturas espontáneas y te avisamos cuando encaje.
-            </p>
+            {unete.sobreTrabajo.map((p, i) => (
+              <p key={i}>{p}</p>
+            ))}
           </div>
 
           <div className="grid sm:grid-cols-3 gap-5 mt-12">
             {PERFILES.map((p) => (
               <div key={p.titulo} className="rounded-2xl border border-stone-200 bg-white p-6">
                 <div className="w-10 h-10 rounded-full bg-oliva/10 text-oliva flex items-center justify-center mb-4">
-                  <p.icon size={18} strokeWidth={1.7} />
+                  <p.Icono size={18} strokeWidth={1.7} />
                 </div>
                 <h3 className="font-serif text-lg text-brand mb-2">{p.titulo}</h3>
                 <p className="text-[13.5px] text-stone-600 leading-relaxed">{p.texto}</p>
@@ -164,14 +137,13 @@ export default function Unete() {
         <div className="max-w-3xl mx-auto px-5 md:px-8">
           <div className="rounded-3xl border border-stone-200 bg-crema/60 p-7 md:p-10">
             <div className="text-[11px] uppercase tracking-[0.22em] text-stone-600 mb-3">
-              ¿Cómo aplicar?
+              {unete.aplicar.epigrafe}
             </div>
             <h2 className="font-serif text-3xl md:text-4xl text-brand leading-[1.1] mb-3">
-              Cuéntanos sobre ti
+              {unete.aplicar.titulo}
             </h2>
             <p className="text-[14px] text-stone-600 leading-relaxed mb-8 max-w-xl">
-              Completa el formulario y se abrirá WhatsApp con tu mensaje listo para enviar.
-              Así podemos seguir la conversación de la forma más ágil.
+              {unete.aplicar.intro}
             </p>
 
             <form onSubmit={onSubmit} noValidate={false} className="space-y-5">

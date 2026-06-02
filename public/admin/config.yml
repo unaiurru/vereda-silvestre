@@ -311,3 +311,73 @@ collections:
               - { label: "Texto", name: "texto", widget: "text" }
               - { label: "Botón WhatsApp", name: "ctaWhatsapp", widget: "string" }
               - { label: "Botón servicios", name: "ctaServicios", widget: "string" }
+
+  # ===========================================================
+  # CONTACTO — textos de la página (los datos van en "Datos del negocio").
+  # ===========================================================
+  - name: "contacto"
+    label: "✉️ Contacto (textos)"
+    description: "Textos de la página de contacto. Teléfono, email, mapa y horario se editan en 'Datos del negocio'."
+    files:
+      - name: "contenido"
+        label: "Textos de Contacto"
+        file: "src/data/contacto.json"
+        fields:
+          - label: "Cabecera"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Epígrafe", name: "epigrafe", widget: "string" }
+              - { label: "Título", name: "titulo", widget: "string" }
+              - { label: "Subtítulo", name: "subtitulo", widget: "text" }
+          - label: "Tarjetas de contacto"
+            name: "tarjetas"
+            widget: "object"
+            fields:
+              - { label: "Texto tarjeta WhatsApp", name: "whatsappDesc", widget: "text" }
+              - { label: "Texto tarjeta Email", name: "emailDesc", widget: "text" }
+              - { label: "Texto tarjeta Ubicación", name: "ubicacionDesc", widget: "text" }
+          - label: "Formulario"
+            name: "formulario"
+            widget: "object"
+            fields:
+              - { label: "Título", name: "titulo", widget: "string" }
+              - { label: "Texto introductorio", name: "intro", widget: "text" }
+
+  # ===========================================================
+  # ÚNETE — textos de la página de empleo / candidaturas.
+  # ===========================================================
+  - name: "unete"
+    label: "🤝 Únete (textos)"
+    description: "Textos de la página 'Únete a nuestro equipo'."
+    files:
+      - name: "contenido"
+        label: "Textos de Únete"
+        file: "src/data/unete.json"
+        fields:
+          - label: "Cabecera"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Epígrafe", name: "epigrafe", widget: "string" }
+              - { label: "Título", name: "titulo", widget: "string" }
+              - { label: "Subtítulo", name: "subtitulo", widget: "text" }
+          - { label: "Sobre el trabajo (párrafos)", name: "sobreTrabajo", widget: "list", field: { label: "Párrafo", name: "parrafo", widget: "text" } }
+          - label: "Perfiles"
+            name: "perfiles"
+            widget: "list"
+            summary: "{{fields.titulo}}"
+            fields:
+              - label: "Icono"
+                name: "icono"
+                widget: "select"
+                options: ["Compass", "Sprout", "Users"]
+              - { label: "Título", name: "titulo", widget: "string" }
+              - { label: "Texto", name: "texto", widget: "text" }
+          - label: "Cómo aplicar"
+            name: "aplicar"
+            widget: "object"
+            fields:
+              - { label: "Epígrafe", name: "epigrafe", widget: "string" }
+              - { label: "Título", name: "titulo", widget: "string" }
+              - { label: "Texto", name: "intro", widget: "text" }
