@@ -1,18 +1,10 @@
 import { Link } from 'react-router-dom'
 import { ArrowRight, MessageCircle, Heart, Mountain, PawPrint, Sparkles } from 'lucide-react'
 import CarruselAuto from '../components/CarruselAuto'
-import Galeria from '../components/Galeria'
+import RejillaShuffle from '../components/RejillaShuffle'
 import useSeo from '../hooks/useSeo'
 
 const WHATSAPP_URL = 'https://wa.me/5215562058871?text=' + encodeURIComponent('Hola, me gustaría reservar un servicio en Vereda Silvestre.')
-
-const heroImages = [
-  '/dos-perros-campo.jpg',
-  '/hero-2.jpg',
-  '/hero-3.jpg',
-  '/hero-4.jpg',
-  '/hero-5.jpg',
-]
 
 const beneficios = [
   { icon: Heart, title: 'Atención personalizada', text: 'Cada perro es único. Conocemos su historia y carácter.' },
@@ -90,12 +82,7 @@ export default function Inicio() {
 
             <div className="relative">
               <div className="rounded-2xl overflow-hidden shadow-xl shadow-stone-900/10">
-                <Galeria
-                  images={heroImages}
-                  alt="Vereda Silvestre"
-                  aspectRatio="aspect-[4/5]"
-                  bgColor="bg-[#F5EFDF]"
-                />
+                <RejillaShuffle />
               </div>
             </div>
           </div>

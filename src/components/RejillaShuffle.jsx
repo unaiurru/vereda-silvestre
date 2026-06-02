@@ -1,0 +1,132 @@
+// RejillaShuffle — rejilla de fotos que se baraja sola con una animación suave.
+//
+// Adaptado al stack de este repo (React + Vite + JavaScript, sin shadcn/TS).
+// El patrón "shuffle grid" original usaba la prop `layout` de framer-motion;
+// aquí el equivalente es GSAP Flip, reutilizando el mismo enfoque que
+// `FlipReveal.jsx`: registro de plugin, `useGSAP`, captura de estado con
+// `Flip.getState` y reanimación con `Flip.from`, respetando
+// `prefers-reduced-motion`.
+//
+// Cada ~3s se baraja el orden del array y Flip anima cada celda desde su
+// posición vieja a la nueva. Las celdas son ambientales (decorativas): el
+// contenedor lleva role="img" con un aria-label descriptivo y las imágenes
+// quedan ocultas a lectores de pantalla.
+
+import { useRef, useState } from 'react'
+import { useGSAP } from '@gsap/react'
+import gsap from 'gsap'
+import Flip from 'gsap/Flip'
+
+gsap.registerPlugin(useGSAP, Flip)
+
+// 16 fotos de perros en el campo, todas existentes en /public.
+const FOTOS = [
+  '/dos-perros-campo.jpg',
+  '/dos-perritos-corriendo-prado-humedo.jpg',
+  '/dos-pastores-australianos-prado-flores.jpg',
+  '/husky-canela-arnes-prado-verde.jpg',
+  '/border-collie-mestizo-corriendo-prado.jpg',
+  '/cattle-dog-collar-rojo-prado.jpg',
+  '/perro-canela-corriendo-hierba-alta.jpg',
+  '/perro-canela-atardecer-pinos.jpg',
+  '/pastor-tricolor-sentado-cerca-amanecer.jpg',
+  '/labrador-canela-descansando-muro-piedra.jpg',
+  '/cocker-spaniel-arnes-turquesa-hierba.jpg',
+  '/dos-perros-corriendo-charco-nopal.jpg',
+  '/pointer-moteado-hierba-alta.jpg',
+  '/retriever-negro-corriendo-correa-azul.jpg',
+  '/perro-canela-mirando-laguna-luna.jpg',
+  '/dos-perros-negros-paseando-sendero-1.jpg',
+]
+
+const INTERVALO_MS = 3000
+
+// Fisher-Yates: devuelve una nueva permutación del array.
+function barajar(arr) {
+  const copia = arr.slice()
+  for (let i = copia.length - 1; i > 0; i--) {
+    const j = Math.floor(Math.random() * (i + 1))
+    ;[copia[i], copia[j]] = [copia[j], copia[i]]
+  }
+  return copia
+}
+
+export default function RejillaShuffle() {
+  const rejillaRef = useRef(null)
+  // Estado captado por Flip justo ANTES de reordenar (las posiciones viejas).
+  const estadoPrevio = useRef(null)
+  // El orden es una permutación de índices sobre FOTOS; la clave de React es
+  // el índice de la foto, así el mismo nodo del DOM se reubica y Flip lo anima.
+  const [orden, setOrden] = useState(() => FOTOS.map((_, i) => i))
+
+  useGSAP(
+    () => {
+      const rejilla = rejillaRef.current
+      if (!rejilla) return
+
+      const prefiereMenosMovimiento =
+        typeof window !== 'undefined' &&
+        window.matchMedia &&
+        window.matchMedia('(prefers-reduced-motion: reduce)').matches
+
+      // Accesibilidad: sin movimiento → rejilla estática, sin barajado.
+      if (prefiereMenosMovimiento) return
+
+      // Anima el cambio de orden recién aplicado (si hay estado previo).
+      if (estadoPrevio.current) {
+        Flip.from(estadoPrevio.current, {
+          duration: 0.9,
+          ease: 'power3.inOut',
+          stagger: 0.03,
+          // Sin `absolute`: el número de celdas es constante, así que la
+          // rejilla conserva su altura y basta con animar las posiciones.
+        })
+      }
+
+      // Programa el siguiente barajado. Capturamos las posiciones actuales
+      // (sólo las celdas visibles en este breakpoint) antes del setState.
+      const id = window.setTimeout(() => {
+        const visibles = gsap.utils
+          .toArray(rejilla.querySelectorAll('[data-celda]'))
+          .filter((el) => el.offsetParent !== null)
+        estadoPrevio.current = Flip.getState(visibles)
+        setOrden((prev) => barajar(prev))
+      }, INTERVALO_MS)
+
+      return () => window.clearTimeout(id)
+    },
+    { scope: rejillaRef, dependencies: [orden] },
+  )
+
+  return (
+    <div
+      ref={rejillaRef}
+      role="img"
+      aria-label="Perros disfrutando del entorno natural de Vereda Silvestre"
+      className="grid grid-cols-3 md:grid-cols-4 gap-2 md:gap-2.5 bg-[#F5EFDF] p-2 md:p-2.5"
+    >
+      {orden.map((fotoIdx, pos) => (
+        <div
+          key={fotoIdx}
+          data-celda
+          // En móvil mostramos 9 celdas (3×3); en md+ las 16 (4×4).
+          className={`aspect-square overflow-hidden rounded-md bg-stone-200 ${
+            pos >= 9 ? 'hidden md:block' : ''
+          }`}
+        >
+          <img
+            src={FOTOS[fotoIdx]}
+            alt=""
+            aria-hidden="true"
+            // Las primeras celdas están sobre el pliegue: carga prioritaria
+            // para evitar huecos; el resto en perezosa.
+            loading={pos < 6 ? 'eager' : 'lazy'}
+            fetchPriority={pos < 6 ? 'high' : 'auto'}
+            draggable="false"
+            className="w-full h-full object-cover select-none"
+          />
+        </div>
+      ))}
+    </div>
+  )
+}
