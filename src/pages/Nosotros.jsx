@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { MessageCircle, Heart, Eye, Users, Mountain, Quote } from 'lucide-react'
 import Lightbox from '../components/Lightbox'
+import InteractiveBentoGallery from '../components/InteractiveBentoGallery'
 import useSeo from '../hooks/useSeo'
 
 const WHATSAPP_URL = 'https://wa.me/5215562058871?text=' + encodeURIComponent('Hola, me gustaría conocer Vereda Silvestre.')
@@ -49,13 +50,90 @@ const CIFRAS = [
   { numero: '100%', etiqueta: 'manejo respetuoso' },
 ]
 
+// Galería bento de la página "Nosotros". Solo imágenes reales de /public.
+// Todas son type: "image" (el proyecto no tiene vídeos). Los `span` mezclan
+// celdas grandes y pequeñas para que el mosaico quede equilibrado.
 const GALERIA = [
-  '/perro-atardecer.jpg',
-  '/dos-perros-correa.jpg',
-  '/mediano-1.jpg',
-  '/pequeno-1.jpg',
-  '/adiestramiento-1.jpg',
-  '/mediano-3.jpg',
+  {
+    id: 1,
+    type: 'image',
+    title: 'Atardeceres en el campo',
+    desc: 'Espacio abierto para correr, oler y descansar mientras cae el sol.',
+    url: '/perro-atardecer.jpg',
+    span: 'col-span-2 row-span-2 sm:col-span-2 sm:row-span-2 md:col-span-2 md:row-span-2',
+  },
+  {
+    id: 2,
+    type: 'image',
+    title: 'Entre flores silvestres',
+    desc: 'Paseos guiados por la vereda, a su ritmo y en buena compañía.',
+    url: '/adiestradora-tres-perros-campo-flores.jpeg',
+    span: 'col-span-2 row-span-1 sm:col-span-1 sm:row-span-1 md:col-span-2 md:row-span-1',
+  },
+  {
+    id: 3,
+    type: 'image',
+    title: 'Compañeros de vereda',
+    desc: 'Convivencia tranquila entre perros que aprenden a estar juntos.',
+    url: '/dos-perros-campo.jpg',
+    span: 'col-span-1 row-span-2 sm:col-span-1 sm:row-span-2 md:col-span-1 md:row-span-2',
+  },
+  {
+    id: 4,
+    type: 'image',
+    title: 'La hora dorada',
+    desc: 'Trabajo en calma al final del día, cuando el campo se vuelve ámbar.',
+    url: '/adiestradora-dos-cattle-dogs-atardecer.jpeg',
+    span: 'col-span-1 row-span-1 sm:col-span-1 sm:row-span-1 md:col-span-1 md:row-span-1',
+  },
+  {
+    id: 5,
+    type: 'image',
+    title: 'Pura energía',
+    desc: 'Ejercicios de agility para soltar tensión y ganar confianza.',
+    url: '/cocker-spaniel-saltando-agility.jpg',
+    span: 'col-span-2 row-span-2 sm:col-span-2 sm:row-span-2 md:col-span-2 md:row-span-2',
+  },
+  {
+    id: 6,
+    type: 'image',
+    title: 'Descanso merecido',
+    desc: 'Después de la sesión, un momento para parar y respirar.',
+    url: '/border-collie-merle-arnes-tumbado.jpg',
+    span: 'col-span-1 row-span-1 sm:col-span-1 sm:row-span-1 md:col-span-1 md:row-span-1',
+  },
+  {
+    id: 7,
+    type: 'image',
+    title: 'Amanece en el rancho',
+    desc: 'Las primeras luces sobre la pradera, listos para empezar.',
+    url: '/pastor-tricolor-sentado-cerca-amanecer.jpg',
+    span: 'col-span-1 row-span-2 sm:col-span-1 sm:row-span-2 md:col-span-1 md:row-span-2',
+  },
+  {
+    id: 8,
+    type: 'image',
+    title: 'Mine y su equipo',
+    desc: 'Un vínculo que se construye día a día, con paciencia y respeto.',
+    url: '/selfie-adiestradora-malinois-campo.jpg',
+    span: 'col-span-2 row-span-1 sm:col-span-2 sm:row-span-1 md:col-span-2 md:row-span-1',
+  },
+  {
+    id: 9,
+    type: 'image',
+    title: 'Posando junto al agua',
+    desc: 'Cada perro tiene su carácter, y aquí hay sitio para todos.',
+    url: '/pomerania-posando-estanque-editado.jpg',
+    span: 'col-span-1 row-span-1 sm:col-span-1 sm:row-span-1 md:col-span-1 md:row-span-1',
+  },
+  {
+    id: 10,
+    type: 'image',
+    title: 'Miradas al horizonte',
+    desc: 'Paseos junto a la laguna cuando el campo se queda en silencio.',
+    url: '/perro-canela-mirando-laguna-luna.jpg',
+    span: 'col-span-1 row-span-1 sm:col-span-1 sm:row-span-1 md:col-span-1 md:row-span-1',
+  },
 ]
 
 // =====================================================================
@@ -241,31 +319,14 @@ export default function Nosotros() {
         </div>
       </section>
 
-      {/* GALERIA */}
+      {/* GALERIA — bento interactiva */}
       <section className="py-16 md:py-24">
         <div className="max-w-6xl mx-auto px-5 md:px-8">
-          <div className="text-center max-w-2xl mx-auto mb-10">
-            <div className="text-[11px] uppercase tracking-[0.22em] text-stone-600 mb-3">
-              El día a día
-            </div>
-            <h2 className="font-serif text-3xl md:text-4xl text-[#2E3720] leading-[1.1]">
-              Algunos momentos de Vereda Silvestre.
-            </h2>
-          </div>
-
-          <div className="grid grid-cols-2 md:grid-cols-3 gap-3 md:gap-4">
-            {GALERIA.map((src, i) => (
-              <div key={i} className="aspect-square rounded-xl overflow-hidden bg-stone-100">
-                <Lightbox sources={GALERIA} startIndex={i} alt="">
-                  <img
-                    src={src}
-                    alt=""
-                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-500"
-                  />
-                </Lightbox>
-              </div>
-            ))}
-          </div>
+          <InteractiveBentoGallery
+            mediaItems={GALERIA}
+            title="Algunos momentos de Vereda Silvestre."
+            description="El día a día"
+          />
         </div>
       </section>
 
