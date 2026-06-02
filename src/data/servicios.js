@@ -283,10 +283,10 @@ export const servicios = [
       'Material y seguimiento entre sesiones'
     ],
     media: [
-      { tipo: 'imagen', src: '/cachorro-1.jpg' },
+      { tipo: 'imagen', src: '/cachorro-poodle-bicolor-primer-plano.jpeg' },
       { tipo: 'pendiente', label: 'Fotos próximamente' },
     ],
-    portada: '/cachorro-1.jpg',
+    portada: '/cachorro-poodle-bicolor-primer-plano.jpeg',
   },
   {
     slug: 'educacion-canina-familiar',
@@ -308,10 +308,10 @@ export const servicios = [
       'Acompañamiento y seguimiento'
     ],
     media: [
-      { tipo: 'imagen', src: '/educacion-familiar-1.jpg' },
+      { tipo: 'imagen', src: '/mujer-saludando-dos-perros-pradera.JPG' },
       { tipo: 'pendiente', label: 'Fotos próximamente' },
     ],
-    portada: '/educacion-familiar-1.jpg',
+    portada: '/mujer-saludando-dos-perros-pradera.JPG',
   },
   {
     slug: 'activacion-natural',
@@ -333,10 +333,10 @@ export const servicios = [
       'Pautas para repetir el trabajo en casa'
     ],
     media: [
-      { tipo: 'imagen', src: '/activacion-natural-1.jpg' },
+      { tipo: 'imagen', src: '/perro-canela-entre-hierba-alta.JPG' },
       { tipo: 'pendiente', label: 'Fotos próximamente' },
     ],
-    portada: '/activacion-natural-1.jpg',
+    portada: '/perro-canela-entre-hierba-alta.JPG',
   },
   {
     slug: 'pension-campestre',
@@ -359,10 +359,10 @@ export const servicios = [
       'Actualizaciones por WhatsApp opcionales'
     ],
     media: [
-      { tipo: 'imagen', src: '/pension-campestre-1.jpg' },
+      { tipo: 'imagen', src: '/dos-perros-campo.jpg' },
       { tipo: 'pendiente', label: 'Fotos próximamente' },
     ],
-    portada: '/pension-campestre-1.jpg',
+    portada: '/dos-perros-campo.jpg',
   },
   {
     slug: 'seminarios-formativos',
@@ -384,10 +384,10 @@ export const servicios = [
       'Espacio para casos y preguntas'
     ],
     media: [
-      { tipo: 'imagen', src: '/seminarios-1.jpg' },
+      { tipo: 'imagen', src: '/grupo-adiestradores-perros-pastoreo.JPG' },
       { tipo: 'pendiente', label: 'Fotos próximamente' },
     ],
-    portada: '/seminarios-1.jpg',
+    portada: '/grupo-adiestradores-perros-pastoreo.JPG',
   },
 ]
 

@@ -118,7 +118,7 @@ export default function Unete() {
             </div>
             <div className="rounded-2xl overflow-hidden bg-[#F5EFDF] aspect-[4/3]">
               <img
-                src="/unete-portada.jpg"
+                src="/adiestradora-vaquera-perro-llanura.jpeg"
                 alt="Entorno natural del centro canino Vereda Silvestre"
                 className="w-full h-full object-cover"
               />
