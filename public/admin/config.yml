@@ -381,3 +381,63 @@ collections:
               - { label: "Epígrafe", name: "epigrafe", widget: "string" }
               - { label: "Título", name: "titulo", widget: "string" }
               - { label: "Texto", name: "intro", widget: "text" }
+
+  # ===========================================================
+  # AVISO DE PRIVACIDAD (texto legal).
+  # En los textos: **negrita** = negrita; {email} = correo del negocio.
+  # ===========================================================
+  - name: "aviso-privacidad"
+    label: "📄 Aviso de privacidad"
+    description: "Texto legal del aviso de privacidad. Usa **negrita** y {email} dentro del texto."
+    files:
+      - name: "contenido"
+        label: "Aviso de privacidad"
+        file: "src/data/aviso-privacidad.json"
+        fields:
+          - { label: "Epígrafe", name: "epigrafe", widget: "string" }
+          - { label: "Título", name: "titulo", widget: "string" }
+          - { label: "Fecha de actualización", name: "actualizacion", widget: "string" }
+          - { label: "Introducción", name: "intro", widget: "text", hint: "Usa **negrita** y {email} (se convierte en el correo del negocio)." }
+          - label: "Secciones"
+            name: "secciones"
+            widget: "list"
+            summary: "{{fields.titulo}}"
+            fields:
+              - { label: "Título de la sección", name: "titulo", widget: "string" }
+              - { label: "Párrafos", name: "parrafos", widget: "list", required: false, field: { label: "Párrafo", name: "p", widget: "text" } }
+              - { label: "Lista (viñetas)", name: "lista", widget: "list", required: false, field: { label: "Punto", name: "p", widget: "text" } }
+              - { label: "Párrafos tras la lista", name: "parrafosFinal", widget: "list", required: false, field: { label: "Párrafo", name: "p", widget: "text" } }
+          - { label: "Recuadro final", name: "cierre", widget: "text", required: false }
+
+  # ===========================================================
+  # POLÍTICA DE COOKIES (texto legal).
+  # ===========================================================
+  - name: "cookies"
+    label: "🍪 Política de cookies"
+    description: "Texto legal de la política de cookies."
+    files:
+      - name: "contenido"
+        label: "Política de cookies"
+        file: "src/data/cookies.json"
+        fields:
+          - { label: "Epígrafe", name: "epigrafe", widget: "string" }
+          - { label: "Título", name: "titulo", widget: "string" }
+          - { label: "Fecha de actualización", name: "actualizacion", widget: "string" }
+          - { label: "Introducción", name: "intro", widget: "text" }
+          - label: "Secciones"
+            name: "secciones"
+            widget: "list"
+            summary: "{{fields.titulo}}"
+            fields:
+              - { label: "Título de la sección", name: "titulo", widget: "string" }
+              - { label: "Párrafos", name: "parrafos", widget: "list", required: false, field: { label: "Párrafo", name: "p", widget: "text" } }
+              - label: "Tabla de cookies"
+                name: "tablaCookies"
+                widget: "list"
+                required: false
+                summary: "{{fields.nombre}}"
+                fields:
+                  - { label: "Nombre de la cookie", name: "nombre", widget: "string" }
+                  - { label: "Finalidad", name: "finalidad", widget: "text" }
+                  - { label: "Duración", name: "duracion", widget: "string" }
+          - { label: "Recuadro final", name: "cierre", widget: "text", required: false }

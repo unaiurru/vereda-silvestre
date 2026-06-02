@@ -1,0 +1,40 @@
+{
+  "epigrafe": "Información legal",
+  "titulo": "Política de cookies",
+  "actualizacion": "Última actualización: abril de 2026",
+  "intro": "Esta página explica el uso que hacemos de cookies y tecnologías similares en el sitio web de Centro Canino Vereda Silvestre S.A.S. de C.V.",
+  "secciones": [
+    {
+      "titulo": "¿Qué son las cookies?",
+      "parrafos": [
+        "Las cookies son pequeños archivos que un sitio web guarda en tu navegador para recordar información sobre tu visita. Sirven para que la web funcione correctamente, recordar preferencias o entender cómo se usa el sitio."
+      ]
+    },
+    {
+      "titulo": "¿Qué cookies utiliza esta web?",
+      "parrafos": [
+        "Esta web utiliza únicamente cookies **técnicas y necesarias** para su correcto funcionamiento. No utiliza cookies de seguimiento, publicidad ni análisis de comportamiento."
+      ],
+      "tablaCookies": [
+        {
+          "nombre": "vs_cookies_aceptadas",
+          "finalidad": "Recordar que has aceptado el aviso de cookies para no volver a mostrarlo.",
+          "duracion": "1 año"
+        }
+      ]
+    },
+    {
+      "titulo": "Mapa de Google",
+      "parrafos": [
+        "En la página de contacto incrustamos un mapa de Google Maps. Al cargarlo, Google puede instalar cookies propias. Puedes consultar la política de privacidad de Google en [policies.google.com/privacy](https://policies.google.com/privacy)."
+      ]
+    },
+    {
+      "titulo": "Cómo gestionar las cookies",
+      "parrafos": [
+        "Puedes borrar o bloquear las cookies desde la configuración de tu navegador. Si las desactivas, algunas funciones del sitio pueden dejar de funcionar correctamente."
+      ]
+    }
+  ],
+  "cierre": "Para más información, consulta nuestro [aviso de privacidad](/aviso-privacidad)."
+}

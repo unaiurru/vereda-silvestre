@@ -1,0 +1,71 @@
+{
+  "epigrafe": "Información legal",
+  "titulo": "Aviso de Privacidad Integral",
+  "actualizacion": "Última actualización: abril de 2026",
+  "intro": "En cumplimiento con lo dispuesto por la Ley Federal de Protección de Datos Personales en Posesión de los Particulares (LFPDPPP), su Reglamento y los Lineamientos del Aviso de Privacidad emitidos por el INAI, **Centro Canino Vereda Silvestre S.A.S. de C.V.** (en adelante, \"Vereda Silvestre\"), con domicilio en Jilotepec de Molina Enríquez, Estado de México, pone a tu disposición el presente Aviso de Privacidad Integral.",
+  "secciones": [
+    {
+      "titulo": "1. Identidad y domicilio del responsable",
+      "parrafos": [
+        "Centro Canino Vereda Silvestre S.A.S. de C.V., con domicilio en Jilotepec de Molina Enríquez, Estado de México, es responsable del tratamiento, uso y protección de tus datos personales. Para cualquier consulta relacionada con este aviso o con tus datos puedes escribirnos a {email}."
+      ]
+    },
+    {
+      "titulo": "2. Datos personales que recabamos",
+      "parrafos": [
+        "Recabamos únicamente los datos personales que tú nos proporcionas voluntariamente cuando nos contactas a través de:"
+      ],
+      "lista": [
+        "El formulario de contacto de esta web (nombre, teléfono y mensaje).",
+        "WhatsApp, llamada telefónica o correo electrónico.",
+        "Datos del perro y del tutor necesarios para prestar el servicio contratado (nombre, edad y características del perro, indicaciones veterinarias o de comportamiento, contacto del tutor)."
+      ],
+      "parrafosFinal": [
+        "**No recabamos datos personales sensibles** (origen racial o étnico, estado de salud, información genética, creencias religiosas, filosóficas o morales, afiliación sindical, opiniones políticas, preferencia sexual) ni datos financieros o patrimoniales.",
+        "Nuestros servicios están dirigidos a personas mayores de edad. **No recabamos datos personales de menores de edad** de manera consciente."
+      ]
+    },
+    {
+      "titulo": "3. Finalidades del tratamiento",
+      "parrafos": [
+        "Tus datos se utilizan para las siguientes **finalidades primarias**, necesarias para la relación con Vereda Silvestre:"
+      ],
+      "lista": [
+        "Atender consultas, dudas o solicitudes de información.",
+        "Coordinar reservas, citas y servicios contratados.",
+        "Facturación y registros administrativos del servicio prestado.",
+        "Comunicar incidencias o información relevante sobre tu perro durante la estancia.",
+        "Cumplir obligaciones legales y fiscales aplicables."
+      ],
+      "parrafosFinal": [
+        "**No realizamos tratamientos con finalidades secundarias** tales como mercadotecnia, publicidad o prospección comercial. Tampoco utilizamos tus datos para fines distintos a los descritos en este aviso."
+      ]
+    },
+    {
+      "titulo": "4. Transferencia de datos personales",
+      "parrafos": [
+        "**No realizamos transferencias de datos personales a terceros que requieran tu consentimiento.** Únicamente podríamos compartirlos en los supuestos previstos en el artículo 37 de la LFPDPPP (por ejemplo, requerimiento de autoridad competente o cumplimiento de una obligación legal), sin que en ningún caso se realicen transferencias con fines comerciales."
+      ]
+    },
+    {
+      "titulo": "5. Conservación y medidas de seguridad",
+      "parrafos": [
+        "Conservamos tus datos durante el tiempo estrictamente necesario para cumplir con las finalidades descritas y, en su caso, durante el plazo legal que resulte aplicable (por ejemplo, materia fiscal). Hemos implementado medidas de seguridad administrativas, técnicas y físicas razonables para proteger tus datos frente a daño, pérdida, alteración, destrucción o uso, acceso o tratamiento no autorizados."
+      ]
+    },
+    {
+      "titulo": "6. Tus derechos ARCO",
+      "parrafos": [
+        "Tienes derecho a **Acceder** a tus datos, **Rectificarlos** si son inexactos, **Cancelarlos** cuando consideres que no se requieren para alguna de las finalidades aquí señaladas o estén siendo utilizados de forma indebida, y **Oponerte** a su tratamiento para fines específicos (derechos ARCO). También puedes revocar en cualquier momento el consentimiento que nos hayas otorgado.",
+        "Para ejercer cualquiera de estos derechos, limitar el uso o divulgación de tus datos o revocar tu consentimiento, envíanos una solicitud al correo {email} indicando tu nombre, una descripción clara de lo que solicitas y un medio para contactarte. Te responderemos en los plazos que establece la ley."
+      ]
+    },
+    {
+      "titulo": "7. Cambios al presente aviso",
+      "parrafos": [
+        "Nos reservamos el derecho de actualizar este Aviso de Privacidad en cualquier momento para reflejar cambios en nuestras prácticas o en la legislación aplicable. Cualquier modificación se publicará en esta misma página, por lo que te recomendamos revisarla periódicamente."
+      ]
+    }
+  ],
+  "cierre": "Si tienes dudas sobre este aviso o sobre el tratamiento de tus datos, escríbenos a {email}."
+}
