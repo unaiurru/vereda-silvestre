@@ -4,42 +4,12 @@ import CarruselAuto from '../components/CarruselAuto'
 import RejillaShuffle from '../components/RejillaShuffle'
 import useSeo from '../hooks/useSeo'
 import { waLink } from '../data/negocio'
+import inicio from '../data/inicio.json'
 
 const WHATSAPP_URL = waLink('Hola, me gustaría reservar un servicio en Vereda Silvestre.')
 
-const beneficios = [
-  { icon: Heart, title: 'Atención personalizada', text: 'Cada perro es único. Conocemos su historia y carácter.' },
-  { icon: Mountain, title: 'Entorno natural', text: 'Espacios abiertos en pleno campo. El mejor lugar para descansar.' },
-  { icon: PawPrint, title: 'Educación respetuosa', text: 'Comunicación clara, sin coerción. Acompañamos sin imponer.' },
-  { icon: Sparkles, title: 'Bienestar integral', text: 'Cuerpo, mente y entorno en equilibrio durante toda la estancia.' },
-]
-
-const serviciosDestacados = [
-  {
-    titulo: 'Cachorro',
-    desc: 'Porque un buen inicio siempre es mejor.',
-    link: '/servicios',
-    imgs: ['/dos-perros-corriendo-charco-nopal.jpg', '/cachorro-poodle-bicolor-primer-plano.jpeg', '/pequeno-1.jpg', '/pequeno-2.jpg'],
-  },
-  {
-    titulo: 'Educación familiar',
-    desc: 'Comprende a profundidad los problemas de comportamiento.',
-    link: '/servicios',
-    imgs: ['/mujer-adiestrando-perro-campo-seco-editado.jpg', '/adiestramiento-obediencia-1.jpg', '/adiestradora-dos-cattle-dogs-atardecer.jpeg'],
-  },
-  {
-    titulo: 'Activación natural y entrenamiento',
-    desc: 'Enriquecimiento ambiental, socialización y entrenamiento. Paseo estructurado.',
-    link: '/servicios',
-    imgs: ['/cocker-spaniel-pomerania-descansando-parque.jpg', '/cocker-spaniel-saltando-agility.jpg', '/paseo-1h-1.jpg', '/excursion-grande-1.jpg'],
-  },
-  {
-    titulo: 'Pensión Campestre',
-    desc: 'Prioriza su socialización, fomenta el desapego e interacciones más balanceadas con perros y personas.',
-    link: '/servicios',
-    imgs: ['/pension-pequeno-1.jpg', '/perro-atardecer.jpg', '/dos-perros-campo.jpg'],
-  },
-]
+// Mapa nombre→icono para los beneficios (el icono se elige por nombre en el JSON).
+const ICONOS = { Heart, Mountain, PawPrint, Sparkles }
 
 export default function Inicio() {
   useSeo({
@@ -58,14 +28,13 @@ export default function Inicio() {
             <div>
               <div className="inline-flex items-center gap-2 text-[11px] uppercase tracking-[0.22em] text-stone-600 mb-6">
                 <span className="h-1 w-6 bg-oliva" />
-                Jilotepec, Edo. de México
+                {inicio.hero.ubicacion}
               </div>
               <h1 className="font-serif text-5xl md:text-6xl leading-[1.05] tracking-tight text-brand">
-                Cuidado, educación y bienestar canino en un entorno natural.
+                {inicio.hero.titulo}
               </h1>
               <p className="mt-6 text-[16px] md:text-[17px] text-stone-600 leading-relaxed max-w-lg">
-                Acompañamos a perros y a sus familias desde el respeto y la comunicación asertiva.
-                Pensión, adiestramiento, paseos y excursiones en pleno campo.
+                {inicio.hero.subtitulo}
               </p>
               <div className="mt-8 flex flex-wrap gap-3">
                 <a
@@ -75,13 +44,13 @@ export default function Inicio() {
                   className="inline-flex items-center gap-2 rounded-full bg-oliva text-crema-clara px-6 py-3.5 text-[14px] font-medium hover:bg-brand transition-colors"
                 >
                   <MessageCircle size={16} />
-                  Reservar por WhatsApp
+                  {inicio.hero.ctaWhatsapp}
                 </a>
                 <Link
                   to="/servicios"
                   className="inline-flex items-center gap-2 rounded-full border border-oliva/25 text-oliva px-6 py-3.5 text-[14px] font-medium hover:bg-oliva/5 transition-colors"
                 >
-                  Ver servicios
+                  {inicio.hero.ctaServicios}
                   <ArrowRight size={16} />
                 </Link>
               </div>
@@ -101,15 +70,18 @@ export default function Inicio() {
         <div className="max-w-6xl mx-auto px-5 md:px-8 py-16">
           <h2 id="beneficios-heading" className="sr-only">Por qué elegir Vereda Silvestre</h2>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
-            {beneficios.map((b) => (
-              <div key={b.title}>
-                <div className="w-10 h-10 rounded-full bg-oliva/10 text-oliva flex items-center justify-center mb-4">
-                  <b.icon size={18} strokeWidth={1.7} />
+            {inicio.beneficios.map((b) => {
+              const Icono = ICONOS[b.icono] || Heart
+              return (
+                <div key={b.titulo}>
+                  <div className="w-10 h-10 rounded-full bg-oliva/10 text-oliva flex items-center justify-center mb-4">
+                    <Icono size={18} strokeWidth={1.7} />
+                  </div>
+                  <h3 className="font-serif text-lg text-brand mb-2">{b.titulo}</h3>
+                  <p className="text-[13.5px] text-stone-600 leading-relaxed">{b.texto}</p>
                 </div>
-                <h3 className="font-serif text-lg text-brand mb-2">{b.title}</h3>
-                <p className="text-[13.5px] text-stone-600 leading-relaxed">{b.text}</p>
-              </div>
-            ))}
+              )
+            })}
           </div>
         </div>
       </section>
@@ -118,20 +90,20 @@ export default function Inicio() {
       <section className="py-20">
         <div className="max-w-6xl mx-auto px-5 md:px-8">
           <div className="max-w-2xl mb-12">
-            <div className="text-[11px] uppercase tracking-[0.22em] text-stone-600 mb-3">Servicios</div>
+            <div className="text-[11px] uppercase tracking-[0.22em] text-stone-600 mb-3">{inicio.programas.epigrafe}</div>
             <h2 className="font-serif text-4xl md:text-5xl text-brand leading-[1.1]">
-              Nuestros programas.
+              {inicio.programas.titulo}
             </h2>
             <p className="mt-4 text-stone-600">
-              Cuatro caminos para acompañar a tu perro según lo que necesita en cada etapa.
+              {inicio.programas.subtitulo}
             </p>
           </div>
 
           <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
-            {serviciosDestacados.map((s) => (
+            {inicio.programas.items.map((s) => (
               <Link
                 key={s.titulo}
-                to={s.link}
+                to="/servicios"
                 className="group rounded-2xl border border-stone-200 bg-white overflow-hidden hover:border-oliva/40 hover:-translate-y-1 transition-all duration-300"
               >
                 <div className="aspect-[4/3] overflow-hidden bg-stone-100">
@@ -154,7 +126,7 @@ export default function Inicio() {
               to="/servicios"
               className="inline-flex items-center gap-2 text-[14px] font-medium text-oliva hover:text-brand"
             >
-              Ver todos los servicios
+              {inicio.programas.verTodos}
               <ArrowRight size={14} />
             </Link>
           </div>
@@ -168,7 +140,7 @@ export default function Inicio() {
             <div className="lg:col-span-5">
               <div className="rounded-2xl overflow-hidden bg-crema max-w-md mx-auto">
                 <img
-                  src="/duenia.jpg"
+                  src={inicio.intro.imagen}
                   alt="Vereda Silvestre"
                   className="w-full h-auto block"
                 />
@@ -177,30 +149,21 @@ export default function Inicio() {
 
             <div className="lg:col-span-7">
               <div className="text-[11px] uppercase tracking-[0.22em] text-stone-600 mb-3">
-                Quiénes somos
+                {inicio.intro.epigrafe}
               </div>
               <h2 className="font-serif text-4xl md:text-5xl text-brand leading-[1.1] mb-6">
-                Una vereda que recorremos contigo y con tu perro.
+                {inicio.intro.titulo}
               </h2>
               <div className="space-y-4 text-[15px] text-stone-700 leading-relaxed">
-                <p>
-                  Vereda Silvestre nace de la necesidad de hacer las cosas de otra manera.
-                  Después de años acompañando a familias y a sus perros, nos dimos cuenta de
-                  algo simple: el perro no es un proyecto que corregir, es un compañero que
-                  comprender.
-                </p>
-                <p>
-                  Trabajamos desde la observación del comportamiento, el manejo respetuoso y
-                  la comunicación asertiva. Sin atajos, sin métodos coercitivos, sin recetas
-                  mágicas. Cada perro tiene su historia, su carácter y su ritmo, y ese es el
-                  punto de partida real.
-                </p>
+                {inicio.intro.parrafos.map((p, i) => (
+                  <p key={i}>{p}</p>
+                ))}
               </div>
               <Link
                 to="/nosotros"
                 className="mt-7 inline-flex items-center gap-2 text-[14px] font-medium text-oliva hover:text-brand"
               >
-                Conócenos mejor
+                {inicio.intro.enlace}
                 <ArrowRight size={14} />
               </Link>
             </div>
@@ -214,30 +177,27 @@ export default function Inicio() {
           <div className="grid md:grid-cols-2 rounded-3xl overflow-hidden border border-stone-200">
             <div className="bg-crema p-10 md:p-14 flex flex-col justify-center">
               <div className="text-[11px] uppercase tracking-[0.22em] text-stone-600 mb-3">
-                Trabaja con nosotros
+                {inicio.unete.epigrafe}
               </div>
               <h2 id="unete-heading" className="font-serif text-3xl md:text-4xl text-brand leading-[1.1]">
-                Únete a nuestro equipo
+                {inicio.unete.titulo}
               </h2>
               <p className="mt-5 text-[15px] text-stone-700 leading-relaxed max-w-md">
-                Vereda Silvestre está en expansión. Actualmente contamos con personal de apoyo
-                en salidas estructuradas y pensión, y nos encontramos formando educadores bajo
-                nuestro enfoque técnico y comunitario. Creemos en la formación interna y en la
-                construcción de criterio profesional.
+                {inicio.unete.texto}
               </p>
               <div className="mt-7">
                 <Link
                   to="/unete"
                   className="inline-flex items-center gap-2 rounded-full bg-oliva text-crema-clara px-6 py-3.5 text-[14px] font-medium hover:bg-brand focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-oliva focus-visible:ring-offset-2 transition-colors"
                 >
-                  Quiero formar parte
+                  {inicio.unete.cta}
                   <ArrowRight size={16} />
                 </Link>
               </div>
             </div>
             <div className="bg-crema min-h-[260px] md:min-h-0">
               <img
-                src="/adiestradora-vaquera-perro-llanura.jpeg"
+                src={inicio.unete.imagen}
                 alt="Entorno natural del centro canino Vereda Silvestre"
                 className="w-full h-full object-cover"
               />
@@ -251,10 +211,10 @@ export default function Inicio() {
         <div className="max-w-6xl mx-auto px-5 md:px-8">
           <div className="rounded-3xl bg-oliva text-crema-clara p-10 md:p-14 text-center">
             <h2 className="font-serif text-3xl md:text-4xl leading-tight">
-              Hablemos de tu perro.
+              {inicio.ctaFinal.titulo}
             </h2>
             <p className="mt-3 text-crema-clara/75 max-w-xl mx-auto">
-              Cuéntanos cómo es y qué necesita. Te respondemos por WhatsApp.
+              {inicio.ctaFinal.texto}
             </p>
             <a
               href={WHATSAPP_URL}
@@ -263,7 +223,7 @@ export default function Inicio() {
               className="mt-7 inline-flex items-center gap-2 rounded-full bg-crema-clara text-brand px-7 py-3.5 text-[14px] font-medium hover:bg-white transition-colors"
             >
               <MessageCircle size={16} />
-              Reservar por WhatsApp
+              {inicio.ctaFinal.cta}
             </a>
           </div>
         </div>

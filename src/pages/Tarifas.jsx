@@ -2,8 +2,13 @@ import { Link } from 'react-router-dom'
 import { ArrowRight, MessageCircle, Info } from 'lucide-react'
 import useSeo from '../hooks/useSeo'
 import { waLink } from '../data/negocio'
+import { servicios } from '../data/servicios'
 
 const WHATSAPP_URL = waLink('Hola, me gustaría información sobre las tarifas de Vereda Silvestre.')
+
+// Precios tomados de los servicios (fuente única). Si editas un precio en
+// "Servicios" desde /admin, esta tabla se actualiza sola gracias al slug.
+const PRECIOS = Object.fromEntries(servicios.map((s) => [s.slug, s]))
 
 const bloques = [
   {
@@ -66,19 +71,23 @@ const bloques = [
 ]
 
 function FilaTarifa({ item }) {
+  // Precio desde el servicio correspondiente (fuente única); si no, el del propio item.
+  const sv = item.slug ? PRECIOS[item.slug] : null
+  const precioBase = sv ? sv.precio.split(' / ')[0] : item.precio
+  const etiqueta = sv ? (sv.estado === 'finalizado' ? 'Finalizado' : null) : item.etiqueta
   const contenido = (
     <>
       <div className="flex items-center gap-2 text-[15px] text-stone-800">
         <span>{item.concepto}</span>
-        {item.etiqueta && (
+        {etiqueta && (
           <span className="bg-stone-700 text-crema-clara px-2 py-0.5 text-[10px] uppercase tracking-wide rounded">
-            {item.etiqueta}
+            {etiqueta}
           </span>
         )}
       </div>
       <div className="flex items-center gap-3">
         <div className="font-serif text-[18px] md:text-[20px] text-oliva whitespace-nowrap">
-          {item.precio}
+          {precioBase}
           {item.unidad && (
             <span className="text-[12px] text-stone-600 font-sans ml-1.5">{item.unidad}</span>
           )}

@@ -1,0 +1,65 @@
+{
+  "hero": {
+    "ubicacion": "Jilotepec, Edo. de México",
+    "titulo": "Cuidado, educación y bienestar canino en un entorno natural.",
+    "subtitulo": "Acompañamos a perros y a sus familias desde el respeto y la comunicación asertiva. Pensión, adiestramiento, paseos y excursiones en pleno campo.",
+    "ctaWhatsapp": "Reservar por WhatsApp",
+    "ctaServicios": "Ver servicios"
+  },
+  "beneficios": [
+    { "icono": "Heart", "titulo": "Atención personalizada", "texto": "Cada perro es único. Conocemos su historia y carácter." },
+    { "icono": "Mountain", "titulo": "Entorno natural", "texto": "Espacios abiertos en pleno campo. El mejor lugar para descansar." },
+    { "icono": "PawPrint", "titulo": "Educación respetuosa", "texto": "Comunicación clara, sin coerción. Acompañamos sin imponer." },
+    { "icono": "Sparkles", "titulo": "Bienestar integral", "texto": "Cuerpo, mente y entorno en equilibrio durante toda la estancia." }
+  ],
+  "programas": {
+    "epigrafe": "Servicios",
+    "titulo": "Nuestros programas.",
+    "subtitulo": "Cuatro caminos para acompañar a tu perro según lo que necesita en cada etapa.",
+    "verTodos": "Ver todos los servicios",
+    "items": [
+      {
+        "titulo": "Cachorro",
+        "desc": "Porque un buen inicio siempre es mejor.",
+        "imgs": ["/dos-perros-corriendo-charco-nopal.jpg", "/cachorro-poodle-bicolor-primer-plano.jpeg", "/pequeno-1.jpg", "/pequeno-2.jpg"]
+      },
+      {
+        "titulo": "Educación familiar",
+        "desc": "Comprende a profundidad los problemas de comportamiento.",
+        "imgs": ["/mujer-adiestrando-perro-campo-seco-editado.jpg", "/adiestramiento-obediencia-1.jpg", "/adiestradora-dos-cattle-dogs-atardecer.jpeg"]
+      },
+      {
+        "titulo": "Activación natural y entrenamiento",
+        "desc": "Enriquecimiento ambiental, socialización y entrenamiento. Paseo estructurado.",
+        "imgs": ["/cocker-spaniel-pomerania-descansando-parque.jpg", "/cocker-spaniel-saltando-agility.jpg", "/paseo-1h-1.jpg", "/excursion-grande-1.jpg"]
+      },
+      {
+        "titulo": "Pensión Campestre",
+        "desc": "Prioriza su socialización, fomenta el desapego e interacciones más balanceadas con perros y personas.",
+        "imgs": ["/pension-pequeno-1.jpg", "/perro-atardecer.jpg", "/dos-perros-campo.jpg"]
+      }
+    ]
+  },
+  "intro": {
+    "epigrafe": "Quiénes somos",
+    "titulo": "Una vereda que recorremos contigo y con tu perro.",
+    "imagen": "/duenia.jpg",
+    "parrafos": [
+      "Vereda Silvestre nace de la necesidad de hacer las cosas de otra manera. Después de años acompañando a familias y a sus perros, nos dimos cuenta de algo simple: el perro no es un proyecto que corregir, es un compañero que comprender.",
+      "Trabajamos desde la observación del comportamiento, el manejo respetuoso y la comunicación asertiva. Sin atajos, sin métodos coercitivos, sin recetas mágicas. Cada perro tiene su historia, su carácter y su ritmo, y ese es el punto de partida real."
+    ],
+    "enlace": "Conócenos mejor"
+  },
+  "unete": {
+    "epigrafe": "Trabaja con nosotros",
+    "titulo": "Únete a nuestro equipo",
+    "texto": "Vereda Silvestre está en expansión. Actualmente contamos con personal de apoyo en salidas estructuradas y pensión, y nos encontramos formando educadores bajo nuestro enfoque técnico y comunitario. Creemos en la formación interna y en la construcción de criterio profesional.",
+    "cta": "Quiero formar parte",
+    "imagen": "/adiestradora-vaquera-perro-llanura.jpeg"
+  },
+  "ctaFinal": {
+    "titulo": "Hablemos de tu perro.",
+    "texto": "Cuéntanos cómo es y qué necesita. Te respondemos por WhatsApp.",
+    "cta": "Reservar por WhatsApp"
+  }
+}

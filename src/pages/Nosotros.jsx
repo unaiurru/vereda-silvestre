@@ -4,140 +4,14 @@ import Lightbox from '../components/Lightbox'
 import InteractiveBentoGallery from '../components/InteractiveBentoGallery'
 import useSeo from '../hooks/useSeo'
 import { waLink } from '../data/negocio'
+import nosotros from '../data/nosotros.json'
 
 const WHATSAPP_URL = waLink('Hola, me gustaría conocer Vereda Silvestre.')
 
-// =====================================================================
-// DATOS EDITABLES — cambia aquí cuando tengas la información real.
-// =====================================================================
+// Mapa nombre→icono para los pilares (el icono se elige por nombre en el JSON).
+const ICONOS = { Eye, Heart, Users }
 
-const NOMBRE_DUENIA = 'Mine'
-const FRASE_DESTACADA = 'El perro no es un proyecto que corregir, es un compañero que comprender.'
-
-const HISTORIA = [
-  'Crecí rodeada de perros. Desde niña, mi forma natural de relacionarme con el mundo ha pasado por ellos: los observaba, los acompañaba, aprendía a leer lo que sentían sin que tuvieran que decírmelo. Ese vínculo nunca se fue.',
-  'Después de años trabajando en distintos espacios con animales, vi algo que se repetía: muchas familias quieren a sus perros, pero no siempre saben cómo entenderlos. Y muchos perros sufren no por falta de cariño, sino por falta de comunicación.',
-  'Vereda Silvestre nace de ahí: del deseo de crear un lugar donde el perro sea escuchado de verdad, donde las familias encuentren acompañamiento real y donde el campo sirva como aula y como refugio.',
-]
-
-const FORMACION = [
-  'Educación canina con enfoque cognitivo-emocional',
-  'Etología y comportamiento canino aplicado',
-  'Manejo respetuoso y comunicación asertiva',
-  'Primeros auxilios caninos',
-]
-
-const PILARES = [
-  {
-    icon: Eye,
-    titulo: 'Observación',
-    texto: 'Antes de actuar, miramos. El comportamiento del perro siempre tiene una causa, y nuestro trabajo empieza por entenderla.',
-  },
-  {
-    icon: Heart,
-    titulo: 'Comunicación',
-    texto: 'Lenguaje claro, coherente y respetuoso. El perro entiende cuando lo escuchamos, y aprende cuando no le imponemos.',
-  },
-  {
-    icon: Users,
-    titulo: 'Acompañamiento',
-    texto: 'El cambio sostenible incluye al tutor. Te enseñamos a mantenerlo en casa para que el vínculo siga creciendo.',
-  },
-]
-
-const CIFRAS = [
-  { numero: '+5', etiqueta: 'años de experiencia' },
-  { numero: '+100', etiqueta: 'perros acompañados' },
-  { numero: '100%', etiqueta: 'manejo respetuoso' },
-]
-
-// Galería bento de la página "Nosotros". Solo imágenes reales de /public.
-// Todas son type: "image" (el proyecto no tiene vídeos). Los `span` mezclan
-// celdas grandes y pequeñas para que el mosaico quede equilibrado.
-const GALERIA = [
-  {
-    id: 1,
-    type: 'image',
-    title: 'Atardeceres en el campo',
-    desc: 'Espacio abierto para correr, oler y descansar mientras cae el sol.',
-    url: '/perro-atardecer.jpg',
-    span: 'col-span-2 row-span-2 sm:col-span-2 sm:row-span-2 md:col-span-2 md:row-span-2',
-  },
-  {
-    id: 2,
-    type: 'image',
-    title: 'Entre flores silvestres',
-    desc: 'Paseos guiados por la vereda, a su ritmo y en buena compañía.',
-    url: '/adiestradora-tres-perros-campo-flores.jpeg',
-    span: 'col-span-2 row-span-1 sm:col-span-1 sm:row-span-1 md:col-span-2 md:row-span-1',
-  },
-  {
-    id: 3,
-    type: 'image',
-    title: 'Compañeros de vereda',
-    desc: 'Convivencia tranquila entre perros que aprenden a estar juntos.',
-    url: '/dos-perros-campo.jpg',
-    span: 'col-span-1 row-span-2 sm:col-span-1 sm:row-span-2 md:col-span-1 md:row-span-2',
-  },
-  {
-    id: 4,
-    type: 'image',
-    title: 'La hora dorada',
-    desc: 'Trabajo en calma al final del día, cuando el campo se vuelve ámbar.',
-    url: '/adiestradora-dos-cattle-dogs-atardecer.jpeg',
-    span: 'col-span-1 row-span-1 sm:col-span-1 sm:row-span-1 md:col-span-1 md:row-span-1',
-  },
-  {
-    id: 5,
-    type: 'image',
-    title: 'Pura energía',
-    desc: 'Ejercicios de agility para soltar tensión y ganar confianza.',
-    url: '/cocker-spaniel-saltando-agility.jpg',
-    span: 'col-span-2 row-span-2 sm:col-span-2 sm:row-span-2 md:col-span-2 md:row-span-2',
-  },
-  {
-    id: 6,
-    type: 'image',
-    title: 'Descanso merecido',
-    desc: 'Después de la sesión, un momento para parar y respirar.',
-    url: '/border-collie-merle-arnes-tumbado.jpg',
-    span: 'col-span-1 row-span-1 sm:col-span-1 sm:row-span-1 md:col-span-1 md:row-span-1',
-  },
-  {
-    id: 7,
-    type: 'image',
-    title: 'Amanece en el rancho',
-    desc: 'Las primeras luces sobre la pradera, listos para empezar.',
-    url: '/pastor-tricolor-sentado-cerca-amanecer.jpg',
-    span: 'col-span-1 row-span-2 sm:col-span-1 sm:row-span-2 md:col-span-1 md:row-span-2',
-  },
-  {
-    id: 8,
-    type: 'image',
-    title: 'Mine y su equipo',
-    desc: 'Un vínculo que se construye día a día, con paciencia y respeto.',
-    url: '/selfie-adiestradora-malinois-campo.jpg',
-    span: 'col-span-2 row-span-1 sm:col-span-2 sm:row-span-1 md:col-span-2 md:row-span-1',
-  },
-  {
-    id: 9,
-    type: 'image',
-    title: 'Posando junto al agua',
-    desc: 'Cada perro tiene su carácter, y aquí hay sitio para todos.',
-    url: '/pomerania-posando-estanque-editado.jpg',
-    span: 'col-span-1 row-span-1 sm:col-span-1 sm:row-span-1 md:col-span-1 md:row-span-1',
-  },
-  {
-    id: 10,
-    type: 'image',
-    title: 'Miradas al horizonte',
-    desc: 'Paseos junto a la laguna cuando el campo se queda en silencio.',
-    url: '/perro-canela-mirando-laguna-luna.jpg',
-    span: 'col-span-1 row-span-1 sm:col-span-1 sm:row-span-1 md:col-span-1 md:row-span-1',
-  },
-]
-
-// =====================================================================
+const NOMBRE = nosotros.nombreDuenia
 
 export default function Nosotros() {
   useSeo({
@@ -153,14 +27,13 @@ export default function Nosotros() {
       <section className="border-b border-stone-200">
         <div className="max-w-5xl mx-auto px-5 md:px-8 py-16 md:py-20">
           <div className="text-[11px] uppercase tracking-[0.22em] text-stone-600 mb-3">
-            Quiénes somos
+            {nosotros.cabecera.epigrafe}
           </div>
           <h1 className="font-serif text-5xl md:text-6xl text-brand leading-[1.05] tracking-tight">
-            Una vereda que recorremos contigo y con tu perro.
+            {nosotros.cabecera.titulo}
           </h1>
           <p className="mt-5 text-stone-600 max-w-2xl text-[15px] leading-relaxed">
-            Vereda Silvestre es un proyecto pequeño y cuidado. Sin franquicias, sin recetas mágicas.
-            Solo trabajo honesto, escucha real y mucho respeto por cada perro que pasa por aquí.
+            {nosotros.cabecera.subtitulo}
           </p>
         </div>
       </section>
@@ -171,10 +44,10 @@ export default function Nosotros() {
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
             <div className="lg:col-span-5">
               <div className="rounded-2xl overflow-hidden bg-crema max-w-md mx-auto">
-                <Lightbox src="/duenia.jpg" alt={'Foto de ' + NOMBRE_DUENIA}>
+                <Lightbox src={nosotros.presentacion.imagen} alt={'Foto de ' + NOMBRE}>
                   <img
-                    src="/duenia.jpg"
-                    alt={'Foto de ' + NOMBRE_DUENIA}
+                    src={nosotros.presentacion.imagen}
+                    alt={'Foto de ' + NOMBRE}
                     className="w-full h-auto block"
                   />
                 </Lightbox>
@@ -183,13 +56,13 @@ export default function Nosotros() {
 
             <div className="lg:col-span-7">
               <div className="text-[11px] uppercase tracking-[0.22em] text-amber-700/80 mb-3">
-                Hola
+                {nosotros.presentacion.epigrafe}
               </div>
               <h2 className="font-serif text-4xl md:text-5xl text-brand leading-[1.1] mb-6">
-                Soy {NOMBRE_DUENIA}.
+                Soy {NOMBRE}.
               </h2>
               <div className="space-y-4 text-[15.5px] text-stone-700 leading-relaxed">
-                {HISTORIA.map((p, i) => (
+                {nosotros.presentacion.historia.map((p, i) => (
                   <p key={i}>{p}</p>
                 ))}
               </div>
@@ -208,10 +81,10 @@ export default function Nosotros() {
             fill="rgb(var(--vs-dorado))"
           />
           <blockquote className="font-serif text-2xl md:text-4xl leading-[1.25] tracking-tight italic">
-            "{FRASE_DESTACADA}"
+            "{nosotros.frase}"
           </blockquote>
           <div className="mt-6 text-[12px] uppercase tracking-[0.22em] text-crema-clara/60">
-            — {NOMBRE_DUENIA}, Vereda Silvestre
+            — {NOMBRE}, Vereda Silvestre
           </div>
         </div>
       </section>
@@ -222,17 +95,16 @@ export default function Nosotros() {
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-16">
             <div className="lg:col-span-5">
               <div className="text-[11px] uppercase tracking-[0.22em] text-stone-600 mb-3">
-                Formación y experiencia
+                {nosotros.formacion.epigrafe}
               </div>
               <h2 className="font-serif text-3xl md:text-4xl text-brand leading-[1.15] mb-6">
-                Aprender no es opcional.
+                {nosotros.formacion.titulo}
               </h2>
               <p className="text-[15px] text-stone-700 leading-relaxed mb-7">
-                El trabajo con perros exige actualización constante. Combinamos formación
-                profesional, lectura y experiencia diaria para hacer las cosas bien.
+                {nosotros.formacion.texto}
               </p>
               <ul className="space-y-3.5">
-                {FORMACION.map((item, i) => (
+                {nosotros.formacion.items.map((item, i) => (
                   <li key={i} className="flex items-start gap-3 text-[14.5px] text-stone-700">
                     <span className="mt-2 w-1.5 h-1.5 rounded-full bg-oliva shrink-0" />
                     <span>{item}</span>
@@ -243,27 +115,30 @@ export default function Nosotros() {
 
             <div className="lg:col-span-7">
               <div className="text-[11px] uppercase tracking-[0.22em] text-stone-600 mb-3">
-                Nuestro enfoque
+                {nosotros.enfoque.epigrafe}
               </div>
               <h2 className="font-serif text-3xl md:text-4xl text-brand leading-[1.15] mb-8">
-                Tres pilares que no negociamos.
+                {nosotros.enfoque.titulo}
               </h2>
 
               <div className="space-y-5">
-                {PILARES.map((p, i) => (
-                  <div
-                    key={i}
-                    className="flex items-start gap-5 p-6 rounded-2xl border border-stone-200 bg-white"
-                  >
-                    <div className="w-11 h-11 rounded-xl bg-oliva/10 text-oliva shrink-0 flex items-center justify-center">
-                      <p.icon size={20} strokeWidth={1.7} />
+                {nosotros.enfoque.pilares.map((p, i) => {
+                  const Icono = ICONOS[p.icono] || Eye
+                  return (
+                    <div
+                      key={i}
+                      className="flex items-start gap-5 p-6 rounded-2xl border border-stone-200 bg-white"
+                    >
+                      <div className="w-11 h-11 rounded-xl bg-oliva/10 text-oliva shrink-0 flex items-center justify-center">
+                        <Icono size={20} strokeWidth={1.7} />
+                      </div>
+                      <div>
+                        <h3 className="font-serif text-xl text-brand mb-1.5">{p.titulo}</h3>
+                        <p className="text-[14px] text-stone-600 leading-relaxed">{p.texto}</p>
+                      </div>
                     </div>
-                    <div>
-                      <h3 className="font-serif text-xl text-brand mb-1.5">{p.titulo}</h3>
-                      <p className="text-[14px] text-stone-600 leading-relaxed">{p.texto}</p>
-                    </div>
-                  </div>
-                ))}
+                  )
+                })}
               </div>
             </div>
           </div>
@@ -276,25 +151,19 @@ export default function Nosotros() {
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
             <div className="lg:col-span-7 order-2 lg:order-1">
               <div className="text-[11px] uppercase tracking-[0.22em] text-stone-600 mb-3">
-                El lugar
+                {nosotros.rancho.epigrafe}
               </div>
               <h2 className="font-serif text-3xl md:text-5xl text-brand leading-[1.1] mb-6">
-                Un rancho a las afueras de Jilotepec.
+                {nosotros.rancho.titulo}
               </h2>
               <div className="space-y-4 text-[15px] text-stone-700 leading-relaxed">
-                <p>
-                  Espacios abiertos, vistas al campo, aire limpio. Aquí los perros pueden moverse,
-                  oler, descansar y volver a ser perros. Lejos del ruido de la ciudad y cerca de
-                  todo lo que de verdad necesitan.
-                </p>
-                <p>
-                  Tenemos zonas de descanso al aire libre y resguardadas, áreas para entrenamiento,
-                  espacios de convivencia controlada y rutas seguras para paseos y excursiones.
-                </p>
+                {nosotros.rancho.parrafos.map((p, i) => (
+                  <p key={i}>{p}</p>
+                ))}
               </div>
 
               <div className="mt-10 grid grid-cols-3 gap-5 max-w-md">
-                {CIFRAS.map((c, i) => (
+                {nosotros.rancho.cifras.map((c, i) => (
                   <div key={i}>
                     <div className="font-serif text-3xl md:text-4xl text-oliva">{c.numero}</div>
                     <div className="text-[12px] uppercase tracking-wider text-stone-600 mt-1 leading-tight">
@@ -307,9 +176,9 @@ export default function Nosotros() {
 
             <div className="lg:col-span-5 order-1 lg:order-2">
               <div className="aspect-[4/3] rounded-2xl overflow-hidden bg-stone-100">
-                <Lightbox src="/rancho.jpg" alt="Rancho Vereda Silvestre">
+                <Lightbox src={nosotros.rancho.imagen} alt="Rancho Vereda Silvestre">
                   <img
-                    src="/rancho.jpg"
+                    src={nosotros.rancho.imagen}
                     alt="Rancho Vereda Silvestre"
                     className="w-full h-full object-cover"
                   />
@@ -324,9 +193,9 @@ export default function Nosotros() {
       <section className="py-16 md:py-24">
         <div className="max-w-6xl mx-auto px-5 md:px-8">
           <InteractiveBentoGallery
-            mediaItems={GALERIA}
-            title="Algunos momentos de Vereda Silvestre."
-            description="El día a día"
+            mediaItems={nosotros.galeria.items}
+            title={nosotros.galeria.titulo}
+            description={nosotros.galeria.epigrafe}
           />
         </div>
       </section>
@@ -337,11 +206,10 @@ export default function Nosotros() {
           <div className="rounded-3xl bg-oliva text-crema-clara p-10 md:p-14 text-center">
             <Mountain size={36} className="mx-auto mb-5 text-dorado" strokeWidth={1.4} />
             <h2 className="font-serif text-3xl md:text-4xl leading-tight">
-              ¿Hablamos de tu perro?
+              {nosotros.cta.titulo}
             </h2>
             <p className="mt-4 text-crema-clara/80 max-w-xl mx-auto leading-relaxed">
-              Si te ha gustado lo que has leído, escríbenos. Te conocemos a ti y a tu perro
-              sin compromiso, y desde ahí decidimos juntos qué necesitáis.
+              {nosotros.cta.texto}
             </p>
             <div className="mt-7 flex flex-wrap gap-3 justify-center">
               <a
@@ -351,13 +219,13 @@ export default function Nosotros() {
                 className="inline-flex items-center gap-2 rounded-full bg-crema-clara text-brand px-7 py-3.5 text-[14px] font-medium hover:bg-white transition-colors"
               >
                 <MessageCircle size={16} />
-                Escribir por WhatsApp
+                {nosotros.cta.ctaWhatsapp}
               </a>
               <Link
                 to="/servicios"
                 className="inline-flex items-center gap-2 rounded-full border border-crema-clara/30 text-crema-clara px-7 py-3.5 text-[14px] font-medium hover:bg-crema-clara/10 transition-colors"
               >
-                Ver servicios
+                {nosotros.cta.ctaServicios}
               </Link>
             </div>
           </div>

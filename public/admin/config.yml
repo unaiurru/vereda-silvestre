@@ -146,3 +146,168 @@ collections:
                   - { label: "Más vendido", value: "mas-vendido" }
                   - { label: "Nuevo", value: "nuevo" }
               - { label: "En stock (disponible)", name: "stock", widget: "boolean", default: true }
+
+  # ===========================================================
+  # INICIO — textos e imágenes de la página de inicio.
+  # ===========================================================
+  - name: "inicio"
+    label: "🏠 Inicio (textos)"
+    description: "Hero, beneficios, programas destacados, intro y llamadas a la acción de la portada."
+    files:
+      - name: "contenido"
+        label: "Contenido de la home"
+        file: "src/data/inicio.json"
+        fields:
+          - label: "Cabecera (hero)"
+            name: "hero"
+            widget: "object"
+            fields:
+              - { label: "Texto pequeño superior", name: "ubicacion", widget: "string" }
+              - { label: "Título grande", name: "titulo", widget: "text" }
+              - { label: "Subtítulo", name: "subtitulo", widget: "text" }
+              - { label: "Botón WhatsApp", name: "ctaWhatsapp", widget: "string" }
+              - { label: "Botón servicios", name: "ctaServicios", widget: "string" }
+          - label: "Beneficios (4 bloques)"
+            name: "beneficios"
+            widget: "list"
+            fields:
+              - label: "Icono"
+                name: "icono"
+                widget: "select"
+                options: ["Heart", "Mountain", "PawPrint", "Sparkles"]
+              - { label: "Título", name: "titulo", widget: "string" }
+              - { label: "Texto", name: "texto", widget: "text" }
+          - label: "Programas destacados"
+            name: "programas"
+            widget: "object"
+            fields:
+              - { label: "Epígrafe", name: "epigrafe", widget: "string" }
+              - { label: "Título", name: "titulo", widget: "string" }
+              - { label: "Subtítulo", name: "subtitulo", widget: "text" }
+              - { label: "Texto del enlace inferior", name: "verTodos", widget: "string" }
+              - label: "Tarjetas"
+                name: "items"
+                widget: "list"
+                summary: "{{fields.titulo}}"
+                fields:
+                  - { label: "Título", name: "titulo", widget: "string" }
+                  - { label: "Descripción", name: "desc", widget: "text" }
+                  - { label: "Fotos (carrusel)", name: "imgs", widget: "list", field: { label: "Foto", name: "foto", widget: "image" } }
+          - label: "Intro 'Quiénes somos'"
+            name: "intro"
+            widget: "object"
+            fields:
+              - { label: "Epígrafe", name: "epigrafe", widget: "string" }
+              - { label: "Título", name: "titulo", widget: "text" }
+              - { label: "Imagen", name: "imagen", widget: "image" }
+              - { label: "Párrafos", name: "parrafos", widget: "list", field: { label: "Párrafo", name: "parrafo", widget: "text" } }
+              - { label: "Texto del enlace", name: "enlace", widget: "string" }
+          - label: "Únete al equipo"
+            name: "unete"
+            widget: "object"
+            fields:
+              - { label: "Epígrafe", name: "epigrafe", widget: "string" }
+              - { label: "Título", name: "titulo", widget: "string" }
+              - { label: "Texto", name: "texto", widget: "text" }
+              - { label: "Botón", name: "cta", widget: "string" }
+              - { label: "Imagen", name: "imagen", widget: "image" }
+          - label: "Llamada final"
+            name: "ctaFinal"
+            widget: "object"
+            fields:
+              - { label: "Título", name: "titulo", widget: "string" }
+              - { label: "Texto", name: "texto", widget: "text" }
+              - { label: "Botón", name: "cta", widget: "string" }
+
+  # ===========================================================
+  # NOSOTROS — textos e imágenes de la página "Nosotros".
+  # ===========================================================
+  - name: "nosotros"
+    label: "👩 Nosotros (textos)"
+    description: "Historia, frase, formación, pilares, el lugar, galería y cierre."
+    files:
+      - name: "contenido"
+        label: "Contenido de Nosotros"
+        file: "src/data/nosotros.json"
+        fields:
+          - { label: "Nombre de la dueña", name: "nombreDuenia", widget: "string" }
+          - label: "Cabecera"
+            name: "cabecera"
+            widget: "object"
+            fields:
+              - { label: "Epígrafe", name: "epigrafe", widget: "string" }
+              - { label: "Título", name: "titulo", widget: "text" }
+              - { label: "Subtítulo", name: "subtitulo", widget: "text" }
+          - label: "Presentación"
+            name: "presentacion"
+            widget: "object"
+            fields:
+              - { label: "Epígrafe", name: "epigrafe", widget: "string" }
+              - { label: "Foto", name: "imagen", widget: "image" }
+              - { label: "Historia (párrafos)", name: "historia", widget: "list", field: { label: "Párrafo", name: "parrafo", widget: "text" } }
+          - { label: "Frase destacada", name: "frase", widget: "text" }
+          - label: "Formación"
+            name: "formacion"
+            widget: "object"
+            fields:
+              - { label: "Epígrafe", name: "epigrafe", widget: "string" }
+              - { label: "Título", name: "titulo", widget: "string" }
+              - { label: "Texto", name: "texto", widget: "text" }
+              - { label: "Puntos", name: "items", widget: "list", field: { label: "Punto", name: "punto", widget: "string" } }
+          - label: "Enfoque (pilares)"
+            name: "enfoque"
+            widget: "object"
+            fields:
+              - { label: "Epígrafe", name: "epigrafe", widget: "string" }
+              - { label: "Título", name: "titulo", widget: "string" }
+              - label: "Pilares"
+                name: "pilares"
+                widget: "list"
+                summary: "{{fields.titulo}}"
+                fields:
+                  - label: "Icono"
+                    name: "icono"
+                    widget: "select"
+                    options: ["Eye", "Heart", "Users"]
+                  - { label: "Título", name: "titulo", widget: "string" }
+                  - { label: "Texto", name: "texto", widget: "text" }
+          - label: "El lugar (rancho)"
+            name: "rancho"
+            widget: "object"
+            fields:
+              - { label: "Epígrafe", name: "epigrafe", widget: "string" }
+              - { label: "Título", name: "titulo", widget: "text" }
+              - { label: "Foto", name: "imagen", widget: "image" }
+              - { label: "Párrafos", name: "parrafos", widget: "list", field: { label: "Párrafo", name: "parrafo", widget: "text" } }
+              - label: "Cifras"
+                name: "cifras"
+                widget: "list"
+                summary: "{{fields.numero}} {{fields.etiqueta}}"
+                fields:
+                  - { label: "Número", name: "numero", widget: "string" }
+                  - { label: "Etiqueta", name: "etiqueta", widget: "string" }
+          - label: "Galería (mosaico)"
+            name: "galeria"
+            widget: "object"
+            fields:
+              - { label: "Epígrafe", name: "epigrafe", widget: "string" }
+              - { label: "Título", name: "titulo", widget: "string" }
+              - label: "Fotos"
+                name: "items"
+                widget: "list"
+                summary: "{{fields.title}}"
+                fields:
+                  - { label: "ID (número único)", name: "id", widget: "number", value_type: "int" }
+                  - { label: "Tipo", name: "type", widget: "hidden", default: "image" }
+                  - { label: "Título", name: "title", widget: "string" }
+                  - { label: "Descripción", name: "desc", widget: "text" }
+                  - { label: "Foto", name: "url", widget: "image" }
+                  - { label: "Tamaño en el mosaico (avanzado)", name: "span", widget: "string", hint: "Clases de CSS grid. No tocar salvo que sepas lo que haces." }
+          - label: "Cierre (CTA)"
+            name: "cta"
+            widget: "object"
+            fields:
+              - { label: "Título", name: "titulo", widget: "string" }
+              - { label: "Texto", name: "texto", widget: "text" }
+              - { label: "Botón WhatsApp", name: "ctaWhatsapp", widget: "string" }
+              - { label: "Botón servicios", name: "ctaServicios", widget: "string" }
