@@ -74,12 +74,18 @@ export function FlipReveal({ keys, hideClass = '', showClass = '', deps = [], ..
       const alturaFinal = wrapper.offsetHeight
 
       // Con `absolute: true`, Flip saca las tarjetas del flujo durante la
-      // animación, así que el contenedor colapsaría y el contenido de abajo
-      // (el footer) subiría y se solaparía con las tarjetas. Fijamos una altura
-      // mínima igual a la mayor de los dos estados mientras dura la animación y
-      // la liberamos al terminar, para que la rejilla nunca encoja a destiempo.
+      // animación, así que el contenedor colapsaría y el footer subiría y se
+      // solaparía. Reservamos como min-height el mayor de los dos estados y
+      // luego lo llevamos suavemente hasta la altura final (sin saltos). El
+      // contenedor debe usar `content-start` (en Tienda.jsx) para que ese hueco
+      // extra quede como espacio vacío abajo y las tarjetas NO se estiren.
       gsap.set(wrapper, { minHeight: Math.max(alturaInicial, alturaFinal) })
-      const liberarAltura = () => gsap.set(wrapper, { clearProps: 'minHeight' })
+      gsap.to(wrapper, {
+        minHeight: alturaFinal,
+        duration: 0.6,
+        ease: 'power1.inOut',
+        onComplete: () => gsap.set(wrapper, { clearProps: 'minHeight' }),
+      })
 
       Flip.from(state, {
         duration: 0.6,
@@ -87,8 +93,6 @@ export function FlipReveal({ keys, hideClass = '', showClass = '', deps = [], ..
         ease: 'power1.inOut',
         stagger: 0.05,
         absolute: true,
-        onComplete: liberarAltura,
-        onInterrupt: liberarAltura,
         onEnter: (elements) =>
           gsap.fromTo(
             elements,
