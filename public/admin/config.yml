@@ -1,0 +1,64 @@
+# =============================================================
+# Decap CMS — configuración del panel de administración (/admin)
+# =============================================================
+# Cada `collection` es un grupo editable. Las rutas `file:` deben
+# coincidir con los archivos JSON reales del proyecto.
+# Documentación: https://decapcms.org/docs/
+
+# -------------------------------------------------------------
+# BACKEND — conexión con GitHub para guardar los cambios.
+# Usa GitHub directo + el proxy OAuth alojado en /api/auth
+# (ver api/auth.js y api/callback.js).
+#
+# ⚠️  base_url DEBE ser la dirección pública real de la web.
+#     Ahora apunta al dominio de Vercel. CUANDO MIGRES A TU
+#     DOMINIO PROPIO, cambia esta línea por https://tudominio.com
+#     y actualiza también la "Authorization callback URL" de la
+#     GitHub OAuth App (ver ADMIN-SETUP.md).
+# -------------------------------------------------------------
+backend:
+  name: github
+  repo: unaiurru/vereda-silvestre
+  branch: main
+  base_url: https://vereda-silvestre.vercel.app
+  auth_endpoint: api/auth
+
+# Un cambio = un commit (sin flujo de revisión). Más simple para el cliente.
+publish_mode: simple
+
+# Carpeta donde Decap sube las imágenes que arrastres al panel.
+# Van a /public (raíz) y se referencian como "/archivo.jpg",
+# igual que el resto de imágenes del sitio.
+media_folder: "public"
+public_folder: "/"
+
+# Idioma del panel
+locale: 'es'
+
+# -------------------------------------------------------------
+# COLECCIONES — los formularios editables
+# -------------------------------------------------------------
+collections:
+
+  # ===========================================================
+  # DATOS DEL NEGOCIO — contacto, redes, ubicación.
+  # ===========================================================
+  - name: "negocio"
+    label: "🏪 Datos del negocio"
+    description: "Contacto, WhatsApp, email, redes sociales, ubicación y horario."
+    files:
+      - name: "info"
+        label: "Información de contacto y marca"
+        file: "src/data/negocio.json"
+        fields:
+          - { label: "Nombre", name: "nombre", widget: "string" }
+          - { label: "Nombre legal (pie de página)", name: "nombreLegal", widget: "string" }
+          - { label: "WhatsApp (solo dígitos)", name: "whatsapp", widget: "string", hint: "Formato internacional sin + ni espacios. Ejemplo: 5215562058871" }
+          - { label: "Teléfono visible", name: "telefonoVisible", widget: "string", hint: "Cómo se muestra al usuario. Ejemplo: +52 1 55 6205 8871" }
+          - { label: "Email", name: "email", widget: "string" }
+          - { label: "Ciudad (versión corta)", name: "ciudad", widget: "string", hint: "Ejemplo: Jilotepec, Estado de México" }
+          - { label: "Ciudad (versión completa)", name: "ciudadCompleta", widget: "string" }
+          - { label: "Horario", name: "horario", widget: "string", hint: "Ejemplo: Lun–Sáb · 9:00 – 19:00" }
+          - { label: "Instagram (URL completa)", name: "instagram", widget: "string", required: false }
+          - { label: "Facebook (URL completa)", name: "facebook", widget: "string", required: false }
+          - { label: "Mapa de Google (URL del embed)", name: "mapaEmbed", widget: "text", required: false, hint: "La URL que aparece en el iframe del mapa de Google Maps." }
