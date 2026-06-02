@@ -62,3 +62,87 @@ collections:
           - { label: "Instagram (URL completa)", name: "instagram", widget: "string", required: false }
           - { label: "Facebook (URL completa)", name: "facebook", widget: "string", required: false }
           - { label: "Mapa de Google (URL del embed)", name: "mapaEmbed", widget: "text", required: false, hint: "La URL que aparece en el iframe del mapa de Google Maps." }
+
+  # ===========================================================
+  # SERVICIOS — añadir, quitar y editar servicios y precios.
+  # ===========================================================
+  - name: "servicios"
+    label: "🐕 Servicios"
+    description: "Pensión, adiestramiento, paseos, excursiones, programas, sesiones y formación."
+    files:
+      - name: "lista"
+        label: "Lista de servicios"
+        file: "src/data/servicios.json"
+        fields:
+          - label: "Servicios"
+            name: "items"
+            label_singular: "Servicio"
+            widget: "list"
+            summary: "{{fields.titulo}} — {{fields.precio}}"
+            fields:
+              - { label: "ID / URL (sin acentos ni espacios)", name: "slug", widget: "string", hint: "Se usa en la dirección web. No cambiarlo una vez creado." }
+              - { label: "Título", name: "titulo", widget: "string" }
+              - { label: "Categoría", name: "categoria", widget: "string", hint: "Ej: Pensión, Adiestramiento, Paseo, Excursión, Programa, Sesión, Formación." }
+              - { label: "Precio", name: "precio", widget: "string", hint: "Ej: 500 MXN / día" }
+              - label: "Estado"
+                name: "estado"
+                widget: "select"
+                default: "activo"
+                options:
+                  - { label: "Activo (se puede reservar)", value: "activo" }
+                  - { label: "Finalizado", value: "finalizado" }
+              - { label: "Resumen (texto de la tarjeta)", name: "resumen", widget: "text" }
+              - { label: "Descripción (un párrafo por línea)", name: "descripcion", widget: "list", field: { label: "Párrafo", name: "parrafo", widget: "text" } }
+              - { label: "Qué incluye", name: "incluye", widget: "list", field: { label: "Punto", name: "punto", widget: "string" } }
+              - { label: "Foto de portada", name: "portada", widget: "image", required: false, hint: "Foto que aparece en la tarjeta del listado." }
+              - label: "Galería (fotos/vídeos)"
+                name: "media"
+                widget: "list"
+                required: false
+                label_singular: "Elemento"
+                summary: "{{fields.tipo}}"
+                fields:
+                  - label: "Tipo"
+                    name: "tipo"
+                    widget: "select"
+                    default: "imagen"
+                    options:
+                      - { label: "Imagen", value: "imagen" }
+                      - { label: "Vídeo", value: "video" }
+                      - { label: "Pendiente (texto)", value: "pendiente" }
+                  - { label: "Archivo (imagen o vídeo)", name: "src", widget: "image", required: false }
+                  - { label: "Texto (solo si es 'Pendiente')", name: "label", widget: "string", required: false }
+
+  # ===========================================================
+  # TIENDA — productos, precios y stock.
+  # ===========================================================
+  - name: "tienda"
+    label: "🛒 Tienda"
+    description: "Productos de la tienda: añadir, quitar, cambiar precio o marcar agotado."
+    files:
+      - name: "lista"
+        label: "Lista de productos"
+        file: "src/data/productos.json"
+        fields:
+          - label: "Productos"
+            name: "items"
+            label_singular: "Producto"
+            widget: "list"
+            summary: "{{fields.nombre}} — {{fields.precio}} MXN"
+            fields:
+              - { label: "ID / URL (sin acentos ni espacios)", name: "id", widget: "string", hint: "Se usa en la dirección web. No cambiarlo una vez creado." }
+              - { label: "Nombre", name: "nombre", widget: "string" }
+              - { label: "Precio (solo número, en MXN)", name: "precio", widget: "number", value_type: "int", min: 0 }
+              - { label: "Foto", name: "imagen", widget: "image" }
+              - { label: "Categoría", name: "categoria", widget: "string", hint: "Ej: Correas, Collares, Transporte, Adiestramiento." }
+              - { label: "Descripción", name: "descripcion", widget: "text" }
+              - label: "Etiqueta"
+                name: "etiqueta"
+                widget: "select"
+                required: false
+                default: ""
+                options:
+                  - { label: "Sin etiqueta", value: "" }
+                  - { label: "Más vendido", value: "mas-vendido" }
+                  - { label: "Nuevo", value: "nuevo" }
+              - { label: "En stock (disponible)", name: "stock", widget: "boolean", default: true }

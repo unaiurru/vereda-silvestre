@@ -1,89 +1,13 @@
 import { waLink } from './negocio'
+import datos from './productos.json'
 
-// Fuente única de verdad para los productos de la tienda.
-// Schema de cada producto:
-//   {
-//     id: 'kebab-case-sin-acentos',  // se usa como URL (/tienda/:id)
-//     nombre, precio (número, MXN), imagen (ruta a archivo real en public/),
-//     categoria, descripcion (1-2 frases),
-//     etiqueta: null | 'mas-vendido' | 'nuevo',
-//     stock: bool  // false => "Agotado"
-//   }
-//
-// Las imágenes apuntan a archivos reales en public/ (servidos desde la raíz).
+// Los productos se editan en `productos.json` (a mano o desde /admin).
+// Estructura de cada producto:
+//   id (se usa como URL /tienda/:id), nombre, precio (número, MXN),
+//   imagen (ruta a archivo de /public), categoria, descripcion,
+//   etiqueta ('' | 'mas-vendido' | 'nuevo'), stock (true/false).
 
-export const productos = [
-  {
-    id: 'correa-antideslizante-sprenger',
-    nombre: 'Correa antideslizante Sprenger',
-    precio: 500,
-    imagen: '/producto-correa-antideslizante.webp',
-    categoria: 'Correas',
-    descripcion: 'Correa Sprenger con agarre antideslizante. Cómoda y segura para el paseo diario.',
-    etiqueta: null,
-    stock: true,
-  },
-  {
-    id: 'collar-correccion-sprenger',
-    nombre: 'Collar de corrección Sprenger',
-    precio: 300,
-    imagen: '/producto-collar-sprenger-cadena.webp',
-    categoria: 'Collares',
-    descripcion: 'Collar de corrección Sprenger de acero. Uso bajo guía profesional.',
-    etiqueta: null,
-    stock: true,
-  },
-  {
-    id: 'transportadora-petmate',
-    nombre: 'Transportadora Petmate',
-    precio: 2500,
-    imagen: '/producto-transportin-perro.webp',
-    categoria: 'Transporte',
-    descripcion: 'Transportadora Petmate resistente, con buena ventilación, para viajes y traslados.',
-    etiqueta: 'mas-vendido',
-    stock: true,
-  },
-  {
-    id: 'correa-larga-10m',
-    nombre: 'Correa larga 10 m',
-    precio: 350,
-    imagen: '/producto-correa-larga-nylon-negro.webp',
-    categoria: 'Correas',
-    descripcion: 'Correa larga de 10 metros, ideal para trabajo de campo, llamada y exploración.',
-    etiqueta: null,
-    stock: true,
-  },
-  {
-    id: 'correa-cuero-180',
-    nombre: 'Correa de cuero 1.80 m',
-    precio: 200,
-    imagen: '/producto-correa-cuero-marron-asa.webp',
-    categoria: 'Correas',
-    descripcion: 'Correa de cuero de 1.80 m, sobria y duradera para el día a día.',
-    etiqueta: 'nuevo',
-    stock: true,
-  },
-  {
-    id: 'clicker',
-    nombre: 'Clicker',
-    precio: 80,
-    imagen: '/DogClicker_jpg.webp',
-    categoria: 'Adiestramiento',
-    descripcion: 'Clicker de adiestramiento para marcar comportamientos con precisión.',
-    etiqueta: null,
-    stock: true,
-  },
-  {
-    id: 'portapremios',
-    nombre: 'Portapremios para perro',
-    precio: 85,
-    imagen: '/producto-bolsa-premios-adiestramiento.webp',
-    categoria: 'Adiestramiento',
-    descripcion: 'Portapremios con cierre rápido para tener los premios siempre a mano durante el trabajo.',
-    etiqueta: null,
-    stock: true,
-  },
-]
+export const productos = datos.items
 
 export function getProducto(id) {
   return productos.find((p) => p.id === id)
