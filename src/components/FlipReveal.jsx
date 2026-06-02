@@ -75,32 +75,39 @@ export function FlipReveal({ keys, hideClass = '', showClass = '', deps = [], ..
 
       // Con `absolute: true`, Flip saca las tarjetas del flujo durante la
       // animación, así que el contenedor colapsaría y el footer subiría y se
-      // solaparía. Reservamos como min-height el mayor de los dos estados y
-      // luego lo llevamos suavemente hasta la altura final (sin saltos). El
-      // contenedor debe usar `content-start` (en Tienda.jsx) para que ese hueco
-      // extra quede como espacio vacío abajo y las tarjetas NO se estiren.
+      // solaparía. Reservamos como min-height el mayor de los dos estados y la
+      // mantenemos durante TODA la animación. Es clave soltarla sólo en el
+      // `onComplete` real de Flip (que incluye el stagger): si se libera antes
+      // —con un temporizador fijo— el contenedor colapsa un instante mientras
+      // las tarjetas siguen absolutas y el footer "salta". El contenedor usa
+      // `content-start` (en Tienda.jsx) para que ese hueco extra quede como
+      // espacio vacío abajo y las tarjetas NO se estiren.
       gsap.set(wrapper, { minHeight: Math.max(alturaInicial, alturaFinal) })
-      gsap.to(wrapper, {
-        minHeight: alturaFinal,
-        duration: 0.6,
-        ease: 'power1.inOut',
-        onComplete: () => gsap.set(wrapper, { clearProps: 'minHeight' }),
-      })
 
       Flip.from(state, {
         duration: 0.6,
         scale: true,
         ease: 'power1.inOut',
-        stagger: 0.05,
+        stagger: 0.04,
         absolute: true,
         onEnter: (elements) =>
           gsap.fromTo(
             elements,
             { opacity: 0, scale: 0 },
-            { opacity: 1, scale: 1, duration: 0.8 },
+            { opacity: 1, scale: 1, duration: 0.6 },
           ),
         onLeave: (elements) =>
-          gsap.to(elements, { opacity: 0, scale: 0, duration: 0.8 }),
+          gsap.to(elements, { opacity: 0, scale: 0, duration: 0.6 }),
+        onComplete: () => {
+          // Ya recolocadas las tarjetas (de vuelta en el flujo normal), llevamos
+          // la altura a la final y liberamos el estilo, sin saltos.
+          gsap.to(wrapper, {
+            minHeight: alturaFinal,
+            duration: 0.25,
+            ease: 'power1.inOut',
+            onComplete: () => gsap.set(wrapper, { clearProps: 'minHeight' }),
+          })
+        },
       })
     },
     // Se desestructuran `keys` (primitivos) para comparar por valor y evitar
