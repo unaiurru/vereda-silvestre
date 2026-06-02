@@ -1,16 +1,14 @@
 import { useState } from 'react'
 import { MessageCircle, Mail, MapPin, Clock, Send, Phone } from 'lucide-react'
 import useSeo from '../hooks/useSeo'
+import { negocio, waLink } from '../data/negocio'
 
-const WHATSAPP_NUMBER = '5215562058871'
-const WHATSAPP_DISPLAY = '+52 1 55 6205 8871'
-const EMAIL = 'v.silvestre.info@gmail.com'
-const LOCATION_TEXT = 'Jilotepec de Molina Enríquez, Estado de México'
+const WHATSAPP_NUMBER = negocio.whatsapp
+const WHATSAPP_DISPLAY = negocio.telefonoVisible
+const EMAIL = negocio.email
+const LOCATION_TEXT = negocio.ciudadCompleta
 
-const MAPA_EMBED_SRC = 'https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3746.213254299979!2d-99.70211522417542!3d20.125148918198853!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d3b242f4b086b1%3A0x6fab260cda796163!2s54273%20San%20Ignacio%20de%20Loyola%2C%20M%C3%A9x.%2C%20M%C3%A9xico!5e0!3m2!1ses!2ses!4v1777375412486!5m2!1ses!2ses'
-
-const waLink = (msg) =>
-  `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`
+const MAPA_EMBED_SRC = negocio.mapaEmbed
 
 export default function Contacto() {
   useSeo({
@@ -289,7 +287,7 @@ export default function Contacto() {
             href={`tel:+${WHATSAPP_NUMBER}`}
             className="font-serif text-3xl md:text-4xl text-brand hover:text-oliva transition-colors"
           >
-            +52 1 55 6205 8871
+            {WHATSAPP_DISPLAY}
           </a>
         </div>
       </section>

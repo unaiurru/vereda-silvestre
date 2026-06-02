@@ -1,9 +1,10 @@
 import { Link } from 'react-router-dom'
 import { Mail, Phone, MapPin, MessageCircle, Instagram, Facebook } from 'lucide-react'
+import { negocio, waLink } from '../data/negocio'
 
-const WHATSAPP_URL = 'https://wa.me/5215562058871'
-const INSTAGRAM_URL = 'https://www.instagram.com/vereda_silvestre/'
-const FACEBOOK_URL = 'https://www.facebook.com/people/Vereda-Silvestre/61565697153668/'
+const WHATSAPP_URL = waLink()
+const INSTAGRAM_URL = negocio.instagram
+const FACEBOOK_URL = negocio.facebook
 
 export default function Footer() {
   return (
@@ -49,18 +50,18 @@ export default function Footer() {
               <li className="flex items-start gap-2.5">
                 <Phone size={14} className="mt-1 text-dorado" />
                 <a href={WHATSAPP_URL} target="_blank" rel="noopener noreferrer" className="hover:text-crema-clara">
-                  +52 1 55 6205 8871
+                  {negocio.telefonoVisible}
                 </a>
               </li>
               <li className="flex items-start gap-2.5">
                 <Mail size={14} className="mt-1 text-dorado" />
-                <a href="mailto:v.silvestre.info@gmail.com" className="hover:text-crema-clara break-all">
-                  v.silvestre.info@gmail.com
+                <a href={`mailto:${negocio.email}`} className="hover:text-crema-clara break-all">
+                  {negocio.email}
                 </a>
               </li>
               <li className="flex items-start gap-2.5">
                 <MapPin size={14} className="mt-1 text-dorado" />
-                <span>Jilotepec, Estado de México</span>
+                <span>{negocio.ciudad}</span>
               </li>
             </ul>
             <div className="flex gap-2 mt-5">
@@ -96,7 +97,7 @@ export default function Footer() {
         </div>
 
         <div className="pt-6 flex flex-col md:flex-row items-center justify-between gap-3 text-[12px] text-crema-clara/60">
-          <div>© {new Date().getFullYear()} Centro Canino Vereda Silvestre S.A.S. de C.V.</div>
+          <div>© {new Date().getFullYear()} {negocio.nombreLegal}</div>
           <div className="flex gap-5">
             <Link to="/aviso-privacidad" className="hover:text-crema-clara">Aviso de privacidad</Link>
             <Link to="/cookies" className="hover:text-crema-clara">Cookies</Link>

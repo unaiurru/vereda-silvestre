@@ -3,8 +3,9 @@ import { ArrowRight, MessageCircle, Heart, Mountain, PawPrint, Sparkles } from '
 import CarruselAuto from '../components/CarruselAuto'
 import RejillaShuffle from '../components/RejillaShuffle'
 import useSeo from '../hooks/useSeo'
+import { waLink } from '../data/negocio'
 
-const WHATSAPP_URL = 'https://wa.me/5215562058871?text=' + encodeURIComponent('Hola, me gustaría reservar un servicio en Vereda Silvestre.')
+const WHATSAPP_URL = waLink('Hola, me gustaría reservar un servicio en Vereda Silvestre.')
 
 const beneficios = [
   { icon: Heart, title: 'Atención personalizada', text: 'Cada perro es único. Conocemos su historia y carácter.' },

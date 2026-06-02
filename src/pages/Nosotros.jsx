@@ -3,8 +3,9 @@ import { MessageCircle, Heart, Eye, Users, Mountain, Quote } from 'lucide-react'
 import Lightbox from '../components/Lightbox'
 import InteractiveBentoGallery from '../components/InteractiveBentoGallery'
 import useSeo from '../hooks/useSeo'
+import { waLink } from '../data/negocio'
 
-const WHATSAPP_URL = 'https://wa.me/5215562058871?text=' + encodeURIComponent('Hola, me gustaría conocer Vereda Silvestre.')
+const WHATSAPP_URL = waLink('Hola, me gustaría conocer Vereda Silvestre.')
 
 // =====================================================================
 // DATOS EDITABLES — cambia aquí cuando tengas la información real.

@@ -1,3 +1,5 @@
+import { waLink } from './negocio'
+
 // Fuente única de verdad para los productos de la tienda.
 // Schema de cada producto:
 //   {
@@ -97,7 +99,6 @@ export function categoriasProductos() {
  * @param {{ producto: object, cantidad: number }[]} items
  */
 export function whatsappLinkPedido(items) {
-  const numero = '5215562058871'
   const lineas = items.map(
     ({ producto, cantidad }) =>
       `• ${cantidad}× ${producto.nombre} — ${cantidad * producto.precio} MXN`
@@ -111,5 +112,5 @@ export function whatsappLinkPedido(items) {
     lineas.join('\n') +
     `\nTotal: ${total} MXN\n` +
     '¿Me confirmas disponibilidad y envío?'
-  return `https://wa.me/${numero}?text=${encodeURIComponent(msg)}`
+  return waLink(msg)
 }

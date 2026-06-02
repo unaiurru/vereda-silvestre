@@ -2,8 +2,9 @@ import { useState, useEffect } from 'react'
 import { Link, NavLink } from 'react-router-dom'
 import { Menu, X, MessageCircle, ShoppingBag } from 'lucide-react'
 import { useCarrito } from '../context/CarritoContext'
+import { waLink } from '../data/negocio'
 
-const WHATSAPP_URL = 'https://wa.me/5215562058871?text=' + encodeURIComponent('Hola, me gustaria reservar un servicio en Vereda Silvestre.')
+const WHATSAPP_URL = waLink('Hola, me gustaria reservar un servicio en Vereda Silvestre.')
 
 const links = [
   { to: '/', label: 'Inicio' },

@@ -1,3 +1,5 @@
+import { waLink } from './negocio'
+
 // Datos de todos los servicios.
 // Cada servicio tiene un array "media" con elementos:
 //   { tipo: 'imagen', src: '/foto.jpg' }
@@ -392,7 +394,5 @@ export const servicios = [
 ]
 
 export function whatsappLinkServicio(titulo) {
-  const numero = '5215562058871'
-  const msg = `Hola, quiero información sobre ${titulo}.`
-  return `https://wa.me/${numero}?text=${encodeURIComponent(msg)}`
+  return waLink(`Hola, quiero información sobre ${titulo}.`)
 }

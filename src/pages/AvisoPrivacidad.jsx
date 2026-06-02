@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { ArrowLeft } from 'lucide-react'
 import useSeo from '../hooks/useSeo'
+import { negocio } from '../data/negocio'
 
 export default function AvisoPrivacidad() {
   useSeo({
@@ -52,8 +53,8 @@ export default function AvisoPrivacidad() {
             Molina Enríquez, Estado de México, es responsable del tratamiento, uso y
             protección de tus datos personales. Para cualquier consulta relacionada con
             este aviso o con tus datos puedes escribirnos a{' '}
-            <a href="mailto:v.silvestre.info@gmail.com" className="text-oliva underline underline-offset-2">
-              v.silvestre.info@gmail.com
+            <a href={`mailto:${negocio.email}`} className="text-oliva underline underline-offset-2">
+              {negocio.email}
             </a>.
           </p>
 
@@ -138,10 +139,10 @@ export default function AvisoPrivacidad() {
             Para ejercer cualquiera de estos derechos, limitar el uso o divulgación de tus
             datos o revocar tu consentimiento, envíanos una solicitud al correo{' '}
             <a
-              href="mailto:v.silvestre.info@gmail.com"
+              href={`mailto:${negocio.email}`}
               className="text-oliva underline underline-offset-2"
             >
-              v.silvestre.info@gmail.com
+              {negocio.email}
             </a>{' '}
             indicando tu nombre, una descripción clara de lo que solicitas y un medio para
             contactarte. Te responderemos en los plazos que establece la ley.
@@ -160,10 +161,10 @@ export default function AvisoPrivacidad() {
           <div className="mt-12 p-5 rounded-2xl bg-crema border border-oliva/10 text-[13px] text-stone-600 leading-relaxed">
             Si tienes dudas sobre este aviso o sobre el tratamiento de tus datos, escríbenos a{' '}
             <a
-              href="mailto:v.silvestre.info@gmail.com"
+              href={`mailto:${negocio.email}`}
               className="text-oliva underline"
             >
-              v.silvestre.info@gmail.com
+              {negocio.email}
             </a>.
           </div>
         </article>

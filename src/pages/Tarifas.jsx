@@ -1,8 +1,9 @@
 import { Link } from 'react-router-dom'
 import { ArrowRight, MessageCircle, Info } from 'lucide-react'
 import useSeo from '../hooks/useSeo'
+import { waLink } from '../data/negocio'
 
-const WHATSAPP_URL = 'https://wa.me/5215562058871?text=' + encodeURIComponent('Hola, me gustaría información sobre las tarifas de Vereda Silvestre.')
+const WHATSAPP_URL = waLink('Hola, me gustaría información sobre las tarifas de Vereda Silvestre.')
 
 const bloques = [
   {

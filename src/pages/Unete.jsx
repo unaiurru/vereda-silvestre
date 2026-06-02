@@ -2,11 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowLeft, Send, Sprout, Users, Compass } from 'lucide-react'
 import useSeo from '../hooks/useSeo'
-
-const WHATSAPP_NUMBER = '5215562058871'
-
-const waLink = (msg) =>
-  `https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`
+import { waLink } from '../data/negocio'
 
 const AREAS = [
   'Apoyo en salidas',
