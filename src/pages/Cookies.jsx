@@ -16,7 +16,7 @@ export default function Cookies() {
         <div className="max-w-3xl mx-auto px-5 md:px-8 py-14 md:py-20">
           <Link
             to="/"
-            className="inline-flex items-center gap-1.5 text-[12.5px] text-stone-600 hover:text-[#3F4A2A] mb-5"
+            className="inline-flex items-center gap-1.5 text-[12.5px] text-stone-600 hover:text-oliva mb-5"
           >
             <ArrowLeft size={14} />
             Volver al inicio
@@ -24,7 +24,7 @@ export default function Cookies() {
           <div className="text-[11px] uppercase tracking-[0.22em] text-stone-600 mb-3">
             Información legal
           </div>
-          <h1 className="font-serif text-4xl md:text-5xl text-[#2E3720] leading-[1.1] tracking-tight">
+          <h1 className="font-serif text-4xl md:text-5xl text-brand leading-[1.1] tracking-tight">
             Política de cookies
           </h1>
           <p className="mt-4 text-[13px] text-stone-600">
@@ -40,7 +40,7 @@ export default function Cookies() {
             en el sitio web de Centro Canino Vereda Silvestre S.A.S. de C.V.
           </p>
 
-          <h2 className="font-serif text-2xl text-[#2E3720] mt-10 mb-3">
+          <h2 className="font-serif text-2xl text-brand mt-10 mb-3">
             ¿Qué son las cookies?
           </h2>
           <p className="text-[15px] text-stone-700 leading-relaxed">
@@ -49,7 +49,7 @@ export default function Cookies() {
             correctamente, recordar preferencias o entender cómo se usa el sitio.
           </p>
 
-          <h2 className="font-serif text-2xl text-[#2E3720] mt-10 mb-3">
+          <h2 className="font-serif text-2xl text-brand mt-10 mb-3">
             ¿Qué cookies utiliza esta web?
           </h2>
           <p className="text-[15px] text-stone-700 leading-relaxed mb-4">
@@ -60,7 +60,7 @@ export default function Cookies() {
 
           <div className="rounded-2xl border border-stone-200 overflow-hidden mt-5">
             <table className="w-full text-[14px]">
-              <thead className="bg-[#FAF6EC] text-stone-700">
+              <thead className="bg-crema-clara text-stone-700">
                 <tr>
                   <th className="text-left px-5 py-3 font-medium">Cookie</th>
                   <th className="text-left px-5 py-3 font-medium">Finalidad</th>
@@ -77,7 +77,7 @@ export default function Cookies() {
             </table>
           </div>
 
-          <h2 className="font-serif text-2xl text-[#2E3720] mt-10 mb-3">
+          <h2 className="font-serif text-2xl text-brand mt-10 mb-3">
             Mapa de Google
           </h2>
           <p className="text-[15px] text-stone-700 leading-relaxed">
@@ -88,13 +88,13 @@ export default function Cookies() {
               href="https://policies.google.com/privacy"
               target="_blank"
               rel="noopener noreferrer"
-              className="text-[#3F4A2A] underline underline-offset-2"
+              className="text-oliva underline underline-offset-2"
             >
               policies.google.com/privacy
             </a>.
           </p>
 
-          <h2 className="font-serif text-2xl text-[#2E3720] mt-10 mb-3">
+          <h2 className="font-serif text-2xl text-brand mt-10 mb-3">
             Cómo gestionar las cookies
           </h2>
           <p className="text-[15px] text-stone-700 leading-relaxed">
@@ -103,9 +103,9 @@ export default function Cookies() {
             dejar de funcionar correctamente.
           </p>
 
-          <div className="mt-12 p-5 rounded-2xl bg-[#F5EFDF] border border-[#3F4A2A]/10 text-[13px] text-stone-600 leading-relaxed">
+          <div className="mt-12 p-5 rounded-2xl bg-crema border border-oliva/10 text-[13px] text-stone-600 leading-relaxed">
             Para más información, consulta nuestro{' '}
-            <Link to="/aviso-privacidad" className="text-[#3F4A2A] underline">
+            <Link to="/aviso-privacidad" className="text-oliva underline">
               aviso de privacidad
             </Link>.
           </div>

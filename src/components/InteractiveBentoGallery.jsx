@@ -39,7 +39,7 @@ export default function InteractiveBentoGallery({ mediaItems = [], title, descri
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: true, margin: '-60px' }}
               transition={{ duration: 0.5 }}
-              className="font-serif text-3xl md:text-4xl text-[#2E3720] leading-[1.1]"
+              className="font-serif text-3xl md:text-4xl text-brand leading-[1.1]"
             >
               {title}
             </motion.h2>
@@ -65,7 +65,7 @@ export default function InteractiveBentoGallery({ mediaItems = [], title, descri
               viewport={{ once: true, margin: '-40px' }}
               transition={{ duration: 0.4, delay: Math.min(i * 0.04, 0.3) }}
               className={`group relative overflow-hidden rounded-xl md:rounded-2xl
-                          bg-stone-100 ring-1 ring-[#3F4A2A]/10 ${item.span || ''}`}
+                          bg-stone-100 ring-1 ring-oliva/10 ${item.span || ''}`}
             >
               {/* Reutiliza el Lightbox del proyecto: clic = ver en grande,
                   con navegación entre todas las fotos de la galería. */}
@@ -80,11 +80,11 @@ export default function InteractiveBentoGallery({ mediaItems = [], title, descri
                 {/* Capa de texto al pasar el ratón */}
                 <div
                   className="pointer-events-none absolute inset-0 flex flex-col justify-end
-                             bg-gradient-to-t from-[#2E3720]/70 via-[#2E3720]/0 to-transparent
+                             bg-gradient-to-t from-brand/70 via-brand/0 to-transparent
                              opacity-0 group-hover:opacity-100 transition-opacity duration-300
                              p-3"
                 >
-                  <div className="text-[#FAF6EC] font-serif text-sm leading-tight">
+                  <div className="text-crema-clara font-serif text-sm leading-tight">
                     {item.title}
                   </div>
                 </div>

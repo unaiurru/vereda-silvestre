@@ -123,7 +123,7 @@ export default function RejillaShuffle() {
       onMouseLeave={() => setHover(false)}
       onFocus={() => setFoco(true)}
       onBlur={onBlur}
-      className="grid grid-cols-3 md:grid-cols-4 gap-2 md:gap-2.5 bg-[#F5EFDF] p-2 md:p-2.5"
+      className="grid grid-cols-3 md:grid-cols-4 gap-2 md:gap-2.5 bg-crema p-2 md:p-2.5"
     >
       {orden.map((fotoIdx, pos) => (
         <div

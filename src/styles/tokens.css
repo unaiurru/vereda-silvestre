@@ -1,0 +1,30 @@
+/* ============================================================
+   SISTEMA DE DISEÑO — VEREDA SILVESTRE
+   ------------------------------------------------------------
+   Este es EL archivo para personalizar la web.
+   Cambia los valores de aquí y se actualiza toda la página
+   (colores, tipografías) sin tocar el resto del código.
+
+   COLORES: se escriben en formato "R G B" (tres números de 0
+   a 255), no en hex. Al lado, en el comentario, tienes el hex
+   equivalente como referencia. Para convertir un hex a R G B
+   puedes buscar "hex to rgb" en internet.
+
+   Ejemplo: para cambiar el dorado a un naranja #FF8800,
+   pon  --vs-dorado: 255 136 0;
+   ============================================================ */
+
+:root {
+  /* ---- Paleta de marca (edita estos 5) ---- */
+  --vs-brand: 46 55 32;          /* #2E3720 · verde oscuro — textos y títulos */
+  --vs-oliva: 63 74 42;          /* #3F4A2A · verde oliva — fondos y acentos */
+  --vs-crema: 245 239 223;       /* #F5EFDF · crema — fondos suaves */
+  --vs-crema-clara: 250 246 236; /* #FAF6EC · crema clara — texto sobre verde */
+  --vs-dorado: 224 164 88;       /* #E0A458 · dorado/ámbar — acento cálido */
+
+  /* ---- Tipografías ----
+     Cambia la primera fuente de cada lista por la que quieras
+     (debe estar cargada en la web). El resto son alternativas. */
+  --vs-font-serif: ui-serif, Georgia, Cambria, 'Times New Roman', Times, serif;
+  --vs-font-sans: ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
+}

@@ -53,19 +53,19 @@ export default function CarritoDrawer() {
         aria-modal="true"
         aria-label="Carrito de la compra"
         className={
-          'fixed top-0 right-0 z-50 h-full w-full max-w-sm bg-[#FAF6EC] shadow-2xl flex flex-col transition-transform duration-300 ' +
+          'fixed top-0 right-0 z-50 h-full w-full max-w-sm bg-crema-clara shadow-2xl flex flex-col transition-transform duration-300 ' +
           (abierto ? 'translate-x-0' : 'translate-x-full')
         }
       >
         {/* Cabecera */}
         <div className="flex items-center justify-between px-5 py-4 border-b border-stone-200">
-          <div className="flex items-center gap-2 font-serif text-lg text-[#2E3720]">
+          <div className="flex items-center gap-2 font-serif text-lg text-brand">
             <ShoppingBag size={18} />
             Tu carrito
           </div>
           <button
             onClick={cerrar}
-            className="w-11 h-11 -mr-2 flex items-center justify-center rounded-md text-[#2E3720] hover:bg-[#3F4A2A]/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3F4A2A] transition-colors"
+            className="w-11 h-11 -mr-2 flex items-center justify-center rounded-md text-brand hover:bg-oliva/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-oliva transition-colors"
             aria-label="Cerrar carrito"
           >
             <X size={20} />
@@ -75,14 +75,14 @@ export default function CarritoDrawer() {
         {lineas.length === 0 ? (
           /* Estado vacío */
           <div className="flex-1 flex flex-col items-center justify-center text-center px-8 gap-4">
-            <div className="w-14 h-14 rounded-full bg-[#3F4A2A]/10 text-[#3F4A2A] flex items-center justify-center">
+            <div className="w-14 h-14 rounded-full bg-oliva/10 text-oliva flex items-center justify-center">
               <ShoppingBag size={24} strokeWidth={1.5} />
             </div>
             <p className="text-[14px] text-stone-600">Tu carrito está vacío.</p>
             <Link
               to="/tienda"
               onClick={cerrar}
-              className="inline-flex items-center justify-center min-h-[44px] rounded-full bg-[#3F4A2A] text-[#FAF6EC] px-6 py-3 text-[14px] font-medium hover:bg-[#2E3720] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3F4A2A] focus-visible:ring-offset-2 transition-colors"
+              className="inline-flex items-center justify-center min-h-[44px] rounded-full bg-oliva text-crema-clara px-6 py-3 text-[14px] font-medium hover:bg-brand focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-oliva focus-visible:ring-offset-2 transition-colors"
             >
               Ver productos
             </Link>
@@ -93,7 +93,7 @@ export default function CarritoDrawer() {
             <div className="flex-1 overflow-y-auto px-5 py-4 space-y-4">
               {lineas.map(({ producto, cantidad }) => (
                 <div key={producto.id} className="flex gap-3">
-                  <div className="w-16 h-16 shrink-0 rounded-lg overflow-hidden bg-[#F5EFDF]">
+                  <div className="w-16 h-16 shrink-0 rounded-lg overflow-hidden bg-crema">
                     <img
                       src={producto.imagen}
                       alt={producto.nombre}
@@ -105,13 +105,13 @@ export default function CarritoDrawer() {
                       <Link
                         to={'/tienda/' + producto.id}
                         onClick={cerrar}
-                        className="text-[13.5px] font-medium text-[#2E3720] hover:text-[#3F4A2A] leading-snug"
+                        className="text-[13.5px] font-medium text-brand hover:text-oliva leading-snug"
                       >
                         {producto.nombre}
                       </Link>
                       <button
                         onClick={() => quitar(producto.id)}
-                        className="shrink-0 w-8 h-8 -mt-1 -mr-1 flex items-center justify-center rounded-md text-stone-400 hover:text-red-700 hover:bg-red-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3F4A2A] transition-colors"
+                        className="shrink-0 w-8 h-8 -mt-1 -mr-1 flex items-center justify-center rounded-md text-stone-400 hover:text-red-700 hover:bg-red-50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-oliva transition-colors"
                         aria-label={'Eliminar ' + producto.nombre}
                       >
                         <Trash2 size={15} />
@@ -122,7 +122,7 @@ export default function CarritoDrawer() {
                         <button
                           onClick={() => cambiarCantidad(producto.id, cantidad - 1)}
                           disabled={cantidad <= 1}
-                          className="w-9 h-9 flex items-center justify-center text-[#2E3720] disabled:opacity-30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3F4A2A] rounded-full"
+                          className="w-9 h-9 flex items-center justify-center text-brand disabled:opacity-30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-oliva rounded-full"
                           aria-label={'Reducir cantidad de ' + producto.nombre}
                         >
                           <Minus size={14} />
@@ -130,13 +130,13 @@ export default function CarritoDrawer() {
                         <span className="w-7 text-center text-[13px] tabular-nums">{cantidad}</span>
                         <button
                           onClick={() => cambiarCantidad(producto.id, cantidad + 1)}
-                          className="w-9 h-9 flex items-center justify-center text-[#2E3720] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3F4A2A] rounded-full"
+                          className="w-9 h-9 flex items-center justify-center text-brand focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-oliva rounded-full"
                           aria-label={'Aumentar cantidad de ' + producto.nombre}
                         >
                           <Plus size={14} />
                         </button>
                       </div>
-                      <div className="font-serif text-[14px] text-[#3F4A2A] whitespace-nowrap">
+                      <div className="font-serif text-[14px] text-oliva whitespace-nowrap">
                         {producto.precio * cantidad} MXN
                       </div>
                     </div>
@@ -149,7 +149,7 @@ export default function CarritoDrawer() {
             <div className="border-t border-stone-200 px-5 py-4 space-y-4">
               <div className="flex items-center justify-between text-[15px]">
                 <span className="text-stone-600">Total</span>
-                <span className="font-serif text-xl text-[#2E3720]">{total} MXN</span>
+                <span className="font-serif text-xl text-brand">{total} MXN</span>
               </div>
               <BotonCheckout items={lineas} />
               <p className="text-[11.5px] text-stone-500 text-center leading-relaxed">

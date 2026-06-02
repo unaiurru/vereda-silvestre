@@ -66,7 +66,7 @@ export default function Contacto() {
           <div className="text-[11px] uppercase tracking-[0.22em] text-stone-600 mb-3">
             Contacto
           </div>
-          <h1 className="font-serif text-5xl md:text-6xl text-[#2E3720] leading-[1.05] tracking-tight">
+          <h1 className="font-serif text-5xl md:text-6xl text-brand leading-[1.05] tracking-tight">
             Hablemos de tu perro.
           </h1>
           <p className="mt-5 text-stone-600 max-w-2xl text-[15px] leading-relaxed">
@@ -85,16 +85,16 @@ export default function Contacto() {
               href={waLink('Hola, me gustaría información sobre Vereda Silvestre.')}
               target="_blank"
               rel="noopener noreferrer"
-              className="group rounded-2xl bg-[#3F4A2A] text-[#FAF6EC] p-7 hover:bg-[#2E3720] transition-colors flex flex-col"
+              className="group rounded-2xl bg-oliva text-crema-clara p-7 hover:bg-brand transition-colors flex flex-col"
             >
-              <div className="w-11 h-11 rounded-xl bg-[#FAF6EC]/10 flex items-center justify-center mb-5">
+              <div className="w-11 h-11 rounded-xl bg-crema-clara/10 flex items-center justify-center mb-5">
                 <MessageCircle size={20} strokeWidth={1.7} />
               </div>
-              <div className="text-[11px] uppercase tracking-[0.22em] text-[#E0A458] mb-1">
+              <div className="text-[11px] uppercase tracking-[0.22em] text-dorado mb-1">
                 WhatsApp · más rápido
               </div>
               <div className="font-serif text-xl mb-1">{WHATSAPP_DISPLAY}</div>
-              <p className="text-[13px] text-[#FAF6EC]/75 mt-2 leading-relaxed flex-1">
+              <p className="text-[13px] text-crema-clara/75 mt-2 leading-relaxed flex-1">
                 Te respondemos en horario laboral. Cuéntanos lo que necesites.
               </p>
               <div className="mt-5 inline-flex items-center gap-1.5 text-[13px] font-medium">
@@ -105,32 +105,32 @@ export default function Contacto() {
             {/* Email */}
             <a
               href={`mailto:${EMAIL}`}
-              className="group rounded-2xl border border-stone-200 bg-white p-7 hover:border-[#3F4A2A]/40 transition-colors flex flex-col"
+              className="group rounded-2xl border border-stone-200 bg-white p-7 hover:border-oliva/40 transition-colors flex flex-col"
             >
-              <div className="w-11 h-11 rounded-xl bg-[#3F4A2A]/8 text-[#3F4A2A] flex items-center justify-center mb-5">
+              <div className="w-11 h-11 rounded-xl bg-oliva/8 text-oliva flex items-center justify-center mb-5">
                 <Mail size={20} strokeWidth={1.7} />
               </div>
               <div className="text-[11px] uppercase tracking-[0.22em] text-amber-700/80 mb-1">
                 Email
               </div>
-              <div className="font-serif text-base text-[#2E3720] mb-1 break-all">{EMAIL}</div>
+              <div className="font-serif text-base text-brand mb-1 break-all">{EMAIL}</div>
               <p className="text-[13px] text-stone-600 mt-2 leading-relaxed flex-1">
                 Para consultas más detalladas o documentación.
               </p>
-              <div className="mt-5 inline-flex items-center gap-1.5 text-[13px] font-medium text-[#3F4A2A]">
+              <div className="mt-5 inline-flex items-center gap-1.5 text-[13px] font-medium text-oliva">
                 Escribir un email →
               </div>
             </a>
 
             {/* Ubicación */}
             <div className="rounded-2xl border border-stone-200 bg-white p-7 flex flex-col">
-              <div className="w-11 h-11 rounded-xl bg-[#3F4A2A]/8 text-[#3F4A2A] flex items-center justify-center mb-5">
+              <div className="w-11 h-11 rounded-xl bg-oliva/8 text-oliva flex items-center justify-center mb-5">
                 <MapPin size={20} strokeWidth={1.7} />
               </div>
               <div className="text-[11px] uppercase tracking-[0.22em] text-amber-700/80 mb-1">
                 Ubicación
               </div>
-              <div className="font-serif text-base text-[#2E3720] leading-tight mb-1">
+              <div className="font-serif text-base text-brand leading-tight mb-1">
                 Jilotepec de Molina Enríquez
               </div>
               <div className="text-[13px] text-stone-600">Estado de México</div>
@@ -155,7 +155,7 @@ export default function Contacto() {
               <div className="text-[11px] uppercase tracking-[0.22em] text-stone-600 mb-3">
                 Cómo llegar
               </div>
-              <h2 className="font-serif text-2xl md:text-3xl text-[#2E3720] leading-tight mb-5">
+              <h2 className="font-serif text-2xl md:text-3xl text-brand leading-tight mb-5">
                 {LOCATION_TEXT}
               </h2>
               <div className="rounded-2xl overflow-hidden border border-stone-200 bg-stone-100 aspect-[4/3]">
@@ -179,7 +179,7 @@ export default function Contacto() {
               <div className="text-[11px] uppercase tracking-[0.22em] text-stone-600 mb-3">
                 Formulario
               </div>
-              <h2 className="font-serif text-2xl md:text-3xl text-[#2E3720] leading-tight mb-5">
+              <h2 className="font-serif text-2xl md:text-3xl text-brand leading-tight mb-5">
                 Envíanos un mensaje
               </h2>
               <form onSubmit={onSubmit} className="rounded-2xl border border-stone-200 bg-white p-7">
@@ -199,7 +199,7 @@ export default function Contacto() {
                       value={form.nombre}
                       onChange={onChange}
                       required
-                      className="mt-2 w-full bg-transparent border-b border-stone-300 focus:border-[#3F4A2A] py-2.5 text-[15px] outline-none transition-colors"
+                      className="mt-2 w-full bg-transparent border-b border-stone-300 focus:border-oliva py-2.5 text-[15px] outline-none transition-colors"
                       placeholder="María García"
                     />
                   </label>
@@ -213,7 +213,7 @@ export default function Contacto() {
                       name="telefono"
                       value={form.telefono}
                       onChange={onChange}
-                      className="mt-2 w-full bg-transparent border-b border-stone-300 focus:border-[#3F4A2A] py-2.5 text-[15px] outline-none transition-colors"
+                      className="mt-2 w-full bg-transparent border-b border-stone-300 focus:border-oliva py-2.5 text-[15px] outline-none transition-colors"
                       placeholder="55 1234 5678"
                     />
                   </label>
@@ -228,7 +228,7 @@ export default function Contacto() {
                       onChange={onChange}
                       rows={4}
                       required
-                      className="mt-2 w-full bg-transparent border-b border-stone-300 focus:border-[#3F4A2A] py-2.5 text-[15px] outline-none resize-none transition-colors"
+                      className="mt-2 w-full bg-transparent border-b border-stone-300 focus:border-oliva py-2.5 text-[15px] outline-none resize-none transition-colors"
                       placeholder="Cuéntanos sobre tu perro y qué servicio te interesa…"
                     />
                   </label>
@@ -261,14 +261,14 @@ export default function Contacto() {
                 <button
                   type="submit"
                   disabled={!form.nombre.trim() || !form.mensaje.trim()}
-                  className="mt-7 inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-[14px] font-medium bg-[#3F4A2A] text-[#FAF6EC] hover:bg-[#2E3720] transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+                  className="mt-7 inline-flex items-center justify-center gap-2 rounded-full px-7 py-3.5 text-[14px] font-medium bg-oliva text-crema-clara hover:bg-brand transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
                 >
                   <Send size={15} />
                   Enviar por WhatsApp
                 </button>
 
                 {enviado && (
-                  <div className="mt-4 text-[13px] text-[#3F4A2A]">
+                  <div className="mt-4 text-[13px] text-oliva">
                     ✓ Hemos abierto WhatsApp con tu mensaje. Si no se abrió, revisa tu navegador.
                   </div>
                 )}
@@ -279,15 +279,15 @@ export default function Contacto() {
       </section>
 
       {/* Banda inferior con teléfono grande */}
-      <section className="py-14 md:py-16 border-t border-stone-200 bg-[#F5EFDF]">
+      <section className="py-14 md:py-16 border-t border-stone-200 bg-crema">
         <div className="max-w-4xl mx-auto px-5 md:px-8 text-center">
-          <Phone size={28} className="mx-auto text-[#3F4A2A] mb-4" strokeWidth={1.5} />
+          <Phone size={28} className="mx-auto text-oliva mb-4" strokeWidth={1.5} />
           <div className="text-[11px] uppercase tracking-[0.22em] text-amber-700/80 mb-2">
             ¿Prefieres llamar?
           </div>
           <a
             href={`tel:+${WHATSAPP_NUMBER}`}
-            className="font-serif text-3xl md:text-4xl text-[#2E3720] hover:text-[#3F4A2A] transition-colors"
+            className="font-serif text-3xl md:text-4xl text-brand hover:text-oliva transition-colors"
           >
             +52 1 55 6205 8871
           </a>

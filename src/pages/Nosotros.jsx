@@ -154,7 +154,7 @@ export default function Nosotros() {
           <div className="text-[11px] uppercase tracking-[0.22em] text-stone-600 mb-3">
             Quiénes somos
           </div>
-          <h1 className="font-serif text-5xl md:text-6xl text-[#2E3720] leading-[1.05] tracking-tight">
+          <h1 className="font-serif text-5xl md:text-6xl text-brand leading-[1.05] tracking-tight">
             Una vereda que recorremos contigo y con tu perro.
           </h1>
           <p className="mt-5 text-stone-600 max-w-2xl text-[15px] leading-relaxed">
@@ -169,7 +169,7 @@ export default function Nosotros() {
         <div className="max-w-6xl mx-auto px-5 md:px-8">
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
             <div className="lg:col-span-5">
-              <div className="rounded-2xl overflow-hidden bg-[#F5EFDF] max-w-md mx-auto">
+              <div className="rounded-2xl overflow-hidden bg-crema max-w-md mx-auto">
                 <Lightbox src="/duenia.jpg" alt={'Foto de ' + NOMBRE_DUENIA}>
                   <img
                     src="/duenia.jpg"
@@ -184,7 +184,7 @@ export default function Nosotros() {
               <div className="text-[11px] uppercase tracking-[0.22em] text-amber-700/80 mb-3">
                 Hola
               </div>
-              <h2 className="font-serif text-4xl md:text-5xl text-[#2E3720] leading-[1.1] mb-6">
+              <h2 className="font-serif text-4xl md:text-5xl text-brand leading-[1.1] mb-6">
                 Soy {NOMBRE_DUENIA}.
               </h2>
               <div className="space-y-4 text-[15.5px] text-stone-700 leading-relaxed">
@@ -198,18 +198,18 @@ export default function Nosotros() {
       </section>
 
       {/* FRASE DESTACADA */}
-      <section className="py-12 md:py-16 bg-[#3F4A2A] text-[#FAF6EC]">
+      <section className="py-12 md:py-16 bg-oliva text-crema-clara">
         <div className="max-w-4xl mx-auto px-5 md:px-8 text-center">
           <Quote
             size={44}
-            className="mx-auto text-[#E0A458] mb-5"
+            className="mx-auto text-dorado mb-5"
             strokeWidth={1.2}
-            fill="#E0A458"
+            fill="rgb(var(--vs-dorado))"
           />
           <blockquote className="font-serif text-2xl md:text-4xl leading-[1.25] tracking-tight italic">
             "{FRASE_DESTACADA}"
           </blockquote>
-          <div className="mt-6 text-[12px] uppercase tracking-[0.22em] text-[#FAF6EC]/60">
+          <div className="mt-6 text-[12px] uppercase tracking-[0.22em] text-crema-clara/60">
             — {NOMBRE_DUENIA}, Vereda Silvestre
           </div>
         </div>
@@ -223,7 +223,7 @@ export default function Nosotros() {
               <div className="text-[11px] uppercase tracking-[0.22em] text-stone-600 mb-3">
                 Formación y experiencia
               </div>
-              <h2 className="font-serif text-3xl md:text-4xl text-[#2E3720] leading-[1.15] mb-6">
+              <h2 className="font-serif text-3xl md:text-4xl text-brand leading-[1.15] mb-6">
                 Aprender no es opcional.
               </h2>
               <p className="text-[15px] text-stone-700 leading-relaxed mb-7">
@@ -233,7 +233,7 @@ export default function Nosotros() {
               <ul className="space-y-3.5">
                 {FORMACION.map((item, i) => (
                   <li key={i} className="flex items-start gap-3 text-[14.5px] text-stone-700">
-                    <span className="mt-2 w-1.5 h-1.5 rounded-full bg-[#3F4A2A] shrink-0" />
+                    <span className="mt-2 w-1.5 h-1.5 rounded-full bg-oliva shrink-0" />
                     <span>{item}</span>
                   </li>
                 ))}
@@ -244,7 +244,7 @@ export default function Nosotros() {
               <div className="text-[11px] uppercase tracking-[0.22em] text-stone-600 mb-3">
                 Nuestro enfoque
               </div>
-              <h2 className="font-serif text-3xl md:text-4xl text-[#2E3720] leading-[1.15] mb-8">
+              <h2 className="font-serif text-3xl md:text-4xl text-brand leading-[1.15] mb-8">
                 Tres pilares que no negociamos.
               </h2>
 
@@ -254,11 +254,11 @@ export default function Nosotros() {
                     key={i}
                     className="flex items-start gap-5 p-6 rounded-2xl border border-stone-200 bg-white"
                   >
-                    <div className="w-11 h-11 rounded-xl bg-[#3F4A2A]/10 text-[#3F4A2A] shrink-0 flex items-center justify-center">
+                    <div className="w-11 h-11 rounded-xl bg-oliva/10 text-oliva shrink-0 flex items-center justify-center">
                       <p.icon size={20} strokeWidth={1.7} />
                     </div>
                     <div>
-                      <h3 className="font-serif text-xl text-[#2E3720] mb-1.5">{p.titulo}</h3>
+                      <h3 className="font-serif text-xl text-brand mb-1.5">{p.titulo}</h3>
                       <p className="text-[14px] text-stone-600 leading-relaxed">{p.texto}</p>
                     </div>
                   </div>
@@ -270,14 +270,14 @@ export default function Nosotros() {
       </section>
 
       {/* RANCHO + CIFRAS */}
-      <section className="py-16 md:py-24 bg-[#F5EFDF]/50 border-y border-stone-200">
+      <section className="py-16 md:py-24 bg-crema/50 border-y border-stone-200">
         <div className="max-w-6xl mx-auto px-5 md:px-8">
           <div className="grid lg:grid-cols-12 gap-10 lg:gap-16 items-center">
             <div className="lg:col-span-7 order-2 lg:order-1">
               <div className="text-[11px] uppercase tracking-[0.22em] text-stone-600 mb-3">
                 El lugar
               </div>
-              <h2 className="font-serif text-3xl md:text-5xl text-[#2E3720] leading-[1.1] mb-6">
+              <h2 className="font-serif text-3xl md:text-5xl text-brand leading-[1.1] mb-6">
                 Un rancho a las afueras de Jilotepec.
               </h2>
               <div className="space-y-4 text-[15px] text-stone-700 leading-relaxed">
@@ -295,7 +295,7 @@ export default function Nosotros() {
               <div className="mt-10 grid grid-cols-3 gap-5 max-w-md">
                 {CIFRAS.map((c, i) => (
                   <div key={i}>
-                    <div className="font-serif text-3xl md:text-4xl text-[#3F4A2A]">{c.numero}</div>
+                    <div className="font-serif text-3xl md:text-4xl text-oliva">{c.numero}</div>
                     <div className="text-[12px] uppercase tracking-wider text-stone-600 mt-1 leading-tight">
                       {c.etiqueta}
                     </div>
@@ -333,12 +333,12 @@ export default function Nosotros() {
       {/* CTA */}
       <section className="pb-20">
         <div className="max-w-4xl mx-auto px-5 md:px-8">
-          <div className="rounded-3xl bg-[#3F4A2A] text-[#FAF6EC] p-10 md:p-14 text-center">
-            <Mountain size={36} className="mx-auto mb-5 text-[#E0A458]" strokeWidth={1.4} />
+          <div className="rounded-3xl bg-oliva text-crema-clara p-10 md:p-14 text-center">
+            <Mountain size={36} className="mx-auto mb-5 text-dorado" strokeWidth={1.4} />
             <h2 className="font-serif text-3xl md:text-4xl leading-tight">
               ¿Hablamos de tu perro?
             </h2>
-            <p className="mt-4 text-[#FAF6EC]/80 max-w-xl mx-auto leading-relaxed">
+            <p className="mt-4 text-crema-clara/80 max-w-xl mx-auto leading-relaxed">
               Si te ha gustado lo que has leído, escríbenos. Te conocemos a ti y a tu perro
               sin compromiso, y desde ahí decidimos juntos qué necesitáis.
             </p>
@@ -347,14 +347,14 @@ export default function Nosotros() {
                 href={WHATSAPP_URL}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 rounded-full bg-[#FAF6EC] text-[#2E3720] px-7 py-3.5 text-[14px] font-medium hover:bg-white transition-colors"
+                className="inline-flex items-center gap-2 rounded-full bg-crema-clara text-brand px-7 py-3.5 text-[14px] font-medium hover:bg-white transition-colors"
               >
                 <MessageCircle size={16} />
                 Escribir por WhatsApp
               </a>
               <Link
                 to="/servicios"
-                className="inline-flex items-center gap-2 rounded-full border border-[#FAF6EC]/30 text-[#FAF6EC] px-7 py-3.5 text-[14px] font-medium hover:bg-[#FAF6EC]/10 transition-colors"
+                className="inline-flex items-center gap-2 rounded-full border border-crema-clara/30 text-crema-clara px-7 py-3.5 text-[14px] font-medium hover:bg-crema-clara/10 transition-colors"
               >
                 Ver servicios
               </Link>

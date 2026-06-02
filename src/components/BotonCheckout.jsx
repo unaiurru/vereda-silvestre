@@ -22,7 +22,7 @@ export default function BotonCheckout({ items = [], className = '' }) {
         if (vacio) e.preventDefault()
       }}
       className={
-        'inline-flex items-center justify-center gap-2 min-h-[44px] w-full rounded-full bg-[#3F4A2A] text-[#FAF6EC] px-6 py-3.5 text-[14px] font-medium hover:bg-[#2E3720] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3F4A2A] focus-visible:ring-offset-2 transition-colors ' +
+        'inline-flex items-center justify-center gap-2 min-h-[44px] w-full rounded-full bg-oliva text-crema-clara px-6 py-3.5 text-[14px] font-medium hover:bg-brand focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-oliva focus-visible:ring-offset-2 transition-colors ' +
         (vacio ? 'opacity-40 cursor-not-allowed ' : '') +
         className
       }

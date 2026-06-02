@@ -117,7 +117,7 @@ export default function ServicioDetalle() {
         <div className="max-w-6xl mx-auto px-5 md:px-8 py-10 md:py-14">
           <Link
             to="/servicios"
-            className="inline-flex items-center gap-1.5 text-[12.5px] text-stone-600 hover:text-[#3F4A2A] mb-5"
+            className="inline-flex items-center gap-1.5 text-[12.5px] text-stone-600 hover:text-oliva mb-5"
           >
             <ArrowLeft size={14} />
             Todos los servicios
@@ -129,16 +129,16 @@ export default function ServicioDetalle() {
                   {servicio.categoria}
                 </span>
                 {finalizado && (
-                  <span className="bg-stone-700 text-[#FAF6EC] px-3 py-1 text-xs uppercase tracking-wide rounded">
+                  <span className="bg-stone-700 text-crema-clara px-3 py-1 text-xs uppercase tracking-wide rounded">
                     Finalizado
                   </span>
                 )}
               </div>
-              <h1 className="font-serif text-4xl md:text-6xl text-[#2E3720] leading-[1.05] tracking-tight">
+              <h1 className="font-serif text-4xl md:text-6xl text-brand leading-[1.05] tracking-tight">
                 {servicio.titulo}
               </h1>
             </div>
-            <div className="font-serif text-2xl md:text-3xl text-[#3F4A2A]">
+            <div className="font-serif text-2xl md:text-3xl text-oliva">
               {servicio.precio}
             </div>
           </div>
@@ -147,12 +147,12 @@ export default function ServicioDetalle() {
 
       {/* Galeria */}
       {hayItems ? (
-        <section className="bg-[#F5EFDF]/50 border-b border-stone-200">
+        <section className="bg-crema/50 border-b border-stone-200">
           <div className="max-w-6xl mx-auto px-5 md:px-8 py-10 md:py-14">
             <div className="relative">
               <div
                 className={
-                  'aspect-[16/10] md:aspect-[16/9] rounded-2xl overflow-hidden bg-[#3F4A2A]/10 relative flex items-center justify-center ' +
+                  'aspect-[16/10] md:aspect-[16/9] rounded-2xl overflow-hidden bg-oliva/10 relative flex items-center justify-center ' +
                   (activeItem && activeItem.tipo === 'imagen' ? 'cursor-zoom-in group' : '')
                 }
                 onClick={() => {
@@ -167,7 +167,7 @@ export default function ServicioDetalle() {
                   <button
                     type="button"
                     onClick={prevItem}
-                    className="absolute left-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/85 hover:bg-white text-[#2E3720] flex items-center justify-center shadow-md"
+                    className="absolute left-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/85 hover:bg-white text-brand flex items-center justify-center shadow-md"
                     aria-label="Anterior"
                   >
                     <ChevronLeft size={20} />
@@ -175,7 +175,7 @@ export default function ServicioDetalle() {
                   <button
                     type="button"
                     onClick={nextItem}
-                    className="absolute right-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/85 hover:bg-white text-[#2E3720] flex items-center justify-center shadow-md"
+                    className="absolute right-4 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-white/85 hover:bg-white text-brand flex items-center justify-center shadow-md"
                     aria-label="Siguiente"
                   >
                     <ChevronRight size={20} />
@@ -196,7 +196,7 @@ export default function ServicioDetalle() {
                     className={
                       'shrink-0 w-24 h-20 md:w-32 md:h-24 rounded-lg overflow-hidden transition-all ' +
                       (i === activeIdx
-                        ? 'ring-2 ring-[#3F4A2A] ring-offset-2 ring-offset-[#F5EFDF]'
+                        ? 'ring-2 ring-oliva ring-offset-2 ring-offset-crema'
                         : 'opacity-60 hover:opacity-100')
                     }
                     aria-label={'Ver elemento ' + (i + 1)}
@@ -209,7 +209,7 @@ export default function ServicioDetalle() {
           </div>
         </section>
       ) : (
-        <section className="bg-[#F5EFDF]/50 border-b border-stone-200">
+        <section className="bg-crema/50 border-b border-stone-200">
           <div className="max-w-6xl mx-auto px-5 md:px-8 py-10">
             <div className="aspect-[16/8] rounded-2xl bg-stone-200 flex flex-col items-center justify-center text-stone-400 gap-3">
               <ImageOff size={36} strokeWidth={1.3} />
@@ -238,14 +238,14 @@ export default function ServicioDetalle() {
                   href={whatsappLinkServicio(servicio.titulo)}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 rounded-full bg-[#3F4A2A] text-[#FAF6EC] px-6 py-3.5 text-[14px] font-medium hover:bg-[#2E3720] transition-colors"
+                  className="inline-flex items-center gap-2 rounded-full bg-oliva text-crema-clara px-6 py-3.5 text-[14px] font-medium hover:bg-brand transition-colors"
                 >
                   <MessageCircle size={16} />
                   {finalizado ? 'Avísame de la próxima edición' : 'Consultar por WhatsApp'}
                 </a>
                 <Link
                   to="/contacto"
-                  className="inline-flex items-center gap-2 rounded-full border border-[#3F4A2A]/25 text-[#3F4A2A] px-6 py-3.5 text-[14px] font-medium hover:bg-[#3F4A2A]/5 transition-colors"
+                  className="inline-flex items-center gap-2 rounded-full border border-oliva/25 text-oliva px-6 py-3.5 text-[14px] font-medium hover:bg-oliva/5 transition-colors"
                 >
                   Ver formas de contacto
                 </Link>
@@ -261,7 +261,7 @@ export default function ServicioDetalle() {
                   <ul className="space-y-3.5">
                     {servicio.incluye.map((item, i) => (
                       <li key={i} className="flex items-start gap-3 text-[14px] text-stone-700">
-                        <Check size={15} className="mt-1 shrink-0 text-[#3F4A2A]" strokeWidth={2.4} />
+                        <Check size={15} className="mt-1 shrink-0 text-oliva" strokeWidth={2.4} />
                         <span>{item}</span>
                       </li>
                     ))}
@@ -287,13 +287,13 @@ export default function ServicioDetalle() {
                 <Link
                   key={s.slug}
                   to={'/servicios/' + s.slug}
-                  className="group rounded-xl border border-stone-200 bg-white p-5 hover:border-[#3F4A2A]/40 transition-colors"
+                  className="group rounded-xl border border-stone-200 bg-white p-5 hover:border-oliva/40 transition-colors"
                 >
                   <div className="text-[10px] uppercase tracking-[0.2em] text-stone-600 mb-1.5">
                     {s.categoria}
                   </div>
-                  <h3 className="font-serif text-lg text-[#2E3720] mb-1">{s.titulo}</h3>
-                  <div className="text-[12.5px] text-[#3F4A2A] font-medium">{s.precio}</div>
+                  <h3 className="font-serif text-lg text-brand mb-1">{s.titulo}</h3>
+                  <div className="text-[12.5px] text-oliva font-medium">{s.precio}</div>
                 </Link>
               ))}
           </div>

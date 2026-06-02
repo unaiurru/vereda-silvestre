@@ -26,17 +26,17 @@ export default function Header() {
   }, [])
 
   const headerClass = scrolled
-    ? 'bg-[#FAF6EC]/90 backdrop-blur-md border-b border-stone-200/60'
-    : 'bg-[#FAF6EC]'
+    ? 'bg-crema-clara/90 backdrop-blur-md border-b border-stone-200/60'
+    : 'bg-crema-clara'
 
   const navLinkClass = ({ isActive }) =>
     isActive
-      ? 'px-4 py-2 text-[14px] text-[#3F4A2A] font-medium transition-colors'
-      : 'px-4 py-2 text-[14px] text-stone-600 hover:text-[#3F4A2A] transition-colors'
+      ? 'px-4 py-2 text-[14px] text-oliva font-medium transition-colors'
+      : 'px-4 py-2 text-[14px] text-stone-600 hover:text-oliva transition-colors'
 
   const mobileLinkClass = ({ isActive }) =>
     isActive
-      ? 'py-3 text-[15px] border-b border-stone-200/70 last:border-0 text-[#3F4A2A] font-medium'
+      ? 'py-3 text-[15px] border-b border-stone-200/70 last:border-0 text-oliva font-medium'
       : 'py-3 text-[15px] border-b border-stone-200/70 last:border-0 text-stone-700'
 
   return (
@@ -49,7 +49,7 @@ export default function Header() {
             className="w-12 h-12 object-contain rounded-full"
           />
           <div className="leading-tight hidden sm:block">
-            <div className="font-serif text-base text-[#2E3720]">Vereda Silvestre</div>
+            <div className="font-serif text-base text-brand">Vereda Silvestre</div>
             <div className="text-[10px] uppercase tracking-[0.2em] text-stone-600">Centro Canino</div>
           </div>
         </Link>
@@ -67,7 +67,7 @@ export default function Header() {
             href={WHATSAPP_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="hidden md:inline-flex items-center gap-2 rounded-full bg-[#3F4A2A] text-[#FAF6EC] px-5 py-2.5 text-[13px] font-medium hover:bg-[#2E3720] transition-colors"
+            className="hidden md:inline-flex items-center gap-2 rounded-full bg-oliva text-crema-clara px-5 py-2.5 text-[13px] font-medium hover:bg-brand transition-colors"
           >
             <MessageCircle size={14} />
             Reservar
@@ -76,12 +76,12 @@ export default function Header() {
           {/* Carrito */}
           <button
             onClick={abrir}
-            className="relative w-11 h-11 text-[#2E3720] flex items-center justify-center rounded-md hover:bg-[#3F4A2A]/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3F4A2A] transition-colors"
+            className="relative w-11 h-11 text-brand flex items-center justify-center rounded-md hover:bg-oliva/5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-oliva transition-colors"
             aria-label={'Abrir carrito' + (totalItems > 0 ? ' (' + totalItems + ')' : '')}
           >
             <ShoppingBag size={20} />
             {totalItems > 0 && (
-              <span className="absolute -top-0.5 -right-0.5 min-w-[18px] h-[18px] px-1 rounded-full bg-[#3F4A2A] text-[#FAF6EC] text-[10px] font-medium flex items-center justify-center">
+              <span className="absolute -top-0.5 -right-0.5 min-w-[18px] h-[18px] px-1 rounded-full bg-oliva text-crema-clara text-[10px] font-medium flex items-center justify-center">
                 {totalItems}
               </span>
             )}
@@ -89,7 +89,7 @@ export default function Header() {
 
           <button
             onClick={() => setOpen(!open)}
-            className="lg:hidden w-11 h-11 -mr-2 text-[#2E3720] flex items-center justify-center rounded-md hover:bg-[#3F4A2A]/5 transition-colors"
+            className="lg:hidden w-11 h-11 -mr-2 text-brand flex items-center justify-center rounded-md hover:bg-oliva/5 transition-colors"
             aria-label={open ? 'Cerrar menú' : 'Abrir menú'}
             aria-expanded={open}
           >
@@ -98,7 +98,7 @@ export default function Header() {
         </div>
       </div>
 
-      <div className={'lg:hidden overflow-hidden transition-all duration-300 bg-[#FAF6EC] ' + (open ? 'max-h-96 border-b border-stone-200' : 'max-h-0')}>
+      <div className={'lg:hidden overflow-hidden transition-all duration-300 bg-crema-clara ' + (open ? 'max-h-96 border-b border-stone-200' : 'max-h-0')}>
         <nav className="px-5 py-3 flex flex-col">
           {links.map((l) => (
             <NavLink

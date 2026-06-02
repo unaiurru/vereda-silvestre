@@ -16,7 +16,7 @@ export default function AvisoPrivacidad() {
         <div className="max-w-3xl mx-auto px-5 md:px-8 py-14 md:py-20">
           <Link
             to="/"
-            className="inline-flex items-center gap-1.5 text-[12.5px] text-stone-600 hover:text-[#3F4A2A] mb-5"
+            className="inline-flex items-center gap-1.5 text-[12.5px] text-stone-600 hover:text-oliva mb-5"
           >
             <ArrowLeft size={14} />
             Volver al inicio
@@ -24,7 +24,7 @@ export default function AvisoPrivacidad() {
           <div className="text-[11px] uppercase tracking-[0.22em] text-stone-600 mb-3">
             Información legal
           </div>
-          <h1 className="font-serif text-4xl md:text-5xl text-[#2E3720] leading-[1.1] tracking-tight">
+          <h1 className="font-serif text-4xl md:text-5xl text-brand leading-[1.1] tracking-tight">
             Aviso de Privacidad Integral
           </h1>
           <p className="mt-4 text-[13px] text-stone-600">
@@ -44,7 +44,7 @@ export default function AvisoPrivacidad() {
             México, pone a tu disposición el presente Aviso de Privacidad Integral.
           </p>
 
-          <h2 className="font-serif text-2xl text-[#2E3720] mt-10 mb-3">
+          <h2 className="font-serif text-2xl text-brand mt-10 mb-3">
             1. Identidad y domicilio del responsable
           </h2>
           <p className="text-[15px] text-stone-700 leading-relaxed">
@@ -52,12 +52,12 @@ export default function AvisoPrivacidad() {
             Molina Enríquez, Estado de México, es responsable del tratamiento, uso y
             protección de tus datos personales. Para cualquier consulta relacionada con
             este aviso o con tus datos puedes escribirnos a{' '}
-            <a href="mailto:v.silvestre.info@gmail.com" className="text-[#3F4A2A] underline underline-offset-2">
+            <a href="mailto:v.silvestre.info@gmail.com" className="text-oliva underline underline-offset-2">
               v.silvestre.info@gmail.com
             </a>.
           </p>
 
-          <h2 className="font-serif text-2xl text-[#2E3720] mt-10 mb-3">
+          <h2 className="font-serif text-2xl text-brand mt-10 mb-3">
             2. Datos personales que recabamos
           </h2>
           <p className="text-[15px] text-stone-700 leading-relaxed">
@@ -80,7 +80,7 @@ export default function AvisoPrivacidad() {
             recabamos datos personales de menores de edad</strong> de manera consciente.
           </p>
 
-          <h2 className="font-serif text-2xl text-[#2E3720] mt-10 mb-3">
+          <h2 className="font-serif text-2xl text-brand mt-10 mb-3">
             3. Finalidades del tratamiento
           </h2>
           <p className="text-[15px] text-stone-700 leading-relaxed">
@@ -100,7 +100,7 @@ export default function AvisoPrivacidad() {
             tus datos para fines distintos a los descritos en este aviso.
           </p>
 
-          <h2 className="font-serif text-2xl text-[#2E3720] mt-10 mb-3">
+          <h2 className="font-serif text-2xl text-brand mt-10 mb-3">
             4. Transferencia de datos personales
           </h2>
           <p className="text-[15px] text-stone-700 leading-relaxed">
@@ -111,7 +111,7 @@ export default function AvisoPrivacidad() {
             ningún caso se realicen transferencias con fines comerciales.
           </p>
 
-          <h2 className="font-serif text-2xl text-[#2E3720] mt-10 mb-3">
+          <h2 className="font-serif text-2xl text-brand mt-10 mb-3">
             5. Conservación y medidas de seguridad
           </h2>
           <p className="text-[15px] text-stone-700 leading-relaxed">
@@ -123,7 +123,7 @@ export default function AvisoPrivacidad() {
             tratamiento no autorizados.
           </p>
 
-          <h2 className="font-serif text-2xl text-[#2E3720] mt-10 mb-3">
+          <h2 className="font-serif text-2xl text-brand mt-10 mb-3">
             6. Tus derechos ARCO
           </h2>
           <p className="text-[15px] text-stone-700 leading-relaxed">
@@ -139,7 +139,7 @@ export default function AvisoPrivacidad() {
             datos o revocar tu consentimiento, envíanos una solicitud al correo{' '}
             <a
               href="mailto:v.silvestre.info@gmail.com"
-              className="text-[#3F4A2A] underline underline-offset-2"
+              className="text-oliva underline underline-offset-2"
             >
               v.silvestre.info@gmail.com
             </a>{' '}
@@ -147,7 +147,7 @@ export default function AvisoPrivacidad() {
             contactarte. Te responderemos en los plazos que establece la ley.
           </p>
 
-          <h2 className="font-serif text-2xl text-[#2E3720] mt-10 mb-3">
+          <h2 className="font-serif text-2xl text-brand mt-10 mb-3">
             7. Cambios al presente aviso
           </h2>
           <p className="text-[15px] text-stone-700 leading-relaxed">
@@ -157,11 +157,11 @@ export default function AvisoPrivacidad() {
             te recomendamos revisarla periódicamente.
           </p>
 
-          <div className="mt-12 p-5 rounded-2xl bg-[#F5EFDF] border border-[#3F4A2A]/10 text-[13px] text-stone-600 leading-relaxed">
+          <div className="mt-12 p-5 rounded-2xl bg-crema border border-oliva/10 text-[13px] text-stone-600 leading-relaxed">
             Si tienes dudas sobre este aviso o sobre el tratamiento de tus datos, escríbenos a{' '}
             <a
               href="mailto:v.silvestre.info@gmail.com"
-              className="text-[#3F4A2A] underline"
+              className="text-oliva underline"
             >
               v.silvestre.info@gmail.com
             </a>.

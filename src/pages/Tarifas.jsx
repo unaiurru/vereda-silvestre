@@ -70,13 +70,13 @@ function FilaTarifa({ item }) {
       <div className="flex items-center gap-2 text-[15px] text-stone-800">
         <span>{item.concepto}</span>
         {item.etiqueta && (
-          <span className="bg-stone-700 text-[#FAF6EC] px-2 py-0.5 text-[10px] uppercase tracking-wide rounded">
+          <span className="bg-stone-700 text-crema-clara px-2 py-0.5 text-[10px] uppercase tracking-wide rounded">
             {item.etiqueta}
           </span>
         )}
       </div>
       <div className="flex items-center gap-3">
-        <div className="font-serif text-[18px] md:text-[20px] text-[#3F4A2A] whitespace-nowrap">
+        <div className="font-serif text-[18px] md:text-[20px] text-oliva whitespace-nowrap">
           {item.precio}
           {item.unidad && (
             <span className="text-[12px] text-stone-600 font-sans ml-1.5">{item.unidad}</span>
@@ -85,7 +85,7 @@ function FilaTarifa({ item }) {
         {item.slug && (
           <ArrowRight
             size={15}
-            className="text-stone-300 group-hover:text-[#3F4A2A] group-hover:translate-x-0.5 transition-all"
+            className="text-stone-300 group-hover:text-oliva group-hover:translate-x-0.5 transition-all"
           />
         )}
       </div>
@@ -96,7 +96,7 @@ function FilaTarifa({ item }) {
     return (
       <Link
         to={'/servicios/' + item.slug}
-        className="group flex items-center justify-between gap-4 px-6 md:px-8 py-5 hover:bg-[#FAF6EC] transition-colors"
+        className="group flex items-center justify-between gap-4 px-6 md:px-8 py-5 hover:bg-crema-clara transition-colors"
       >
         {contenido}
       </Link>
@@ -124,7 +124,7 @@ export default function Tarifas() {
           <div className="text-[11px] uppercase tracking-[0.22em] text-stone-600 mb-3">
             Tarifas
           </div>
-          <h1 className="font-serif text-5xl md:text-6xl text-[#2E3720] leading-[1.05] tracking-tight">
+          <h1 className="font-serif text-5xl md:text-6xl text-brand leading-[1.05] tracking-tight">
             Precios claros, sin sorpresas.
           </h1>
           <p className="mt-5 text-stone-600 max-w-2xl text-[15px] leading-relaxed">
@@ -143,7 +143,7 @@ export default function Tarifas() {
             {bloques.map((b) => (
               <div key={b.titulo}>
                 <div className="flex items-end justify-between flex-wrap gap-3 mb-5">
-                  <h2 className="font-serif text-2xl md:text-3xl text-[#2E3720]">{b.titulo}</h2>
+                  <h2 className="font-serif text-2xl md:text-3xl text-brand">{b.titulo}</h2>
                 </div>
 
                 <div className="rounded-2xl border border-stone-200 bg-white overflow-hidden">
@@ -164,7 +164,7 @@ export default function Tarifas() {
             ))}
           </div>
 
-          <div className="mt-14 rounded-2xl bg-[#F5EFDF] border border-[#3F4A2A]/10 p-6 md:p-8">
+          <div className="mt-14 rounded-2xl bg-crema border border-oliva/10 p-6 md:p-8">
             <div className="text-[11px] uppercase tracking-[0.22em] text-amber-700/80 mb-2">
               Información importante
             </div>
@@ -172,7 +172,7 @@ export default function Tarifas() {
               <li>• Los precios pueden variar según la zona, la duración total del servicio o necesidades especiales.</li>
               <li>• Para reservas de pensión recomendamos contactar con antelación, sobre todo en periodos vacacionales.</li>
               <li>• Aceptamos pago en efectivo y transferencia. Confirma la modalidad por WhatsApp al reservar.</li>
-              <li>• ¿Buscas material para tu perro? Visita nuestra <Link to="/tienda" className="text-[#3F4A2A] underline underline-offset-2">tienda</Link>.</li>
+              <li>• ¿Buscas material para tu perro? Visita nuestra <Link to="/tienda" className="text-oliva underline underline-offset-2">tienda</Link>.</li>
             </ul>
           </div>
         </div>
@@ -180,7 +180,7 @@ export default function Tarifas() {
 
       <section className="py-14 md:py-20 border-t border-stone-200">
         <div className="max-w-4xl mx-auto px-5 md:px-8 text-center">
-          <h2 className="font-serif text-3xl md:text-4xl text-[#2E3720] leading-tight">
+          <h2 className="font-serif text-3xl md:text-4xl text-brand leading-tight">
             ¿Tienes dudas sobre qué servicio te conviene?
           </h2>
           <p className="mt-4 text-stone-600 max-w-xl mx-auto text-[15px]">
@@ -192,14 +192,14 @@ export default function Tarifas() {
               href={WHATSAPP_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-full bg-[#3F4A2A] text-[#FAF6EC] px-7 py-3.5 text-[14px] font-medium hover:bg-[#2E3720] transition-colors"
+              className="inline-flex items-center gap-2 rounded-full bg-oliva text-crema-clara px-7 py-3.5 text-[14px] font-medium hover:bg-brand transition-colors"
             >
               <MessageCircle size={16} />
               Pregunta por WhatsApp
             </a>
             <Link
               to="/servicios"
-              className="inline-flex items-center gap-2 rounded-full border border-[#3F4A2A]/25 text-[#3F4A2A] px-7 py-3.5 text-[14px] font-medium hover:bg-[#3F4A2A]/5 transition-colors"
+              className="inline-flex items-center gap-2 rounded-full border border-oliva/25 text-oliva px-7 py-3.5 text-[14px] font-medium hover:bg-oliva/5 transition-colors"
             >
               Ver servicios
               <ArrowRight size={16} />

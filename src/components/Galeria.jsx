@@ -18,7 +18,7 @@ export default function Galeria({
   alt = '',
   aspectRatio = 'aspect-[16/10] md:aspect-[16/9]',
   showThumbnails = true,
-  bgColor = 'bg-[#3F4A2A]/10',
+  bgColor = 'bg-oliva/10',
 }) {
   const [activeIdx, setActiveIdx] = useState(0)
   const [lightboxOpen, setLightboxOpen] = useState(false)
@@ -66,7 +66,7 @@ export default function Galeria({
             <button
               type="button"
               onClick={prev}
-              className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/85 hover:bg-white text-[#2E3720] flex items-center justify-center shadow-md"
+              className="absolute left-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/85 hover:bg-white text-brand flex items-center justify-center shadow-md"
               aria-label="Anterior"
             >
               <ChevronLeft size={18} />
@@ -74,7 +74,7 @@ export default function Galeria({
             <button
               type="button"
               onClick={next}
-              className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/85 hover:bg-white text-[#2E3720] flex items-center justify-center shadow-md"
+              className="absolute right-3 top-1/2 -translate-y-1/2 w-10 h-10 rounded-full bg-white/85 hover:bg-white text-brand flex items-center justify-center shadow-md"
               aria-label="Siguiente"
             >
               <ChevronRight size={18} />
@@ -96,7 +96,7 @@ export default function Galeria({
               className={
                 'shrink-0 w-16 h-14 md:w-20 md:h-16 rounded-lg overflow-hidden transition-all ' +
                 (i === activeIdx
-                  ? 'ring-2 ring-[#3F4A2A] ring-offset-2 ring-offset-[#FAF6EC]'
+                  ? 'ring-2 ring-oliva ring-offset-2 ring-offset-crema-clara'
                   : 'opacity-60 hover:opacity-100')
               }
               aria-label={'Ver foto ' + (i + 1)}

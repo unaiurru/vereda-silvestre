@@ -88,7 +88,7 @@ export default function Unete() {
   }
 
   const inputClass =
-    'w-full rounded-xl border border-stone-300 bg-white px-4 py-3 text-[14px] text-stone-800 placeholder:text-stone-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3F4A2A] focus-visible:border-[#3F4A2A] transition-colors'
+    'w-full rounded-xl border border-stone-300 bg-white px-4 py-3 text-[14px] text-stone-800 placeholder:text-stone-400 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-oliva focus-visible:border-oliva transition-colors'
 
   return (
     <div>
@@ -97,7 +97,7 @@ export default function Unete() {
         <div className="max-w-6xl mx-auto px-5 md:px-8 py-16 md:py-20">
           <Link
             to="/"
-            className="inline-flex items-center gap-1.5 text-[12.5px] text-stone-600 hover:text-[#3F4A2A] mb-5"
+            className="inline-flex items-center gap-1.5 text-[12.5px] text-stone-600 hover:text-oliva mb-5"
           >
             <ArrowLeft size={14} />
             Volver al inicio
@@ -107,7 +107,7 @@ export default function Unete() {
               <div className="text-[11px] uppercase tracking-[0.22em] text-stone-600 mb-3">
                 Trabaja con nosotros
               </div>
-              <h1 className="font-serif text-5xl md:text-6xl text-[#2E3720] leading-[1.05] tracking-tight">
+              <h1 className="font-serif text-5xl md:text-6xl text-brand leading-[1.05] tracking-tight">
                 Únete a nuestro equipo
               </h1>
               <p className="mt-5 text-stone-600 max-w-xl text-[15px] leading-relaxed">
@@ -116,7 +116,7 @@ export default function Unete() {
                 comunicación asertiva.
               </p>
             </div>
-            <div className="rounded-2xl overflow-hidden bg-[#F5EFDF] aspect-[4/3]">
+            <div className="rounded-2xl overflow-hidden bg-crema aspect-[4/3]">
               <img
                 src="/adiestradora-vaquera-perro-llanura.jpeg"
                 alt="Entorno natural del centro canino Vereda Silvestre"
@@ -152,10 +152,10 @@ export default function Unete() {
           <div className="grid sm:grid-cols-3 gap-5 mt-12">
             {PERFILES.map((p) => (
               <div key={p.titulo} className="rounded-2xl border border-stone-200 bg-white p-6">
-                <div className="w-10 h-10 rounded-full bg-[#3F4A2A]/10 text-[#3F4A2A] flex items-center justify-center mb-4">
+                <div className="w-10 h-10 rounded-full bg-oliva/10 text-oliva flex items-center justify-center mb-4">
                   <p.icon size={18} strokeWidth={1.7} />
                 </div>
-                <h3 className="font-serif text-lg text-[#2E3720] mb-2">{p.titulo}</h3>
+                <h3 className="font-serif text-lg text-brand mb-2">{p.titulo}</h3>
                 <p className="text-[13.5px] text-stone-600 leading-relaxed">{p.texto}</p>
               </div>
             ))}
@@ -166,11 +166,11 @@ export default function Unete() {
       {/* Cómo aplicar */}
       <section className="pb-20 md:pb-28">
         <div className="max-w-3xl mx-auto px-5 md:px-8">
-          <div className="rounded-3xl border border-stone-200 bg-[#F5EFDF]/60 p-7 md:p-10">
+          <div className="rounded-3xl border border-stone-200 bg-crema/60 p-7 md:p-10">
             <div className="text-[11px] uppercase tracking-[0.22em] text-stone-600 mb-3">
               ¿Cómo aplicar?
             </div>
-            <h2 className="font-serif text-3xl md:text-4xl text-[#2E3720] leading-[1.1] mb-3">
+            <h2 className="font-serif text-3xl md:text-4xl text-brand leading-[1.1] mb-3">
               Cuéntanos sobre ti
             </h2>
             <p className="text-[14px] text-stone-600 leading-relaxed mb-8 max-w-xl">
@@ -195,7 +195,7 @@ export default function Unete() {
               <div className="grid sm:grid-cols-2 gap-5">
                 <div>
                   <label htmlFor="nombre" className="block text-[13px] font-medium text-stone-700 mb-1.5">
-                    Nombre <span className="text-[#3F4A2A]">*</span>
+                    Nombre <span className="text-oliva">*</span>
                   </label>
                   <input
                     id="nombre"
@@ -211,7 +211,7 @@ export default function Unete() {
                 </div>
                 <div>
                   <label htmlFor="email" className="block text-[13px] font-medium text-stone-700 mb-1.5">
-                    Email <span className="text-[#3F4A2A]">*</span>
+                    Email <span className="text-oliva">*</span>
                   </label>
                   <input
                     id="email"
@@ -263,7 +263,7 @@ export default function Unete() {
 
               <div>
                 <label htmlFor="mensaje" className="block text-[13px] font-medium text-stone-700 mb-1.5">
-                  Mensaje <span className="text-[#3F4A2A]">*</span>
+                  Mensaje <span className="text-oliva">*</span>
                 </label>
                 <textarea
                   id="mensaje"
@@ -280,14 +280,14 @@ export default function Unete() {
               <button
                 type="submit"
                 disabled={!form.nombre.trim() || !form.email.trim() || !form.mensaje.trim()}
-                className="inline-flex items-center justify-center gap-2 min-h-[44px] rounded-full px-7 py-3.5 text-[14px] font-medium bg-[#3F4A2A] text-[#FAF6EC] hover:bg-[#2E3720] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3F4A2A] focus-visible:ring-offset-2 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
+                className="inline-flex items-center justify-center gap-2 min-h-[44px] rounded-full px-7 py-3.5 text-[14px] font-medium bg-oliva text-crema-clara hover:bg-brand focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-oliva focus-visible:ring-offset-2 transition-colors disabled:opacity-40 disabled:cursor-not-allowed"
               >
                 <Send size={15} />
                 Enviar por WhatsApp
               </button>
 
               {enviado && (
-                <div className="text-[13px] text-[#3F4A2A]">
+                <div className="text-[13px] text-oliva">
                   ✓ Hemos abierto WhatsApp con tu mensaje. Si no se abrió, revisa tu navegador.
                 </div>
               )}

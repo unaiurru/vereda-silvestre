@@ -62,7 +62,7 @@ export default function Lightbox({ src, sources, startIndex = 0, alt = '', child
       >
         {children}
         {/* Indicador de zoom al hover */}
-        <span className="absolute top-3 right-3 w-9 h-9 rounded-full bg-white/85 text-[#2E3720] flex items-center justify-center shadow-md opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
+        <span className="absolute top-3 right-3 w-9 h-9 rounded-full bg-white/85 text-brand flex items-center justify-center shadow-md opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none">
           <ZoomIn size={16} strokeWidth={2} />
         </span>
       </button>

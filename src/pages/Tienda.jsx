@@ -15,8 +15,8 @@ const ORDENES = [
 ]
 
 const etiquetaBadge = {
-  'mas-vendido': { texto: 'Más vendido', clase: 'bg-[#3F4A2A] text-[#FAF6EC]' },
-  nuevo: { texto: 'Nuevo', clase: 'bg-amber-700 text-[#FAF6EC]' },
+  'mas-vendido': { texto: 'Más vendido', clase: 'bg-oliva text-crema-clara' },
+  nuevo: { texto: 'Nuevo', clase: 'bg-amber-700 text-crema-clara' },
 }
 
 export default function Tienda() {
@@ -77,10 +77,10 @@ export default function Tienda() {
               key={c}
               onClick={() => setCategoria(c)}
               className={
-                'block w-full text-left px-3 py-2 rounded-lg text-[14px] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3F4A2A] ' +
+                'block w-full text-left px-3 py-2 rounded-lg text-[14px] transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-oliva ' +
                 (categoria === c
-                  ? 'bg-[#3F4A2A] text-[#FAF6EC]'
-                  : 'text-stone-700 hover:bg-[#3F4A2A]/5')
+                  ? 'bg-oliva text-crema-clara'
+                  : 'text-stone-700 hover:bg-oliva/5')
               }
             >
               {c}
@@ -102,7 +102,7 @@ export default function Tienda() {
             placeholder="Mín"
             value={min}
             onChange={(e) => setMin(e.target.value)}
-            className="w-full rounded-lg border border-stone-300 bg-white px-3 py-2 text-[14px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3F4A2A] focus-visible:border-[#3F4A2A]"
+            className="w-full rounded-lg border border-stone-300 bg-white px-3 py-2 text-[14px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-oliva focus-visible:border-oliva"
           />
           <span className="text-stone-400">–</span>
           <label className="sr-only" htmlFor="precio-max">Precio máximo</label>
@@ -114,7 +114,7 @@ export default function Tienda() {
             placeholder="Máx"
             value={max}
             onChange={(e) => setMax(e.target.value)}
-            className="w-full rounded-lg border border-stone-300 bg-white px-3 py-2 text-[14px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3F4A2A] focus-visible:border-[#3F4A2A]"
+            className="w-full rounded-lg border border-stone-300 bg-white px-3 py-2 text-[14px] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-oliva focus-visible:border-oliva"
           />
         </div>
       </div>
@@ -127,7 +127,7 @@ export default function Tienda() {
       <section className="border-b border-stone-200">
         <div className="max-w-6xl mx-auto px-5 md:px-8 py-12 md:py-16">
           <div className="text-[11px] uppercase tracking-[0.22em] text-stone-600 mb-3">Tienda</div>
-          <h1 className="font-serif text-5xl md:text-6xl text-[#2E3720] leading-[1.05] tracking-tight">
+          <h1 className="font-serif text-5xl md:text-6xl text-brand leading-[1.05] tracking-tight">
             Tienda
           </h1>
           <p className="mt-5 text-stone-600 max-w-xl text-[15px] leading-relaxed">
@@ -150,7 +150,7 @@ export default function Tienda() {
               <div className="flex items-center justify-between gap-3 mb-6">
                 <button
                   onClick={() => setFiltrosAbiertos((v) => !v)}
-                  className="lg:hidden inline-flex items-center gap-2 min-h-[44px] rounded-full border border-stone-300 px-4 py-2 text-[13px] text-stone-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3F4A2A]"
+                  className="lg:hidden inline-flex items-center gap-2 min-h-[44px] rounded-full border border-stone-300 px-4 py-2 text-[13px] text-stone-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-oliva"
                   aria-expanded={filtrosAbiertos}
                 >
                   <SlidersHorizontal size={15} />
@@ -163,7 +163,7 @@ export default function Tienda() {
                     id="orden"
                     value={orden}
                     onChange={(e) => setOrden(e.target.value)}
-                    className="rounded-full border border-stone-300 bg-white px-4 py-2 text-[13px] text-stone-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3F4A2A]"
+                    className="rounded-full border border-stone-300 bg-white px-4 py-2 text-[13px] text-stone-700 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-oliva"
                   >
                     {ORDENES.map((o) => (
                       <option key={o.id} value={o.id}>{o.label}</option>
@@ -207,7 +207,7 @@ export default function Tienda() {
                         className="flex-col"
                       >
                       <article
-                        className="group relative w-full rounded-2xl border border-stone-200 bg-white overflow-hidden hover:border-[#3F4A2A]/40 transition-colors flex flex-col flex-1"
+                        className="group relative w-full rounded-2xl border border-stone-200 bg-white overflow-hidden hover:border-oliva/40 transition-colors flex flex-col flex-1"
                       >
                         {badge && (
                           <span className={'absolute top-3 left-3 z-10 px-3 py-1 text-[10px] uppercase tracking-wide rounded ' + badge.clase}>
@@ -215,12 +215,12 @@ export default function Tienda() {
                           </span>
                         )}
                         {agotado && (
-                          <span className="absolute top-3 right-3 z-10 px-3 py-1 text-[10px] uppercase tracking-wide rounded bg-stone-700 text-[#FAF6EC]">
+                          <span className="absolute top-3 right-3 z-10 px-3 py-1 text-[10px] uppercase tracking-wide rounded bg-stone-700 text-crema-clara">
                             Agotado
                           </span>
                         )}
 
-                        <div className="aspect-square overflow-hidden bg-[#F5EFDF]">
+                        <div className="aspect-square overflow-hidden bg-crema">
                           <img
                             src={p.imagen}
                             alt={p.nombre}
@@ -232,21 +232,21 @@ export default function Tienda() {
                           <div className="text-[10px] uppercase tracking-[0.18em] text-stone-500 mb-1">
                             {p.categoria}
                           </div>
-                          <h3 className="text-[14px] font-medium text-[#2E3720] leading-snug mb-2">
+                          <h3 className="text-[14px] font-medium text-brand leading-snug mb-2">
                             {p.nombre}
                           </h3>
-                          <div className="font-serif text-[16px] text-[#3F4A2A] mb-4">{p.precio} MXN</div>
+                          <div className="font-serif text-[16px] text-oliva mb-4">{p.precio} MXN</div>
 
                           <button
                             onClick={() => onAgregar(p.id)}
                             disabled={agotado}
                             className={
-                              'relative z-10 mt-auto inline-flex items-center justify-center gap-1.5 min-h-[44px] rounded-full px-4 py-2.5 text-[13px] font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3F4A2A] focus-visible:ring-offset-2 ' +
+                              'relative z-10 mt-auto inline-flex items-center justify-center gap-1.5 min-h-[44px] rounded-full px-4 py-2.5 text-[13px] font-medium transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-oliva focus-visible:ring-offset-2 ' +
                               (agotado
                                 ? 'bg-stone-200 text-stone-400 cursor-not-allowed'
                                 : recienAgregado
-                                  ? 'bg-[#2E3720] text-[#FAF6EC]'
-                                  : 'bg-[#3F4A2A] text-[#FAF6EC] hover:bg-[#2E3720]')
+                                  ? 'bg-brand text-crema-clara'
+                                  : 'bg-oliva text-crema-clara hover:bg-brand')
                             }
                             aria-label={'Agregar ' + p.nombre + ' al carrito'}
                           >
@@ -269,7 +269,7 @@ export default function Tienda() {
                         {/* Enlace que cubre la card hacia el detalle (sin tapar el botón). */}
                         <Link
                           to={'/tienda/' + p.id}
-                          className="absolute inset-0 rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3F4A2A] focus-visible:ring-offset-2"
+                          className="absolute inset-0 rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-oliva focus-visible:ring-offset-2"
                           aria-label={'Ver ' + p.nombre}
                         >
                           <span className="sr-only">Ver {p.nombre}</span>

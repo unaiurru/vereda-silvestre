@@ -43,7 +43,7 @@ export default function CarruselAuto({
           src={src}
           alt={alt}
           className={
-            'absolute inset-0 w-full h-full object-contain bg-[#F5EFDF] transition-opacity duration-700 ease-in-out ' +
+            'absolute inset-0 w-full h-full object-contain bg-crema transition-opacity duration-700 ease-in-out ' +
             (i === idx ? 'opacity-100' : 'opacity-0')
           }
         />

@@ -7,7 +7,7 @@ import CarritoDrawer from './CarritoDrawer'
 
 export default function Layout() {
   return (
-    <div className="min-h-screen flex flex-col bg-[#FAF6EC] text-stone-800 font-sans">
+    <div className="min-h-screen flex flex-col bg-crema-clara text-stone-800 font-sans">
       <ScrollToTop />
       <Header />
       <main className="flex-1">

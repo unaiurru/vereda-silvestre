@@ -92,9 +92,9 @@ export default function Servicios() {
 
   const chipBase =
     'shrink-0 inline-flex items-center gap-1.5 min-h-[40px] rounded-full px-4 py-2 text-[13px] font-medium ' +
-    'transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3F4A2A] focus-visible:ring-offset-2'
-  const chipOn = 'bg-[#3F4A2A] text-[#FAF6EC]'
-  const chipOff = 'bg-white text-stone-700 border border-stone-300 hover:border-[#3F4A2A]/40 hover:bg-[#3F4A2A]/5'
+    'transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-oliva focus-visible:ring-offset-2'
+  const chipOn = 'bg-oliva text-crema-clara'
+  const chipOff = 'bg-white text-stone-700 border border-stone-300 hover:border-oliva/40 hover:bg-oliva/5'
 
   const estados = [
     { id: 'todos', label: 'Todos' },
@@ -110,7 +110,7 @@ export default function Servicios() {
           <div className="text-[11px] uppercase tracking-[0.22em] text-stone-600 mb-3">
             Nuestros servicios
           </div>
-          <h1 className="font-serif text-5xl md:text-6xl text-[#2E3720] leading-[1.05] tracking-tight">
+          <h1 className="font-serif text-5xl md:text-6xl text-brand leading-[1.05] tracking-tight">
             Cada perro tiene lo que necesita.
           </h1>
           <p className="mt-5 text-stone-600 max-w-xl text-[15px] leading-relaxed">
@@ -136,7 +136,7 @@ export default function Servicios() {
               className={`${chipBase} ${!catActiva ? chipOn : chipOff}`}
             >
               Todos
-              <span className={!catActiva ? 'text-[#FAF6EC]/70' : 'text-stone-400'}>
+              <span className={!catActiva ? 'text-crema-clara/70' : 'text-stone-400'}>
                 {servicios.length}
               </span>
             </button>
@@ -151,7 +151,7 @@ export default function Servicios() {
                   className={`${chipBase} ${on ? chipOn : chipOff}`}
                 >
                   {c.nombre}
-                  <span className={on ? 'text-[#FAF6EC]/70' : 'text-stone-400'}>{c.count}</span>
+                  <span className={on ? 'text-crema-clara/70' : 'text-stone-400'}>{c.count}</span>
                 </button>
               )
             })}
@@ -191,7 +191,7 @@ export default function Servicios() {
               <button
                 type="button"
                 onClick={resetear}
-                className="inline-flex items-center gap-1.5 text-[13px] font-medium text-[#3F4A2A] hover:text-[#2E3720] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3F4A2A] focus-visible:ring-offset-2 rounded"
+                className="inline-flex items-center gap-1.5 text-[13px] font-medium text-oliva hover:text-brand focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-oliva focus-visible:ring-offset-2 rounded"
               >
                 <X size={14} />
                 Quitar filtros
@@ -201,8 +201,8 @@ export default function Servicios() {
 
           {/* Grid de servicios o estado vacío */}
           {lista.length === 0 ? (
-            <div className="mt-10 rounded-2xl border border-dashed border-stone-300 bg-[#F5EFDF]/40 py-16 px-6 text-center">
-              <p className="font-serif text-xl text-[#2E3720]">
+            <div className="mt-10 rounded-2xl border border-dashed border-stone-300 bg-crema/40 py-16 px-6 text-center">
+              <p className="font-serif text-xl text-brand">
                 No hay servicios con estos filtros.
               </p>
               <p className="mt-2 text-[14px] text-stone-600">
@@ -211,7 +211,7 @@ export default function Servicios() {
               <button
                 type="button"
                 onClick={resetear}
-                className="mt-6 inline-flex items-center gap-2 rounded-full bg-[#3F4A2A] text-[#FAF6EC] px-5 py-2.5 text-[13px] font-medium hover:bg-[#2E3720] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3F4A2A] focus-visible:ring-offset-2 transition-colors"
+                className="mt-6 inline-flex items-center gap-2 rounded-full bg-oliva text-crema-clara px-5 py-2.5 text-[13px] font-medium hover:bg-brand focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-oliva focus-visible:ring-offset-2 transition-colors"
               >
                 Ver todos los servicios
               </button>
@@ -223,16 +223,16 @@ export default function Servicios() {
                 return (
                   <article
                     key={s.slug}
-                    className="group relative rounded-2xl border border-stone-200 bg-white overflow-hidden hover:border-[#3F4A2A]/40 hover:-translate-y-1 transition-all duration-300"
+                    className="group relative rounded-2xl border border-stone-200 bg-white overflow-hidden hover:border-oliva/40 hover:-translate-y-1 transition-all duration-300"
                   >
                     {/* Badge "Finalizado" */}
                     {finalizado && (
-                      <span className="absolute top-3 left-3 z-10 bg-stone-700 text-[#FAF6EC] px-3 py-1 text-xs uppercase tracking-wide rounded">
+                      <span className="absolute top-3 left-3 z-10 bg-stone-700 text-crema-clara px-3 py-1 text-xs uppercase tracking-wide rounded">
                         Finalizado
                       </span>
                     )}
 
-                    <div className="aspect-[4/3] overflow-hidden bg-[#F5EFDF] flex items-center justify-center">
+                    <div className="aspect-[4/3] overflow-hidden bg-crema flex items-center justify-center">
                       {s.portada ? (
                         <img
                           src={s.portada}
@@ -252,14 +252,14 @@ export default function Servicios() {
                       <div className="text-[10px] uppercase tracking-[0.2em] text-stone-600 mb-2">
                         {s.categoria}
                       </div>
-                      <h3 className="font-serif text-xl text-[#2E3720] mb-3">{s.titulo}</h3>
+                      <h3 className="font-serif text-xl text-brand mb-3">{s.titulo}</h3>
                       <p className="text-[13.5px] text-stone-600 leading-relaxed mb-5">
                         {s.resumen}
                       </p>
                       <div className="flex items-center justify-between gap-3 pt-4 border-t border-stone-200">
-                        <span className="font-serif text-[15px] text-[#2E3720]">{s.precio}</span>
+                        <span className="font-serif text-[15px] text-brand">{s.precio}</span>
                         {finalizado ? (
-                          <span className="inline-flex items-center gap-1 text-[12.5px] font-medium text-[#3F4A2A]">
+                          <span className="inline-flex items-center gap-1 text-[12.5px] font-medium text-oliva">
                             Ver detalles
                             <ArrowRight size={14} className="transition-transform group-hover:translate-x-1" />
                           </span>
@@ -271,7 +271,7 @@ export default function Servicios() {
                             target="_blank"
                             rel="noopener noreferrer"
                             onClick={(e) => e.stopPropagation()}
-                            className="relative z-10 inline-flex items-center gap-1.5 min-h-[44px] rounded-full bg-[#3F4A2A] text-[#FAF6EC] px-4 py-2 text-[12.5px] font-medium hover:bg-[#2E3720] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3F4A2A] focus-visible:ring-offset-2 transition-colors"
+                            className="relative z-10 inline-flex items-center gap-1.5 min-h-[44px] rounded-full bg-oliva text-crema-clara px-4 py-2 text-[12.5px] font-medium hover:bg-brand focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-oliva focus-visible:ring-offset-2 transition-colors"
                           >
                             <MessageCircle size={14} />
                             Reservar
@@ -284,7 +284,7 @@ export default function Servicios() {
                         Va al final para no tapar el botón "Reservar" (z-10). */}
                     <Link
                       to={'/servicios/' + s.slug}
-                      className="absolute inset-0 rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[#3F4A2A] focus-visible:ring-offset-2"
+                      className="absolute inset-0 rounded-2xl focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-oliva focus-visible:ring-offset-2"
                       aria-label={'Ver detalles de ' + s.titulo}
                     >
                       <span className="sr-only">Ver detalles de {s.titulo}</span>
