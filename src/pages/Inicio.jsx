@@ -15,22 +15,28 @@ const beneficios = [
 
 const serviciosDestacados = [
   {
-    titulo: 'Pensión campestre',
-    desc: 'Estancia diaria con paseos, descanso y supervisión profesional. Adaptada a cada tamaño.',
+    titulo: 'Cachorro',
+    desc: 'Porque un buen inicio siempre es mejor.',
     link: '/servicios',
-    imgs: ['/pension-pequeno-1.jpg', '/mediano-1.jpg', '/perro-atardecer.jpg'],
+    imgs: ['/cachorro-poodle-bicolor-primer-plano.jpeg', '/pequeno-1.jpg', '/pequeno-2.jpg'],
   },
   {
-    titulo: 'Adiestramiento',
-    desc: 'Sesiones individuales (agility u obediencia) y clases grupales. Manejo respetuoso.',
+    titulo: 'Educación familiar',
+    desc: 'Comprende a profundidad los problemas de comportamiento.',
     link: '/servicios',
-    imgs: ['/adiestramiento-obediencia-1.jpg', '/adiestramiento-1.jpg', '/clase-grupal-1.jpg'],
+    imgs: ['/mujer-adiestrando-perro-campo-seco-editado.jpg', '/adiestramiento-obediencia-1.jpg', '/adiestramiento-1.jpg'],
   },
   {
-    titulo: 'Paseos y excursiones',
-    desc: 'Salidas al campo con manejo respetuoso y rutas adaptadas a cada perro.',
+    titulo: 'Activación natural y entrenamiento',
+    desc: 'Enriquecimiento ambiental, socialización y entrenamiento. Paseo estructurado.',
     link: '/servicios',
-    imgs: ['/paseo-1h-1.jpg', '/paseo-30min-1.jpg', '/excursion-grande-1.jpg'],
+    imgs: ['/cocker-spaniel-saltando-agility.jpg', '/paseo-1h-1.jpg', '/excursion-grande-1.jpg'],
+  },
+  {
+    titulo: 'Pensión Campestre',
+    desc: 'Prioriza su socialización, fomenta el desapego e interacciones más balanceadas con perros y personas.',
+    link: '/servicios',
+    imgs: ['/pension-pequeno-1.jpg', '/perro-atardecer.jpg', '/dos-perros-campo.jpg'],
   },
 ]
 
@@ -113,14 +119,14 @@ export default function Inicio() {
           <div className="max-w-2xl mb-12">
             <div className="text-[11px] uppercase tracking-[0.22em] text-stone-600 mb-3">Servicios</div>
             <h2 className="font-serif text-4xl md:text-5xl text-[#2E3720] leading-[1.1]">
-              Todo lo que tu perro necesita.
+              Nuestros programas.
             </h2>
             <p className="mt-4 text-stone-600">
-              Pensión, adiestramiento, paseos y excursiones. Cada servicio se adapta al perro, no al revés.
+              Cuatro caminos para acompañar a tu perro según lo que necesita en cada etapa.
             </p>
           </div>
 
-          <div className="grid md:grid-cols-3 gap-5">
+          <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-5">
             {serviciosDestacados.map((s) => (
               <Link
                 key={s.titulo}
