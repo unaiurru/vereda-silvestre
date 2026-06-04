@@ -1,20 +1,4 @@
 {
-  "nombreDuenia": "Mine",
-  "cabecera": {
-    "epigrafe": "Quiénes somos",
-    "titulo": "Una vereda que recorremos contigo y con tu perro.",
-    "subtitulo": "Vereda Silvestre es un proyecto pequeño y cuidado. Sin franquicias, sin recetas mágicas. Solo trabajo honesto, escucha real y mucho respeto por cada perro que pasa por aquí."
-  },
-  "presentacion": {
-    "epigrafe": "Hola",
-    "imagen": "/duenia.jpg",
-    "historia": [
-      "Crecí rodeada de perros. Desde niña, mi forma natural de relacionarme con el mundo ha pasado por ellos: los observaba, los acompañaba, aprendía a leer lo que sentían sin que tuvieran que decírmelo. Ese vínculo nunca se fue.",
-      "Después de años trabajando en distintos espacios con animales, vi algo que se repetía: muchas familias quieren a sus perros, pero no siempre saben cómo entenderlos. Y muchos perros sufren no por falta de cariño, sino por falta de comunicación.",
-      "Vereda Silvestre nace de ahí: del deseo de crear un lugar donde el perro sea escuchado de verdad, donde las familias encuentren acompañamiento real y donde el campo sirva como aula y como refugio."
-    ]
-  },
-  "frase": "El perro no es un proyecto que corregir, es un compañero que comprender.",
   "formacion": {
     "epigrafe": "Formación y experiencia",
     "titulo": "Aprender no es opcional.",
@@ -26,15 +10,7 @@
       "Primeros auxilios caninos"
     ]
   },
-  "enfoque": {
-    "epigrafe": "Nuestro enfoque",
-    "titulo": "Tres pilares que no negociamos.",
-    "pilares": [
-      { "icono": "Eye", "titulo": "Observación", "texto": "Antes de actuar, miramos. El comportamiento del perro siempre tiene una causa, y nuestro trabajo empieza por entenderla." },
-      { "icono": "Heart", "titulo": "Comunicación", "texto": "Lenguaje claro, coherente y respetuoso. El perro entiende cuando lo escuchamos, y aprende cuando no le imponemos." },
-      { "icono": "Users", "titulo": "Acompañamiento", "texto": "El cambio sostenible incluye al tutor. Te enseñamos a mantenerlo en casa para que el vínculo siga creciendo." }
-    ]
-  },
+  "frase": "El perro no es un proyecto que corregir, es un compañero que comprender.",
   "rancho": {
     "epigrafe": "El lugar",
     "titulo": "Un rancho a las afueras de Jilotepec.",
@@ -44,25 +20,48 @@
       "Tenemos zonas de descanso al aire libre y resguardadas, áreas para entrenamiento, espacios de convivencia controlada y rutas seguras para paseos y excursiones."
     ],
     "cifras": [
-      { "numero": "+5", "etiqueta": "años de experiencia" },
-      { "numero": "+100", "etiqueta": "perros acompañados" },
-      { "numero": "100%", "etiqueta": "manejo respetuoso" }
+      {
+        "numero": "+5",
+        "etiqueta": "años de experiencia"
+      },
+      {
+        "numero": "+100",
+        "etiqueta": "perros acompañados"
+      },
+      {
+        "numero": "100%",
+        "etiqueta": "manejo respetuoso"
+      }
     ]
   },
-  "galeria": {
-    "epigrafe": "El día a día",
-    "titulo": "Algunos momentos de Vereda Silvestre.",
-    "items": [
-      { "id": 1, "type": "image", "title": "Atardeceres en el campo", "desc": "Espacio abierto para correr, oler y descansar mientras cae el sol.", "url": "/perro-atardecer.jpg", "span": "col-span-2 row-span-2 sm:col-span-2 sm:row-span-2 md:col-span-2 md:row-span-2" },
-      { "id": 2, "type": "image", "title": "Entre flores silvestres", "desc": "Paseos guiados por la vereda, a su ritmo y en buena compañía.", "url": "/adiestradora-tres-perros-campo-flores.jpeg", "span": "col-span-2 row-span-1 sm:col-span-1 sm:row-span-1 md:col-span-2 md:row-span-1" },
-      { "id": 3, "type": "image", "title": "Compañeros de vereda", "desc": "Convivencia tranquila entre perros que aprenden a estar juntos.", "url": "/dos-perros-campo.jpg", "span": "col-span-1 row-span-2 sm:col-span-1 sm:row-span-2 md:col-span-1 md:row-span-2" },
-      { "id": 4, "type": "image", "title": "La hora dorada", "desc": "Trabajo en calma al final del día, cuando el campo se vuelve ámbar.", "url": "/adiestradora-dos-cattle-dogs-atardecer.jpeg", "span": "col-span-1 row-span-1 sm:col-span-1 sm:row-span-1 md:col-span-1 md:row-span-1" },
-      { "id": 5, "type": "image", "title": "Pura energía", "desc": "Ejercicios de agility para soltar tensión y ganar confianza.", "url": "/cocker-spaniel-saltando-agility.jpg", "span": "col-span-2 row-span-2 sm:col-span-2 sm:row-span-2 md:col-span-2 md:row-span-2" },
-      { "id": 6, "type": "image", "title": "Descanso merecido", "desc": "Después de la sesión, un momento para parar y respirar.", "url": "/border-collie-merle-arnes-tumbado.jpg", "span": "col-span-1 row-span-1 sm:col-span-1 sm:row-span-1 md:col-span-1 md:row-span-1" },
-      { "id": 7, "type": "image", "title": "Amanece en el rancho", "desc": "Las primeras luces sobre la pradera, listos para empezar.", "url": "/pastor-tricolor-sentado-cerca-amanecer.jpg", "span": "col-span-1 row-span-2 sm:col-span-1 sm:row-span-2 md:col-span-1 md:row-span-2" },
-      { "id": 8, "type": "image", "title": "Mine y su equipo", "desc": "Un vínculo que se construye día a día, con paciencia y respeto.", "url": "/selfie-adiestradora-malinois-campo.jpg", "span": "col-span-2 row-span-1 sm:col-span-2 sm:row-span-1 md:col-span-2 md:row-span-1" },
-      { "id": 9, "type": "image", "title": "Posando junto al agua", "desc": "Cada perro tiene su carácter, y aquí hay sitio para todos.", "url": "/pomerania-posando-estanque-editado.jpg", "span": "col-span-1 row-span-1 sm:col-span-1 sm:row-span-1 md:col-span-1 md:row-span-1" },
-      { "id": 10, "type": "image", "title": "Miradas al horizonte", "desc": "Paseos junto a la laguna cuando el campo se queda en silencio.", "url": "/perro-canela-mirando-laguna-luna.jpg", "span": "col-span-1 row-span-1 sm:col-span-1 sm:row-span-1 md:col-span-1 md:row-span-1" }
+  "presentacion": {
+    "epigrafe": "Hola",
+    "imagen": "/duenia.jpg",
+    "historia": [
+      "Crecí rodeada de perros. Desde niña, mi forma natural de relacionarme con el mundo ha pasado por ellos: los observaba, los acompañaba, aprendía a leer lo que sentían sin que tuvieran que decírmelo. Ese vínculo nunca se fue. :)",
+      "Después de años trabajando en distintos espacios con animales, vi algo que se repetía: muchas familias quieren a sus perros, pero no siempre saben cómo entenderlos. Y muchos perros sufren no por falta de cariño, sino por falta de comunicación.",
+      "Vereda Silvestre nace de ahí: del deseo de crear un lugar donde el perro sea escuchado de verdad, donde las familias encuentren acompañamiento real y donde el campo sirva como aula y como refugio."
+    ]
+  },
+  "enfoque": {
+    "epigrafe": "Nuestro enfoque",
+    "titulo": "Tres pilares que no negociamos.",
+    "pilares": [
+      {
+        "icono": "Eye",
+        "titulo": "Observación",
+        "texto": "Antes de actuar, miramos. El comportamiento del perro siempre tiene una causa, y nuestro trabajo empieza por entenderla."
+      },
+      {
+        "icono": "Heart",
+        "titulo": "Comunicación",
+        "texto": "Lenguaje claro, coherente y respetuoso. El perro entiende cuando lo escuchamos, y aprende cuando no le imponemos."
+      },
+      {
+        "icono": "Users",
+        "titulo": "Acompañamiento",
+        "texto": "El cambio sostenible incluye al tutor. Te enseñamos a mantenerlo en casa para que el vínculo siga creciendo."
+      }
     ]
   },
   "cta": {
@@ -70,5 +69,97 @@
     "texto": "Si te ha gustado lo que has leído, escríbenos. Te conocemos a ti y a tu perro sin compromiso, y desde ahí decidimos juntos qué necesitáis.",
     "ctaWhatsapp": "Escribir por WhatsApp",
     "ctaServicios": "Ver servicios"
-  }
+  },
+  "cabecera": {
+    "epigrafe": "Quiénes somos",
+    "titulo": "Una vereda que recorremos contigo y con tu perro.",
+    "subtitulo": "Vereda Silvestre es un proyecto pequeño y cuidado. Sin franquicias, sin recetas mágicas. Solo trabajo honesto, escucha real y mucho respeto por cada perro que pasa por aquí."
+  },
+  "galeria": {
+    "epigrafe": "El día a día",
+    "titulo": "Algunos momentos de Vereda Silvestre.",
+    "items": [
+      {
+        "id": 1,
+        "type": "image",
+        "title": "Atardeceres en el campo",
+        "desc": "Espacio abierto para correr, oler y descansar mientras cae el sol.",
+        "url": "/perro-atardecer.jpg",
+        "span": "col-span-2 row-span-2 sm:col-span-2 sm:row-span-2 md:col-span-2 md:row-span-2"
+      },
+      {
+        "id": 2,
+        "type": "image",
+        "title": "Entre flores silvestres",
+        "desc": "Paseos guiados por la vereda, a su ritmo y en buena compañía.",
+        "url": "/adiestradora-tres-perros-campo-flores.jpeg",
+        "span": "col-span-2 row-span-1 sm:col-span-1 sm:row-span-1 md:col-span-2 md:row-span-1"
+      },
+      {
+        "id": 3,
+        "type": "image",
+        "title": "Compañeros de vereda",
+        "desc": "Convivencia tranquila entre perros que aprenden a estar juntos.",
+        "url": "/dos-perros-campo.jpg",
+        "span": "col-span-1 row-span-2 sm:col-span-1 sm:row-span-2 md:col-span-1 md:row-span-2"
+      },
+      {
+        "id": 4,
+        "type": "image",
+        "title": "La hora dorada",
+        "desc": "Trabajo en calma al final del día, cuando el campo se vuelve ámbar.",
+        "url": "/adiestradora-dos-cattle-dogs-atardecer.jpeg",
+        "span": "col-span-1 row-span-1 sm:col-span-1 sm:row-span-1 md:col-span-1 md:row-span-1"
+      },
+      {
+        "id": 5,
+        "type": "image",
+        "title": "Pura energía",
+        "desc": "Ejercicios de agility para soltar tensión y ganar confianza.",
+        "url": "/cocker-spaniel-saltando-agility.jpg",
+        "span": "col-span-2 row-span-2 sm:col-span-2 sm:row-span-2 md:col-span-2 md:row-span-2"
+      },
+      {
+        "id": 6,
+        "type": "image",
+        "title": "Descanso merecido",
+        "desc": "Después de la sesión, un momento para parar y respirar.",
+        "url": "/border-collie-merle-arnes-tumbado.jpg",
+        "span": "col-span-1 row-span-1 sm:col-span-1 sm:row-span-1 md:col-span-1 md:row-span-1"
+      },
+      {
+        "id": 7,
+        "type": "image",
+        "title": "Amanece en el rancho",
+        "desc": "Las primeras luces sobre la pradera, listos para empezar.",
+        "url": "/pastor-tricolor-sentado-cerca-amanecer.jpg",
+        "span": "col-span-1 row-span-2 sm:col-span-1 sm:row-span-2 md:col-span-1 md:row-span-2"
+      },
+      {
+        "id": 8,
+        "type": "image",
+        "title": "Mine y su equipo",
+        "desc": "Un vínculo que se construye día a día, con paciencia y respeto.",
+        "url": "/selfie-adiestradora-malinois-campo.jpg",
+        "span": "col-span-2 row-span-1 sm:col-span-2 sm:row-span-1 md:col-span-2 md:row-span-1"
+      },
+      {
+        "id": 9,
+        "type": "image",
+        "title": "Posando junto al agua",
+        "desc": "Cada perro tiene su carácter, y aquí hay sitio para todos.",
+        "url": "/pomerania-posando-estanque-editado.jpg",
+        "span": "col-span-1 row-span-1 sm:col-span-1 sm:row-span-1 md:col-span-1 md:row-span-1"
+      },
+      {
+        "id": 10,
+        "type": "image",
+        "title": "Miradas al horizonte",
+        "desc": "Paseos junto a la laguna cuando el campo se queda en silencio.",
+        "url": "/perro-canela-mirando-laguna-luna.jpg",
+        "span": "col-span-1 row-span-1 sm:col-span-1 sm:row-span-1 md:col-span-1 md:row-span-1"
+      }
+    ]
+  },
+  "nombreDuenia": "Mine"
 }
