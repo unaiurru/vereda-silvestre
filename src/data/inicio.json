@@ -1,16 +1,32 @@
 {
   "hero": {
-    "ubicacion": "Jilotepec, Edo. de México",
+    "ubicacion": "Vereda silvestre",
     "titulo": "Cuidado, educación y bienestar canino en un entorno natural.",
     "subtitulo": "Acompañamos a perros y a sus familias desde el respeto y la comunicación asertiva. Pensión, adiestramiento, paseos y excursiones en pleno campo.",
     "ctaWhatsapp": "Reservar por WhatsApp",
     "ctaServicios": "Ver servicios"
   },
   "beneficios": [
-    { "icono": "Heart", "titulo": "Atención personalizada", "texto": "Cada perro es único. Conocemos su historia y carácter." },
-    { "icono": "Mountain", "titulo": "Entorno natural", "texto": "Espacios abiertos en pleno campo. El mejor lugar para descansar." },
-    { "icono": "PawPrint", "titulo": "Educación respetuosa", "texto": "Comunicación clara, sin coerción. Acompañamos sin imponer." },
-    { "icono": "Sparkles", "titulo": "Bienestar integral", "texto": "Cuerpo, mente y entorno en equilibrio durante toda la estancia." }
+    {
+      "icono": "Heart",
+      "titulo": "Atención personalizada",
+      "texto": "Cada perro es único. Conocemos su historia y carácter."
+    },
+    {
+      "icono": "Mountain",
+      "titulo": "Entorno natural",
+      "texto": "Espacios abiertos en pleno campo. El mejor lugar para descansar."
+    },
+    {
+      "icono": "PawPrint",
+      "titulo": "Educación respetuosa",
+      "texto": "Comunicación clara, sin coerción. Acompañamos sin imponer."
+    },
+    {
+      "icono": "Sparkles",
+      "titulo": "Bienestar integral",
+      "texto": "Cuerpo, mente y entorno en equilibrio durante toda la estancia."
+    }
   ],
   "programas": {
     "epigrafe": "Servicios",
@@ -21,22 +37,40 @@
       {
         "titulo": "Cachorro",
         "desc": "Porque un buen inicio siempre es mejor.",
-        "imgs": ["/dos-perros-corriendo-charco-nopal.jpg", "/cachorro-poodle-bicolor-primer-plano.jpeg", "/pequeno-1.jpg", "/pequeno-2.jpg"]
+        "imgs": [
+          "/dos-perros-corriendo-charco-nopal.jpg",
+          "/cachorro-poodle-bicolor-primer-plano.jpeg",
+          "/pequeno-1.jpg",
+          "/pequeno-2.jpg"
+        ]
       },
       {
         "titulo": "Educación familiar",
         "desc": "Comprende a profundidad los problemas de comportamiento.",
-        "imgs": ["/mujer-adiestrando-perro-campo-seco-editado.jpg", "/adiestramiento-obediencia-1.jpg", "/adiestradora-dos-cattle-dogs-atardecer.jpeg"]
+        "imgs": [
+          "/mujer-adiestrando-perro-campo-seco-editado.jpg",
+          "/adiestramiento-obediencia-1.jpg",
+          "/adiestradora-dos-cattle-dogs-atardecer.jpeg"
+        ]
       },
       {
         "titulo": "Activación natural y entrenamiento",
         "desc": "Enriquecimiento ambiental, socialización y entrenamiento. Paseo estructurado.",
-        "imgs": ["/cocker-spaniel-pomerania-descansando-parque.jpg", "/cocker-spaniel-saltando-agility.jpg", "/paseo-1h-1.jpg", "/excursion-grande-1.jpg"]
+        "imgs": [
+          "/cocker-spaniel-pomerania-descansando-parque.jpg",
+          "/cocker-spaniel-saltando-agility.jpg",
+          "/paseo-1h-1.jpg",
+          "/excursion-grande-1.jpg"
+        ]
       },
       {
         "titulo": "Pensión Campestre",
         "desc": "Prioriza su socialización, fomenta el desapego e interacciones más balanceadas con perros y personas.",
-        "imgs": ["/pension-pequeno-1.jpg", "/perro-atardecer.jpg", "/dos-perros-campo.jpg"]
+        "imgs": [
+          "/pension-pequeno-1.jpg",
+          "/perro-atardecer.jpg",
+          "/dos-perros-campo.jpg"
+        ]
       }
     ]
   },
